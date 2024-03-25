@@ -1,0 +1,87 @@
+<section class=" {% render 'c-container' %} mb-3 relative z-10">
+
+  <div class="grid gap-3 md:grid-cols-2">
+
+    {%- if section.settings.left-img != blank -%}
+      {% assign leftImg = section.settings.left-img %}
+      <div class="">
+        {%- if section.settings.left-link != blank -%}
+          <a href="{{ section.settings.left-link }}">
+          {%- endif -%}
+          {% render 'img-width', img:leftImg %}
+          {%- if section.settings.left-link != blank -%}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+
+    {%- if section.settings.right-img != blank -%}
+      {% assign rightImg = section.settings.right-img %}
+      <div class="">
+
+        {%- if section.settings.right-link != blank -%}
+          <a href="{{ section.settings.right-link }}">
+          {%- endif -%}
+          {% render 'img-width', img:rightImg %}
+          {%- if section.settings.right-link != blank -%}
+          </a>
+        {%- endif -%}
+      </div>
+
+
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.header-link != blank -%}
+    <a href="{{ section.settings.header-link }}">
+    {%- endif -%}
+    {% render 'subheader', arrow:true %}
+    {%- if section.settings.header-link != blank -%}
+    </a>
+  {%- endif -%}
+</section>
+
+{% schema %}
+  {
+    "name": "Two image feature",
+    "settings": [
+      {
+        "id": "left-img",
+        "type": "image_picker",
+        "label": "Left image"
+
+      },
+      {
+        "id": "left-link",
+        "type": "url",
+        "label": "Left image link"
+      },
+      {
+        "id": "right-img",
+        "type": "image_picker",
+        "label": "Right image"
+
+      },
+      {
+        "id": "right-link",
+        "type": "url",
+        "label": "Right image link"
+      }, {
+        "id": "header",
+        "type": "text",
+        "label": "Header"
+      }, {
+        "id": "header-link",
+        "type": "url",
+        "label": "Header Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Two image feature",
+        "category": "sections"
+      }
+    ]
+  }
+{% endschema %}

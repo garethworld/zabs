@@ -1,0 +1,48 @@
+<section class=" {% render 'c-container' %} mb-7 r">
+
+  <div class="flex flex-wrap">
+
+
+    {%- if section.settings.right-img != blank -%}
+      {% assign rightImg = section.settings.right-img %}
+      <div class="md:w-1/2 md:ml-auto">
+
+        {%- if section.settings.right-link != blank -%}
+          <a href="{{ section.settings.right-link }}">
+          {%- endif -%}
+          {% render 'img-width', img:rightImg %}
+          {%- if section.settings.right-link != blank -%}
+          </a>
+        {%- endif -%}
+      </div>
+
+
+    </div>
+  {%- endif -%}
+
+
+</section>
+
+{% schema %}
+  {
+    "name": "Right image",
+    "settings": [
+      {
+        "id": "right-img",
+        "type": "image_picker",
+        "label": "Image"
+
+      }, {
+        "id": "right-link",
+        "type": "url",
+        "label": "Image link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Right image",
+        "category": "sections"
+      }
+    ]
+  }
+{% endschema %}

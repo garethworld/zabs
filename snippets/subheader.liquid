@@ -1,0 +1,20 @@
+{%- if section.settings.header != blank -%}
+  <div class="subheader font-3 tracking-2 ">
+    {%- if section.settings.header-link != blank -%}
+      <a class="flex  uppercase flex-wrap py-3  text-center hover:text-tint3 flex  block w-full {% render 'c-color-change' %} " href="{{ section.settings.header-link }}">
+        <span class="mx-auto">{{section.settings.header }}</span>
+
+        {%- if arrow == true -%}
+          <span>→</span>
+        {%- endif -%}
+      </a>
+
+    {%- else -%}
+
+      <div class="flex items-center justify-center py-3 text-center  uppercase tracking-2
+                    {% if template contains "shop" %}{%- else -%} {%- endif -%}">
+        {{section.settings.header }}
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

@@ -1,0 +1,48 @@
+<div class=" {% render 'c-container' %}">
+
+    {% assign imgSet = section.settings.feat-img %}
+
+      {%- if section.settings.header-link != blank -%}
+       <a href="{{ section.settings.header-link }}" >
+      {%- endif -%}
+
+      {%- if section.settings.feat-img != blank -%}
+      {% render 'img-vh', img:imgSet %}
+      {%- endif -%}
+
+      {%- if section.settings.header-link != blank -%}
+       </a>
+      {%- endif -%}
+
+ {% render 'subheader' %}
+
+</div>
+
+{% schema %}
+  {
+    "name": "Image feature",
+    "settings": [
+      {
+        "id": "feat-img",
+        "type": "image_picker",
+        "label": "Image"
+      }, 
+      {
+        "id": "header",
+        "type": "text",
+        "label": "Header"
+      }, 
+      {
+        "id": "header-link",
+        "type": "url",
+        "label": "Header Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero image feature",
+        "category": "sections"
+      }
+    ]
+  }
+{% endschema %}

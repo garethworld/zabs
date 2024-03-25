@@ -1,0 +1,8 @@
+<ul class="w-full foot:w-auto foot:flex foot:ml-3 foot:flex-wrap">
+  {% for link in linklists.footer.links %}
+    <li class="w-full foot:w-auto foot:mr-3">
+      <a href="{{ link.url }}" class="py-3 foot:py-0 uppercase tracking-2
+                                     {% if forloop.index !=  forloop.length %}  brand-b-border {% endif %} foot:border-0 block w-full text-center  hover:text-tint3  {% render 'c-color-change' %} {% if link.active %} text-tint1{% endif %}">{{ link.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

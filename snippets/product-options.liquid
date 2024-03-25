@@ -1,0 +1,117 @@
+
+  {% if product.variants.size > 1 %}
+		{% if product.options[0] %}
+
+       <div class="hidden">
+    <div class="relative">
+       
+	    <div class="block mt-8 mb-3 text-tint5 text-1-fluid"> {{ product.options[0] }}</div>
+			<select id="select-one" class="block px-2 py-2 border border-tint3 select-option text-tint1 text-2-fluid font-1"  onchange="updatePrice()">
+				{% for value in product.options_with_values[0].values %}
+					<option value="{{ value }}" {% if product.options_with_values[0].selected_value == value %}selected{% endif %}>
+						{{ value }}
+					</option>
+				{% endfor %}
+			</select>
+       </div>
+        </div>
+		{% endif %}
+		{% if product.options[1] %}
+     <div class="border-tint4 border-t-1">
+    <div class="relative">
+	    <div class="block mt-8 mb-3 text-tint5 text-1-fluid"> {{ product.options[1] }}</div>
+			<select id="select-two" class="block px-2 py-2 border border-tint3 select-option text-tint1 text-2-fluid font-1" onchange="updatePrice()">
+				{% for value in product.options_with_values[1].values %}
+					<option value="{{ value }}" {% if product.options_with_values[1].selected_value == value %}selected{% endif %}>
+						{{ value }}
+					</option>
+				{% endfor %}
+			</select>
+           </div>
+        </div>
+		{% endif %}
+		{% if product.options[2] %}
+           <div class="border-tint4 border-t-1">
+    <div class="relative">
+				    <div class="block mt-8 mb-3 text-tint5 text-1-fluid"> {{ product.options[2] }}</div>
+			<select id="select-three" class="block px-2 py-2 border border-tint3 select-option text-tint1 text-2-fluid font-1" onchange="updatePrice()">
+				{% for value in product.options_with_values[2].values %}
+					<option value="{{ value }}" {% if product.options_with_values[2].selected_value == value %}selected{% endif %}>
+						{{ value }}
+					</option>
+				{% endfor %}
+			</select>
+      </div>
+      </div>
+		{% endif %}
+	{% endif %}
+	<select name="id" id="product-select" class="hidden">
+		{% for variant in product.variants %}
+			<option
+				{% if variant == current_variant %}selected="selected"{% endif %}
+				{% unless variant.available %}disabled="disabled"{% endunless %}
+				value="{{ variant.id }}">
+				{{ variant.title }}
+			</option>
+		{% endfor %}
+	</select>				
+
+
+<script>
+	function updatePrice() {
+
+
+
+		{% if product.options[0] %}var opt1 = document.getElementById('select-one').value;{% endif %}
+		{% if product.options[1] %}var opt2 = document.getElementById('select-two').value;{% endif %}
+		{% if product.options[2] %}var opt3 = document.getElementById('select-three').value;{% endif %}
+		var id = '';
+		{% for v in product.variants %}
+		if(opt1=="{{ v.option1 }}"{% if product.options[1] %} && opt2=="{{ v.option2 }}"{% endif %}{% if product.options[2] %} && opt3=="{{ v.option3 }}"{% endif %}) {
+				var id = {{ v.id }};
+				var price = "{{ v.price | money }}";
+			}
+		{% endfor %}
+
+      var proselect = document.querySelector('#product-select option[value="' + id + '"]')
+  
+     
+		if (id == '') {
+ 
+			// Variant Not Found / Unavailable
+			document.getElementById('product-select').value = '';
+			document.getElementById('price').innerHTML = 'Unavailable';
+			//history.pushState(null, null, '/products/{{ product.handle }}');
+			// Disable Add To Cart Button Here
+		} else if (proselect.disabled == true) {
+     
+			// Sold Out
+			document.getElementById('product-select').value = id;
+	
+			document.getElementById('add').classList.add('text-tint5');
+	
+			document.getElementById('add').classList.remove('hover:text-tint1');
+      		
+			document.getElementById('add').disabled = true;
+           		document.getElementById('add').innerHTML = 'Sold out';
+
+			//history.pushState(null, null, '/products/{{ product.handle }}?variant=' + id);
+			// Disable Add To Cart Button Here			
+		} else {
+
+				document.getElementById('add').classList.remove('text-tint5');
+	
+			document.getElementById('add').classList.add('hover:text-tint1');
+      		
+
+			document.getElementById('product-select').value = id;
+			document.getElementById('price').innerHTML = price;
+      		document.getElementById('add').disabled = false;
+    		document.getElementById('add').innerHTML = 'Add to bag';
+
+
+		//history.pushState(null, null, '/products/{{ product.handle }}?variant=' + id);
+			// Enable Add To Cart Button Here
+		}			
+	}
+</script>

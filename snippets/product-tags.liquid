@@ -1,0 +1,8 @@
+    <ul class="flex flex-wrap text-tint3">
+      <li class="pr-1">Tags:</li>
+      {% for tag in product.tags %}
+      <li>
+        <a class="pr-1 transition-colors duration-300 text-0-fluid hover:text-tint1" href="/collections/{{ tag | handle }}">{{ tag }}{% if forloop.last == true %} {% else %},{% endif %}</a>
+      </li>
+      {% endfor %}
+    </ul>

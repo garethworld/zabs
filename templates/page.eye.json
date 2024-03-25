@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "eye": {
+      "type": "eye"
+    }
+  },
+  "order": ["eye"]
+}

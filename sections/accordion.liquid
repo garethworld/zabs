@@ -1,0 +1,70 @@
+<section class="{% render 'c-container' %} pb-3">
+
+<div x-data="{ active: false }" class="border-t border-tint3 mt-7">
+  {% for block in section.blocks %}
+
+    <div class="relative flex flex-wrap border-b border-tint3" x-data="{
+                                      id: {{forloop.index0}},
+                                      get expanded() {
+                                          return this.active === this.id
+                                      },
+                                      set expanded(value) {
+                                          this.active = value ? this.id : null
+                                      },
+          
+                                  }" role="region" class="">
+
+<div class="md:w-1/2">
+        <button x-on:click="expanded = !expanded" :aria-expanded="expanded" class="block w-full py-3 text-left font-2 text-3">
+         <span  x-show="!expanded" class="w-[20px] inline-block">+</span><span  x-show="expanded" class="w-[20px] inline-block">-</span>{{ block.settings.title }}
+        </button>
+</div>
+
+       
+
+      <div x-show="expanded" x-collapse class="flex md:w-1/2">
+        
+        <div class="pb-4 md:pt-3 text-4">
+          {{ block.settings.text }}
+        </div>
+      </div>
+    </div>
+
+
+  {% endfor %}
+
+
+
+</section>
+
+
+{% schema %}
+  {
+    "name": "Accordion",
+    "max_blocks": 55,
+    "blocks": [
+      {
+        "name": "Row",
+        "type": "gallery",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+          }, {
+            "id": "text",
+            "type": "richtext",
+            "label": "Text"
+          }
+        ]
+      }
+    ],
+   
+    "presets": [
+      {
+        "name": "Accordion",
+        "category": "sections"
+      }
+    ]
+  }
+{% endschema %}

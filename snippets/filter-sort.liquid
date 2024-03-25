@@ -1,0 +1,9 @@
+    <h2 class="{% render 'c-filter-h'%}">Sort by</h2>
+    <ul>
+
+    <li><a @click="sort" class="{% render 'c-filter-link'%} sort-opt  {% if collection.sort_by == "best-selling"  or collection.sort_by == "" %} filter-active {% endif %}" data-action="best-selling">Bestsellers</a></li>
+    <li><a @click="sort" class="{% render 'c-filter-link'%} sort-opt  {% if collection.sort_by == "created-descending" %} filter-active{% endif %}" data-action="created-descending">Newest</a></li>
+    <li><a @click="sort"  class="{% render 'c-filter-link'%} sort-opt  {% if collection.sort_by == "price-ascending" %} filter-active{% endif %}" data-action="price-ascending">Price low</a></li>
+    <li><a @click="sort" class="{% render 'c-filter-link'%} sort-opt  {% if collection.sort_by == "price-descending" %} filter-active{% endif %}" data-action="price-descending">Price high</a></li>
+
+</ul>

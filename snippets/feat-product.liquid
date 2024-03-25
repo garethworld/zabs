@@ -1,0 +1,33 @@
+<div class="">
+  {% assign featPro = all_products[feat-product] %}
+
+  {{ featPro.title }}
+
+
+{{ featPro.metafields.accentuate.summary }}  
+
+  {% render 'price', product: featPro, price_class: '' %} {% if
+  featPro.available == false %}
+  <span class="block text-tint5">Sold out</span> {% else %}
+  
+  
+  <form method="post" action="/cart/add">
+    <input
+      type="hidden"
+      class="hidden"
+      name="id"
+      value="{{ featPro.variants.first.id }}"
+    />
+    <input
+      type="submit"
+      value="Add to cart"
+      class="cursor-pointer text-tint3"
+    />
+  </form>
+  
+  {% endif %}
+
+  <a href="{{ featPro.url }}">
+    {% render 'img-square', img:featPro.featured_image %}
+  </a>
+</div>

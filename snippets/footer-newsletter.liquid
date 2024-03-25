@@ -1,0 +1,37 @@
+<h2 class="mb-6 text-3-fluid md:mb-7">Newsletter</h2>
+
+
+Receive updates promotions and more!
+
+
+
+
+
+<div class="mt-8 newsletter-section">
+ 
+ 
+    {% form 'customer' %}
+      {{ form.errors | default_errors }}
+      {% if form.posted_successfully? %}
+        <p class="">You have been successfully signed up.</p>
+      {% else %}
+        <div class="flex flex-wrap">
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input type="email"
+            name="contact[email]"
+            id="Email"
+            class="p-1 mail-ipt grow focus:border-0 font-1 text-tint1"
+            value="{% if customer %}{{ customer.email }}{% endif %}"
+            placeholder="Email"
+            autocorrect="off"
+            autocapitalize="off">
+       
+            <button type="submit" class="w-full py-1 mt-2 ml-0 text-left lg:w-auto md:ml-0 lg:ml-2 hover:text-tint1 mail-btn newsletter__submit" name="commit" id="Subscribe">
+              <span class="inline-block pb-1 font-1 newsletter__submit-text--large">Subscribe</span>
+            </button>
+          </div>
+     
+      {% endif %}
+    {% endform %}
+
+</div>

@@ -1,0 +1,39 @@
+{% for link in linklists.main-menu.links %} {% if link.active or
+    link.child_active %} {% else %} {% if link.type contains 'collection_link'
+    %}
+    <h2 class="{% render 'c-filter-h'%}">{{ link.title | escape }}</h2>
+    {% endif %} {% endif %} {% endfor %}
+
+
+
+    <!-- by age or -->
+    {% for link in linklists.main-menu.links %} 
+    
+ 
+    
+    {% if link.levels >= 1 %}
+
+    
+
+    {% if link.active or link.child_active %}
+  
+
+ {% else %}
+    <ul id="menu-{{ link.handle | escape }}" class="mt-auto mb-10 ">
+      {% for sub_link in link.links %}
+
+      <li>
+      
+        <a
+         @click="cat"
+          class="{% render 'c-filter-link'%} menu-opt   {% if forloop.first == true %}{% if current_tags.size > 0 %} {% else %} filter-active   {% endif %}{% endif %}  {% if current_tags contains sub_link.title  %} filter-active {% endif %}"
+          data-action = "/collections/{{ collection.handle }}/{{ sub_link.handle }}"
+          >{{ sub_link.title | escape }}</a
+        >
+        {% endfor %}
+      </li>
+      
+    </ul>
+
+    {% endif %} 
+    {% endif %} {% endfor %}

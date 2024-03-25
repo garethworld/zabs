@@ -1,0 +1,28 @@
+<div id="lightbox" class="fixed top-0 left-0 z-50 flex hidden w-full h-full">
+  <button
+    x-data="gallery"
+    @click="close()"
+    class="absolute top-0 right-0 z-50 p-4 transition duration-300 cursor-pointer group bg-tint4 hover:bg-tint1"
+  >
+    <svg
+      version="1.1"
+      class="stroke-tint3 stroke-2  group-hover:stroke-tint2  menu-icon duration-300 transition fill-none w-[17px] pointer-events-none"
+      xmlns="http://www.w3.org/2000/svg"
+      x="0"
+      y="0"
+      viewBox="0 0 19 17"
+      xml:space="preserve"
+    >
+      <path id="Line_11" class="st0" d="m1.5.5 16 16"></path>
+      <path id="Line_12" class="st0" d="m1.5 16.5 16-16"></path>
+    </svg>
+  </button>
+
+  <div id="full-gallery" class="relative z-20 mx-auto my-auto enlarged"></div>
+
+  <div
+    x-data="gallery"
+    @click="close()"
+    class="absolute top-0 left-0 z-10 w-full h-full bg-opacity-95 bg-tint2"
+  ></div>
+</div>

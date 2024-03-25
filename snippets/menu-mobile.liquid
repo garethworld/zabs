@@ -1,0 +1,35 @@
+<nav class="relative z-20 w-full ">
+  <ul class="flex justify-around menu">
+    {% for link in linklists.main-menu.links %}
+
+      <li class="flex-1">
+        <a class="uppercase {% if forloop.index !=  forloop.length %}  brand-r-border {% endif %} w-full block tracking-2 select-none text-center {% render 'c-color-change' %}
+                  {% if template contains "shop" or template contains "product" or template contains "about" or template contains "eye" %}
+                      {% if link.active or link.child_active %}
+                       text-tint1
+                      {% else %}
+          
+          
+                 {% if template contains "product" and link.url contains "shop"%}
+                  {% else %}
+                          text-tint3 hover:text-tint1
+          
+                        {% endif %}
+                      {% endif %}
+                    {% else %}
+          
+                  {% endif %}
+          
+                 {% if template contains "product" and link.url contains "shop" %}
+                     text-tint1
+                  {% endif %}
+          
+                  " href="{{ link.url }}">
+          {{ link.title | escape }}
+
+
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

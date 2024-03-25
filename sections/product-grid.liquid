@@ -1,0 +1,123 @@
+<section class=" {% render 'c-container' %}">
+
+
+
+  {%- if section.settings.product != blank -%}
+    {% assign product =  section.settings.product  %}
+  {% else %}
+    {% for product in collections.all.products %}
+      {% if product.id == 8008408400103 %}
+        {% assign product = product %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+
+  {% if product.variants.size > 1 %}
+    <div class="grid gap-x-3 mb-7 gap-y-7 sm:grid-cols-2 md:grid-cols-3 ">
+
+
+      {% assign count = 0 %}
+
+      {% for variant in product.variants %}
+
+
+        {% assign count = count | plus: 1 %}
+        <a href="{{product.url}}?v={{ variant.id }}" class="relative ">
+          {% assign vImg = variant.image %}
+          {% if vImg %}
+            {% assign vImg = variant.image.src %}
+          {% else %}
+
+            {% assign images = product.media  %}
+            {% assign vImg = images[0].src %}
+
+          {% endif %}
+
+          <div class="relative group">
+            {% render 'img-square', img:vImg %}
+
+            {% if variant.metafields.custom.rollover_image != blank %}
+              <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-0 group-hover:opacity-100">
+
+                <img class="block w-full" src="   {{ variant.metafields.custom.rollover_image | img_url:  '1000x1000', crop: 'center' }}" alt="{{ variant.title }}"/>
+
+              </div>
+            {% endif %}
+
+          </div>
+
+          <h2 class="mt-3 mb-1 transition duration-300 ease-in-out text-tint1 group-hover:text-tint1">{{product.title }}</h2>
+          <h3 class="mb-4">
+            {{product.options[0]}} {{ variant.title }}</h3>
+          <h4 class="transition duration-300 ease-in-out text-tint3 group-hover:text-tint1">{{ variant.price | money }}</h4>
+        </a>
+
+
+        {% if count==2 %}
+          {%- if section.settings.page != blank -%}
+            {% assign page =  section.settings.page  %}
+
+            <a href="{{ page.url }}" class=" mb-7">
+
+              {%- if section.settings.page-img != blank -%}
+                {% assign imgSet = section.settings.page-img %}
+
+                {%- if section.settings.page-caption != blank -%}
+                  <div class="relative">
+                    <div class="absolute top-0 p-6 uppercase transform -translate-y-1/2 tracking-2 font-3 font-1 top-1/2">
+                      <span class="mr-2">→</span>
+                      {{ section.settings.page-caption }}
+                    </div>
+                  {% endif %}
+                  {% render 'img-square', img:imgSet %}
+                  {%- if section.settings.page-caption != blank -%}
+                  </div>
+                {% endif %}
+
+              {%- endif -%}
+
+              <h2 class="mt-2 text-tint1">{{page.title}}</h2>
+
+            </a>
+          {%- endif -%}
+        {%- endif -%}
+      {% endfor %}
+
+    </div>
+
+  {% endif %}
+
+</secton>
+
+
+
+{% schema %}
+  {
+    "name": " Product grid",
+    "settings": [
+      {
+        "id": "product",
+        "type": "product",
+        "label": "Product",
+        "info": "Select a product to create a grid of variants"
+      }, {
+        "id": "page",
+        "type": "page",
+        "label": "Page feature",
+        "info": "Page to feature as the third item in the product grid"
+      }, {
+        "id": "page-img",
+        "type": "image_picker",
+        "label": "Image for page feature",
+        "info": "Image should be 1080px x 1080px"
+      }, {
+        "id": "page-caption",
+        "type": "text",
+        "default": "Find your strength",
+        "label": "Caption for page feature"
+      }
+    ]
+
+  }
+{% endschema %}

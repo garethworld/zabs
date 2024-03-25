@@ -1,0 +1,6 @@
+{% if collection.title contains "Shop by personality" %} Not sure {%
+            endif %} {% if collection.title contains "Shop by age" %} All ages
+            {% endif %} {% if collection.title contains "Shop by age" or
+            collection.title contains "Shop by personality" %} {% else %}
+            {{ collection.title }}
+            {% endif %}

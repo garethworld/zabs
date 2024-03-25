@@ -1,0 +1,47 @@
+{%- if card_product.featured_media -%}
+
+  <a href="{{ card_product.url }}" class="">
+
+    <div class="relative overflow-hidden square bg-tint7">
+      {% render 'img-square-list', img:img%}
+    </div>
+
+  </a>
+
+{%- endif -%}
+
+<div class="mt-6 ">
+
+  <div class="flex flex-wrap ">
+
+
+    <h3 class="mb-1 mr-2 text-2-fluid leading-2">{{ card_product.title | escape }}</h3>
+
+
+    <div class="w-full text-tint5">
+      {% render 'price', product: card_product, price_class: '' %}
+    </div>
+
+  </div>
+
+
+  {% if card_product.available == false %}
+    <span class="block pt-1 text-tint5">Sold out</span>
+  {% else %}
+
+
+
+    <form method="post" action="/cart/add" id="add-to-cart-{{ card_product.handle }}-{{ collection.handle }}-{{ section.id }}">
+
+      <input type="hidden" class="hidden" name="id" value="{{ card_product.variants.first.id }}"/>
+
+
+      <button type="submit" name="add" data-add-to-cart class="mt-2 text-left transition-colors duration-300 hover:text-tint1 js-go-cart-add-to-cart text-tint3">
+        Add to cart
+      </button>
+
+    </form>
+  {% endif %}
+
+
+</div>

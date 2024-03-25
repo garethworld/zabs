@@ -1,0 +1,78 @@
+<section x-data="hero()" x-on:resize.window="init" class=" {% render 'c-container' %}">
+
+    {% assign imgSet = section.settings.feat-img %}
+
+      {%- if section.settings.header-link != blank -%}
+       <a href="{{ section.settings.header-link }}" >
+      {%- endif -%}
+
+      {%- if section.settings.landscape-img != blank -%}
+
+      
+    
+      <div class="block object-cover w-full h-screen bg-center bg-no-repeat bg-cover hero-img">
+    <style scoped>
+   {% if section.settings.portrait-img != blank %}
+         .hero-img{background-image: url({{ section.settings.portrait-img.src | img_url: '1000x' }});}
+
+          {% else %}
+          .hero-img{background-image: url({{ section.settings.landscape-img.src | img_url: '1000x' }});}
+         
+      {% endif %}
+      
+       {% if section.settings.landscape-img != blank %}
+         @media (orientation: landscape) {
+         .hero-img{background-image: url({{ section.settings.landscape-img.src | img_url: '1920x' }})
+        }
+        {% endif %}
+      </style>
+      </div>
+  
+    
+  
+     
+        
+
+
+
+
+      {%- endif -%}
+
+      {%- if section.settings.header-link != blank -%}
+       </a>
+      {%- endif -%}
+
+ {% render 'subheader',arrow:true %}
+
+</secton>
+
+{% schema %}
+  {
+    "name": "Hero",
+    "settings": [
+      {
+        "id": "landscape-img",
+        "type": "image_picker",
+        "label": "Landscape image",
+        "info": "Image should be 0 x 0"
+      }, 
+       {
+        "id": "portrait-img",
+        "type": "image_picker",
+        "label": "Portrait Image",
+        "info": "Image should be 0 x 0"
+      }, 
+      {
+        "id": "header",
+        "type": "text",
+        "label": "Header"
+      }, 
+      {
+        "id": "header-link",
+        "type": "url",
+        "label": "Header Link"
+      }
+    ]
+
+  }
+{% endschema %}

@@ -1,0 +1,20 @@
+{% if collections[parent.metafields.accentuate.related_collection].title != blank  %}
+      
+    <div id="related-mobile" x-data="mobrelated()" x-init="init" class="">
+
+
+    <button class="hidden splide__arrow splide__arrow--prev"></button>
+        <button class="hidden splide__arrow splide__arrow--next"></button>
+
+        <div class="relative z-0 splide__track">
+          <ul class="splide__list ">
+        {% for product in collection.products limit: 6 %}
+            <li class="splide__slide">
+            {% render 'product-card',card_product: product, img:product.images.first.%}
+            </li>
+        {% endfor %}
+        </ul>
+       </div>
+
+   </div>
+   {% endif %}

@@ -1,0 +1,38 @@
+<header id="header" x-data="menu()" @scroll.window="scroll" class="top-0 z-40 w-full font-3 tracking-2 bg-tint2">
+
+
+  <div class="relative z-20 flex flex-wrap items-center justify-center w-full bg-tint2">
+
+    <div class="flex w-2/12 md:hidden">
+      <a class="block p-3 cursor-pointer " x-data="menu()" @click="open">
+        <svg class="w-[10px] block" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 10 10" style="enable-background:new 0 0 10 10" xml:space="preserve"><path class="stroke-tint1" d="M0 .3h10M0 9.8h10M0 5h10"/></svg>
+      </a>
+    </div>
+
+    <div class="hidden w-2/12 md:flex">
+      <a href="{{ shop.url }}" class="hover:text-tint5 block tracking-2 p-3 select-none uppercase {% render 'c-color-change' %} ">solon</a>
+    </div>
+
+    <div class="flex-1 hidden w-8/12 md:flex">
+      <div class="mx-auto">{% render 'menu' %}</div>
+    </div>
+
+
+    <div class="flex-1 mx-auto text-center md:hidden">
+      <a href="{{ shop.url }}" class="hover:text-tint5 block tracking-2 p-3 select-none uppercase {% render 'c-color-change' %} ">solon</a>
+    </div>
+
+
+    <div class="flex w-2/12">
+      <div class="ml-auto">{%- render "go-cart-button" -%}</div>
+    </div>
+
+  </div>
+
+  <div id="mobile-menu" class="absolute z-10 flex items-center justify-center w-full transform -translate-y-full md:hidden font-3 tracking-2 bg-tint2">
+    <div class="{% render 'c-container' %}   w-full">
+      <div class="py-3 brand-t-border ">{% render 'menu-mobile' %}</div>
+    </div>
+  </div>
+
+</header>

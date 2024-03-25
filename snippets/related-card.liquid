@@ -1,0 +1,36 @@
+{%- if card_product.featured_media -%}
+
+<a href="{{ card_product.url }}">
+  <img
+    class="z-10 block w-full"
+    src="{{ img| img_url: '700x720', crop: 'center'}}"
+    alt="{{ img.featured_image.alt }}"
+    srcset="
+    {% if img.width > 640 %}{{ img.src | img_url: '640x640', crop: 'center' }} 640w{% endif %}
+    {% if img.width > 720 %},{{ img.src | img_url: '720x720', crop: 'center' }} 720w{% endif %}
+    {% if img.width > 900 %},{{ img.src | img_url: '900x900', crop: 'center' }} 900w{% endif %} 
+    {% if img.width > 1200 %},{{ img.src | img_url: '1200x1200', crop: 'center' }} 1200w{% endif %} 
+    {% if img.width > 1920 %},{{img.src | img_url: '1920x1920', crop: 'center'  }} 1920w{% endif %} 
+    "
+    loading="lazy"
+  />
+</a>
+
+{%- endif -%}
+
+<div class="mt-6">
+  {{ card_product.title | escape }}
+  {% render 'price', product: card_product, price_class: '' %} 
+  
+  {% if card_product.available == false %} <span class="block text-tint5">Sold out</span> {% else %}
+  <form method="post" action="/cart/add">
+    <input
+      type="hidden"
+      class="hidden"
+      name="id"
+      value="{{ card_product.variants.first.id }}"
+    />
+    <input type="submit" value="Add to cart" class="cursor-pointer text-tint3" />
+  </form>
+  {% endif %}
+</div>

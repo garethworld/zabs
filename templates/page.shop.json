@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero"
+    },
+     "grid": {
+      "type": "product-grid"
+    }
+  },
+  "order": ["hero","grid"]
+}

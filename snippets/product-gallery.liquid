@@ -1,0 +1,26 @@
+<div id="gallery-holder">
+<div id="gallery" x-data="gallery()" x-init="init" class="relative w-full md:w-11/12
+
+{% if product.images.size < 2 %}
+no-arrows 
+{% endif %} 
+
+">
+
+
+ {% render 'gallery-btns' %}
+
+
+
+ 
+  <div id="gal-zoom" class="splide__track md:cursor-zoom">
+    <ul class="splide__list">
+      {% assign images = product.media | where: "media_type", "image" %} {% for
+      image in product.images %}
+      <li class="relative splide__slide" x-data="gallery" @click="enlarge()">{% render 'img-square', img:image%}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+</div>

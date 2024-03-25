@@ -1,153 +1,48 @@
-{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+<section class="flex flex-wrap w-full pt-0 md:pt-7 pb-7 md:pb-13">
+  <div class="{% render 'c-gutter' %}"></div>
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
+  <div class="flex-1 ">
+    <h1 class="mb-4 text-4-fluid leading-2 md:mb-11">Curated</h1> 
+      
+      {% assign blog = blogs.collections %}
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
+    <div x-data="blog()" x-init="init" class="flex flex-wrap masonry">
 
-{%- paginate blog.articles by 6 -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
-    <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ blog.title | escape }}
-    </h1>
+      {% assign count = 0 %}
 
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
-      {%- for article in blog.articles -%}
-        <div
-          class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-            style="--animation-order: {{ forloop.index }};"
-          {% endif %}
-        >
-          {%- render 'article-card',
-            article: article,
-            media_height: section.settings.image_height,
-            media_aspect_ratio: article.image.aspect_ratio,
-            show_image: section.settings.show_image,
-            show_date: section.settings.show_date,
-            show_author: section.settings.show_author,
-            show_excerpt: true
-          -%}
+      {% for article in blog.articles  %}
+        {% assign count = count | plus: 1 %}
+        
+
+           {% if count == 5 %}{% assign count = 1 %}{% endif %}
+
+        <div class="flex md:flex-wrap post">
+          <div class=" {% if count == 1 %} w-full md:w-7/12 pb-8 md:pb-[20vh] {% endif %} {% if count == 2 %} md:pt-[25vh] pb-8 md:pb-[20vh] w-full md:w-7/12 ml-auto{% endif %} {% if count == 3 %} w-full md:w-10/12 ml-auto pb-8 md:pb-[20vh] {% endif %}
+        
+
+          {% if count == 4 %} w-full md:w-7/12 pb-8 md:pb-[20vh] md:mx-auto {% endif %}"
+          
+          >
+
+
+             
+          
+            <a class="relative block group" href="{{ article.url }}">
+              
+              <div class="absolute top-0 left-0 z-10 flex w-full h-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 overlay bg-tint3 p-sm text-tint2 ">
+                    <span class="m-auto ">View post</span>
+                </div>
+              <img class="block w-full" src="{{ article.image.src | image_url: width: 1000 }}">
+            
+            
+            </a>
+            <a class="block mt-4 mb-1 text-2-fluid leading-1" href="{{ article.url }}">{{ article.title }}</a>
+            <a class="block text-tint5" href="{{ article.url }}">{{ article.published_at | date: "%d/%m/%Y" }}</a>
+          </div>
         </div>
-      {%- endfor -%}
+      {% endfor %}
     </div>
-
-    {%- if paginate.pages > 1 -%}
-      {%- render 'pagination', paginate: paginate -%}
-    {%- endif -%}
   </div>
-{%- endpaginate -%}
 
-{% schema %}
-{
-  "name": "t:sections.main-blog.name",
-  "tag": "section",
-  "class": "section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "t:sections.main-blog.settings.header.content"
-    },
-    {
-      "type": "select",
-      "id": "layout",
-      "options": [
-        {
-          "value": "grid",
-          "label": "t:sections.main-blog.settings.layout.options__1.label"
-        },
-        {
-          "value": "collage",
-          "label": "t:sections.main-blog.settings.layout.options__2.label"
-        }
-      ],
-      "default": "collage",
-      "label": "t:sections.main-blog.settings.layout.label",
-      "info": "t:sections.main-blog.settings.layout.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_image",
-      "default": true,
-      "label": "t:sections.main-blog.settings.show_image.label"
-    },
-    {
-      "type": "select",
-      "id": "image_height",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.main-blog.settings.image_height.options__1.label"
-        },
-        {
-          "value": "small",
-          "label": "t:sections.main-blog.settings.image_height.options__2.label"
-        },
-        {
-          "value": "medium",
-          "label": "t:sections.main-blog.settings.image_height.options__3.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.main-blog.settings.image_height.options__4.label"
-        }
-      ],
-      "default": "medium",
-      "label": "t:sections.main-blog.settings.image_height.label",
-      "info": "t:sections.main-blog.settings.image_height.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_date",
-      "default": true,
-      "label": "t:sections.main-blog.settings.show_date.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_author",
-      "default": false,
-      "label": "t:sections.main-blog.settings.show_author.label"
-    },
-    {
-      "type": "paragraph",
-      "content": "t:sections.main-blog.settings.paragraph.content"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
-  ]
-}
-{% endschema %}
+  <div class="{% render 'c-gutter' %}"></div>
+</section>

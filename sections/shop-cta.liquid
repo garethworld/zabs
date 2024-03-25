@@ -1,0 +1,53 @@
+ {% if section.settings.cta-text != blank  %}
+<div class="flex flex-wrap w-full bg-tint7 py-11 md:py-12 lg:py-13">
+
+<div class="{% render 'c-gutter' %}"></div>
+    <div class="flex-1 text-tint3">
+      
+
+      <div class="w-10/12">
+      <h2 class="mb-8 md:mb-10 text-4-fluid leading-2">{{ section.settings.cta-text }}</h2>
+
+         {% if section.settings.cta-url != blank  %}
+            <a  class="transition-colors duration-300 text-3-fluid hover:text-tint1" href="{{ section.settings.cta-url }}"> {{ section.settings.btn-txt }} →</a>
+
+             {% else %}
+          <a class="transition-colors duration-300 text-3-fluid hover:text-tint1" href="collections/shop-by-age"> Shop all →</a>
+
+             {% endif %}
+             </div>
+
+    </div>
+<div class="{% render 'c-gutter' %}"></div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "CTA",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "cta-text", 
+      "label": "Text",
+      "info": "Shown at the bottom of the homepage, product listings and pages",
+      "default": "<p>Phasellus sit amet volutpat orci. Phasellus iaculis tempus mauris id faucibus. Donec eget dolor mi. Ut interdum lectus et efficitur eleifend.</p>"
+    },
+     {
+      "type": "url",
+      "id": "cta-url", 
+      "label": "Link"
+    },
+  {
+      "type": "text",
+      "id": "btn-txt", 
+      "label": "Button text",
+      "default": "Shop all"
+    }
+  ]
+}
+{% endschema %}
+
+
+

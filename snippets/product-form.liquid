@@ -1,0 +1,55 @@
+{% if product.available == false %}
+<span class="block pt-1 text-tint5">Sold out</span> 
+{% else %}
+
+ <form action="/cart/add" method="post" enctype="multipart/form-data"  
+  id="add-to-cart-{{ product.handle }}-{{ collection.handle }}-{{ section.id }}">
+
+
+
+
+
+
+{% render 'product-options' %}
+
+
+    <div class="flex mt-6">
+       <input class="hidden" type="text" id="Quantity" name="quantity" value="1" min="1"/>
+
+     
+       {% if product.variants.size == 1 %}
+        {% if product.variants.first.inventory_quantity == 0 %}
+   
+          <button  disabled class="w-full py-2 uppercase bg-tint4 text-tint4 font-1" >SOLD OUT</button>
+        {% else %}
+
+        {% render 'product-add' %}
+       {% endif %}
+
+        {% else %}
+      {% render 'product-add' %}
+  {% endif %}
+
+
+    </div>
+                         
+    {% assign current_variant = product.selected_or_first_available_variant %}
+
+
+
+
+
+
+</form>
+
+{% endif %}
+
+
+{% render 'swym-product-view', product: product %}
+<button class="flex items-center mt-9 text-1-fluid group" data-swaction="addToWishlist" data-product-id="{{product.id | json}}">
+<svg class="mr-2 group-hover:stroke-tint3  pointer-events-none block h-[18px]  w-[16px] duration-300 transition menu-icon stroke-2 fill-none stroke-tint1" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 18 16" style="enable-background:new 0 0 18 16;" xml:space="preserve">
+<path class="st0" d="M16,2.2c-1.7-1.7-4.3-1.7-6,0l-1,1.1L8,2.2c-1.7-1.7-4.3-1.7-6,0S0.4,6.4,2,8.1l1.1,1.1l6,5.9l6-5.9l1.1-1.1
+	C17.6,6.4,17.6,3.8,16,2.2z"  fill="none"/></svg>
+ Add to wishlist
+</button>

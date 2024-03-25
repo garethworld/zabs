@@ -1,0 +1,53 @@
+<div class="flex flex-wrap h-full p-4 lg:p-7">
+  
+
+<div>
+<a href="{{ featPro.url }}" class="block mb-3 text-3-fluid leading-2">{{ featPro.title }}</a>
+
+<a href="{{ featPro.url }}" class="block mb-8 leading-3 text-tint5 ">
+  {% if featPro.metafields.accentuate.summary != blank %}
+  {{ featPro.metafields.accentuate.summary }}
+  {% else %} 
+{% assign truncateBy = featPro.description.size  | minus: 100 %}
+
+ {{ featPro.description | strip_html | replace: '&nbsp;', ' ' | truncate: 100 }}
+  {% endif %} 
+</a>
+
+</div>
+
+<div class="w-full mt-auto">
+
+   <div class="text-3-fluid">
+  {% render 'price', product: featPro, price_class: '' %}
+  </div>
+  
+  {% if featPro.available == false %}
+  
+     <div class="mt-3 border-t border-tint3 ">
+   <span class="block pt-3 text-tint5">Sold out</span>
+   </div>
+  {% else %}
+
+
+<form method="post" action="/cart/add" id="add-to-cart-{{ featPro.handle }}-{{ collection.handle }}-{{ section.id }}">
+
+  <input
+      type="hidden"
+      class="hidden"
+      name="id"
+      value="{{ featPro.variants.first.id }}"
+    />
+  
+
+<button   type="submit"  name="add"  data-add-to-cart class="w-full pt-3 mt-3 text-left transition-colors duration-300 border-t hover:text-tint1 border-tint3 js-go-cart-add-to-cart text-tint3"> 
+	 
+   Add to cart
+ </button>  
+
+  </form>
+  {% endif %}
+
+  </div>
+  
+</div>

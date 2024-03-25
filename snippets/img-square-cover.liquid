@@ -1,0 +1,13 @@
+  <img
+    class="block object-cover w-full h-full"
+    src="{{ img| img_url: '400x400', crop: 'center'}}"
+    alt="{{ img.featured_image.alt }}"
+    srcset="
+    {% if img.width > 400 %}{{ img.src | img_url: '400x400', crop: 'center' }} 400w{% endif %}
+    {% if img.width > 640 %}{{ img.src | img_url: '640x640', crop: 'center' }} 640w{% endif %}
+    {% if img.width > 720 %},{{ img.src | img_url: '720x720', crop: 'center' }} 720w{% endif %}
+    {% if img.width > 900 %},{{ img.src | img_url: '900x900', crop: 'center' }} 900w{% endif %} 
+ {% if img.width > 1200 %},{{ img.src | img_url: '1200x1200', crop: 'center' }} 1200w{% endif %} 
+    "
+    loading="lazy"
+/>

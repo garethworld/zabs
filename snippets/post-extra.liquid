@@ -1,0 +1,41 @@
+{% if article.metafields.accentuate.more-text%} 
+
+  <div id="more" class="flex flex-wrap w-full bg-tint4 ">
+    <div class="{% render 'c-gutter' %}"></div>
+    <div class="flex-1 py-10 md:py-12 text-tint3 ">
+
+        <h3 class="text-4-fluid leading-2 mb-7 lg:mb-9 text-tint3">{{ article.metafields.accentuate.heading }}</h3>
+        
+        
+  <div class="flex flex-wrap">
+
+        <div class="md:w-1/2 post-txt tint3-links" >
+
+            <div class="md:w-10/12 text-tint1">
+        {{ article.metafields.accentuate.more-text }}
+
+        </div>
+        
+        </div>
+
+
+            <div class="md:w-1/2">
+
+                <div class="mx-auto md:w-10/12">
+            {% for image in article.metafields.accentuate.more-image %}
+            <img class="w-full" src="{{ image.cloudinary_src | append: 'c_crop,w_1000,h_1500' }}" alt="{{ image.alt }}"/>
+            {% endfor %}
+            </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="{% render 'c-gutter' %}"></div>
+
+  </div>
+        
+{% endif %} 
