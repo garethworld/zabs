@@ -24,7 +24,7 @@ module.exports = {
       tint1: "#000",
       tint2: "#fff",
       tint3: "#9e9d9b",
-      tint4: "yellow",
+      tint4: "green",
       tint5: "#666",
       tint7: "#fff",
       tint8: "#000",
