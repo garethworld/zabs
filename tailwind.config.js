@@ -27,6 +27,7 @@ module.exports = {
       tint4: "pink",
       tint5: "#666",
       tint7: "#fff",
+      tint8: "#000",
     },
   },
   plugins: [],
