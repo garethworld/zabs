@@ -10,7 +10,7 @@
       <div class='flex flex-wrap items-center ml-auto'>
         {% render 'right-menu' %}
         <a href='/cart' class='flex flex-wrap items-end mb-2'>
-          <img class='w-[22px] mr-1' src='/assets/cart.svg' alt='Cart'>
+          <img class='w-[22px] mr-1' src='{{ 'cart.svg' | asset_url }}' alt='Cart'>
           ({{ cart.item_count }})
         </a>
       </div>

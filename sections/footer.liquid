@@ -1,7 +1,7 @@
 <footer class='mt-auto text-tint2'>
   <div class='flex flex-wrap pt-12 bg-tint2 {% render 'c-container' %} '>
     <div class='mx-auto w-full md:w-[800px] relative'>
-      <img class='w-full' src='/assets/matchbox-right.static.svg' alt='Matchbox'>
+      <img class='w-full' src='{{ 'matchbox-right.static.svg' | asset_url }}' alt='Matchbox'>
       <div class='absolute left-[280px] flex-col pt-12 top-0 transform  pb-12 flex flex-wrap h-full text-tint1 text-center w-[420px]'>
         <h2 class='mb-6 font-3 leading-2 text-12-fluid'>Keep in touch</h2>
         <div class='font-1 leading-2'>
@@ -15,7 +15,7 @@
             class='w-full pb-1 placeholder-opacity-50 border-dotted bg-tint2 placeholder-tint1 border-b-6 leading-2 font-1 text-1-fluid text-tint1 border-tint1 '
           >
           <button type='submit' class='absolute top-0 right-0'>
-            <img class='w-[20px]' src='/assets/arrow.static.svg' alt='Arrow'>
+            <img class='w-[20px]' src='{{ 'arrow.static.svg' | asset_url }}' alt='Arrow'>
           </button>
         </form>
       </div>
@@ -24,7 +24,9 @@
 
   <div class='bg-tint2 rounded-b-2 text-tint1   {% render 'c-container' %} py-12 flex flex-wrap items-center'>
     <div>
-      <a href='{{ shop.url }}'><img class='w-[190px]' src='/assets/footer-logo.static.svg' alt="Zab's hot sauce"></a>
+      <a href='{{ shop.url }}'
+        ><img class='w-[190px]' src='{{ 'footer-logo.static.svg' | asset_url }}' alt="Zab's hot sauce"
+      ></a>
     </div>
     <div class='grid w-1/2 grid-cols-3 ml-auto gap-x-3'>
       <div>{% include 'menu-footer-top' with menu: 'footer' %}</div>
