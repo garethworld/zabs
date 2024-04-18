@@ -1,8 +1,17 @@
 {
   "sections": {
-     "collections": {
-      "type": "collections"
+    "collections": {
+      "type": "collections",
+      "settings": {
+        "feat-collections": [
+          "zabs-starter-packs",
+          "sauces",
+          "merchandise"
+        ]
+      }
     }
   },
-  "order": ["collections"]
+  "order": [
+    "collections"
+  ]
 }
