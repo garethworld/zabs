@@ -3,7 +3,7 @@
     <div class='my-auto'>{% render 'menu' %}</div>
 
     <div class='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
-      <a href='{{ shop.url }}'><img class='w-[250px]' src='/assets/logo.svg' alt="Dab of Zab's"></a>
+      <a href='{{ shop.url }}'><img class='w-[250px]' src='{{ 'logo.svg' | asset_url }}' alt="Dab of Zab's"> </a>
     </div>
 
     <div class='my-auto ml-auto'>
