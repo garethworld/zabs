@@ -33,24 +33,23 @@
 
 
 
-  <body class="antialiased bg-tint4 text-2 text-tint1 leading-1 font-1">
+  <body class="flex flex-col min-h-screen pt-4 antialiased bg-tint1 text-2 text-tint1 {% render 'c-container' %} font-1">
 
     {% section "announcement-bar" %}
+    
 
-    <div class="flex flex-col h-screen">
+    <main class="flex-grow">
 
       {% render 'header' %}
 
-
       {% render 'cart' %}
 
-      <main class="flex-grow panels">
+      <div class="">
         {{ content_for_layout }}
-      </main>
+      </div>
+    </main>
 
-      {% section 'footer' %}
-
-    </div>
+    {% section 'footer' %}
 
     <script src="{{ 'bundle.js' | asset_url }}" defer="defer"></script>
   </body>

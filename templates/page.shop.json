@@ -1,11 +1,8 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero"
-    },
-     "grid": {
-      "type": "product-grid"
+     "collections": {
+      "type": "collections"
     }
   },
-  "order": ["hero","grid"]
+  "order": ["collections"]
 }

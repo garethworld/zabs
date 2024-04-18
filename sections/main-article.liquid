@@ -1,39 +1,55 @@
-<div class="flex flex-wrap w-full pt-0 md:pt-7">
-  <div class="{% render 'c-gutter' %}">
-    <a
-      href="/blogs/collections"
-      class="cursor-pointer w-[62px] hidden transition-colors duration-300 origin-top-left transform rotate-90 translate-x-full lg:inline-block hover:text-tint3"
-    >
-      Back
-    </a>
-  </div>
-  <div class="flex-1 border-tint1">
-    <div class="flex flex-wrap {% render 'c-section-b-margin' %}">
-      
-      <div class="md:w-1/2">
-        <h1 class="md:hidden leading-2 text-4-fluid">{{ article.title }}</h1>
-        <h2 class="mb-6 md:hidden leading-2 text-3-fluid text-tint5">
-          {{ article.published_at | date: "%d/%m/%Y" }}
-        </h2>
-        {% render 'gallery' %}
+<section class='flex flex-wrap bg-tint2 pt-30 '>
+  <div class='mx-auto max-w-content'>
+    <div class='w-full pb-1 border-tint1 border-b-3 '>
+      <div class='w-full text-center border-tint1 border-b-3 '>
+        <div class=''>
+          <h3 class='mb-12 text-tint3 leading-1ax-w-content font-3 text-9-fluid'>Cook it in</h3>
+          <h2 class='mb-10 leading-4 uppercase text-13-fluid'>{{ article.title }}</h2>
+          <h4 class='mb-12 uppercase'>By Zab's Saucemaster General</h4>
+        </div>
       </div>
-
-
-      <div class="flex flex-col flex-wrap md:w-1/2 post-txt tint1-link">{% render 'post-intro' %}</div>
-    
     </div>
 
+    <div class='pt-12 '>
+      <div class='grid grid-cols-2 gap-8'>
+        {% if article.image != blank %}
+          <div>
+            {% assign img = article.image %}
+            {% render 'img-product-card', img: img %}
+          </div>
+        {% endif %}
 
+        <div class='leading-4 font-4 text-5-fluid'>
+          {% render 'ingredients',
+            title: article.metafields.custom.ingredients_one_title,
+            list: article.metafields.custom.ingredients_one_list
+          %}
+
+          {% render 'ingredients',
+            title: article.metafields.custom.ingredients_two_title,
+            list: article.metafields.custom.ingredients_two_list2
+          %}
+
+          {% render 'ingredients',
+            title: article.metafields.custom.ingredients_three_title,
+            list: article.metafields.custom.ingredients_three_list2
+          %}
+        </div>
+      </div>
+
+      <div class='w-full'>
+        <div class='w-full pb-1 border-tint1 border-b-3 '>
+          <div class='w-full py-12 leading-4 border-tint1 border-b-3 font-4 text-5-fluid article'>
+            {{ article.content }}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="{% render 'c-gutter' %}"></div>
-</div>
 
-{% render 'post-extra' %}
-
-<div class="flex flex-wrap w-full">
-  <div class="{% render 'c-gutter' %}"></div>
-
-  <div class="flex-1">{% render 'product-related', parent:article %}</div>
-
-  <div class="{% render 'c-gutter' %}"></div>
-</div>
+  {% render 'related-products',
+    products: article.metafields.custom.related_products,
+    title: 'In this recipe',
+    class: 'article-related'
+  %}
+</section>

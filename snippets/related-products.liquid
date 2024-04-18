@@ -1,0 +1,24 @@
+{% if products %}
+    <section class="w-full bg-tint2">
+ 
+    <div class="{{ class }}">
+      <div class="py-24">
+        <h2 class="{% render 'c-section-header' %}">
+        {% if title %}
+          {{title}}
+        {% else %}
+          Related products
+        {% endif %}
+        </h2>
+    <div class="w-10/12 mx-auto">
+      <div class='{% render 'c-product-grid' %}'>
+    {% for related_product in products.value %}
+      {% render 'product-card' with card_product: related_product %}
+    {% endfor %}
+    </div>
+    </div>
+   
+    </div>
+    <div class="blue-dec dec-border "></div>
+  </section>
+  {% endif %}

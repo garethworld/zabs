@@ -1,0 +1,16 @@
+<ul class='flex -mx-1'>
+  {% for link in linklists['footer-bottom'].links %}
+    <li class='px-1'>
+      <a
+        href='{{ link.url }}'
+        class='uppercase inline-block hover:text-tint3 {% render 'c-color-change' %} {% if link.active %} text-tint1{% endif %}'
+      >
+        {{- link.title -}}
+      </a>
+      {% if forloop.last %}
+      {% else %}
+        <span class='inline-block'>-</span>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

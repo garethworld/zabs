@@ -1,0 +1,11 @@
+{% if title %}
+  <h3 class='mb-1 text-3-fluid leading-2 font-1'>{{ title }}</h3>
+{% endif %}
+
+{% if list %}
+  <ul class='mb-8'>
+    {% for ingredient in list.value %}
+      <li class='mb-1'>{{ ingredient }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}

@@ -1,0 +1,12 @@
+<ul class='flex flex-wrap'>
+  {% for link in linklists[menu].links %}
+    <li class='w-full'>
+      <a
+        href='{{ link.url }}'
+        class='uppercase mb-2 block hover:text-tint3 {% render 'c-color-change' %} {% if link.active %} text-tint1{% endif %}'
+      >
+        {{- link.title -}}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

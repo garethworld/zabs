@@ -1,37 +1,41 @@
-<footer class="w-full text-tint3 font-3 tracking-2">
-
-  <div class="   text-tint1 {% render 'c-container' %}">
-
-    <div class="flex flex-wrap brand-t-border foot:py-3">
-
-      <div class="hidden w-2/12 uppercase tracking-2 foot:block">
-        {{section.settings.signoff-text }}
-      </div>
-
-      <div class="flex justify-center w-full foot:w-8/12">
-        <div class="w-full foot:w-auto">
-          {% render 'menu-footer' %}
+<footer class='mt-auto text-tint2'>
+  <div class='flex flex-wrap pt-12 bg-tint2 {% render 'c-container' %} '>
+    <div class='mx-auto w-full md:w-[800px] relative'>
+      <img class='w-full' src='/assets/matchbox-right.static.svg' alt='Matchbox'>
+      <div class='absolute left-[280px] flex-col pt-12 top-0 transform  pb-12 flex flex-wrap h-full text-tint1 text-center w-[420px]'>
+        <h2 class='mb-6 font-3 leading-2 text-12-fluid'>Keep in touch</h2>
+        <div class='font-1 leading-2'>
+          <p>For new product releases, merchandies, restaurant partnerships, and more info</p>
         </div>
-      </div>
-      <div class="hidden w-2/12 foot:flex">
-        <button x-data="up()" @click="go" class="ml-auto uppercase tracking-2 hover:text-tint3  {% render 'c-color-change' %} font-3">Back to the top</button>
+        <form action='/contact' method='post' class='relative w-full mt-auto'>
+          <input
+            type='email'
+            name='email'
+            placeholder='EMAIL ON THE DOTTED LINE, PLEASE!'
+            class='w-full pb-1 placeholder-opacity-50 border-dotted bg-tint2 placeholder-tint1 border-b-6 leading-2 font-1 text-1-fluid text-tint1 border-tint1 '
+          >
+          <button type='submit' class='absolute top-0 right-0'>
+            <img class='w-[20px]' src='/assets/arrow.static.svg' alt='Arrow'>
+          </button>
+        </form>
       </div>
     </div>
   </div>
+
+  <div class='bg-tint2 rounded-b-2 text-tint1   {% render 'c-container' %} py-12 flex flex-wrap items-center'>
+    <div>
+      <a href='{{ shop.url }}'><img class='w-[190px]' src='/assets/footer-logo.static.svg' alt="Zab's hot sauce"></a>
+    </div>
+    <div class='grid w-1/2 grid-cols-3 ml-auto gap-x-3'>
+      <div>{% include 'menu-footer-top' with menu: 'footer' %}</div>
+      <div>{% include 'menu-footer-top' with menu: 'footer-two' %}</div>
+      <div>{% include 'menu-footer-top' with menu: 'footer-three' %}</div>
+    </div>
+  </div>
+
+  <div class='flex pt-4 pb-12 flex-warp'>
+    <div class='w-1/2 ml-auto'>
+      {% render 'menu-bottom' %}
+    </div>
+  </div>
 </footer>
-
-{% render 'vcolors'%}
-
-{% schema %}
-  {
-    "name": "Footer",
-    "settings": [
-      {
-        "type": "text",
-        "id": "signoff-text",
-        "label": "Signoff text",
-        "default": "Only the wise"
-      }
-    ]
-  }
-{% endschema %}

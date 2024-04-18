@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 22.6 20.1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #053c96;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path id="Icon_awesome-shopping-cart" data-name="Icon awesome-shopping-cart" class="cls-1" d="M20.7,11.8l1.9-8.1c.1-.5-.2-1-.7-1.1,0,0-.1,0-.2,0H6.2l-.4-1.8C5.8.3,5.4,0,5,0H.9C.4,0,0,.4,0,.9v.6c0,.5.4.9.9.9h2.7l2.8,13.5c-1.1.6-1.4,1.9-.8,3,.6,1.1,1.9,1.4,3,.8,1.1-.6,1.4-1.9.8-3-.1-.2-.2-.3-.4-.5h8.2c-.9.8-.9,2.2,0,3.1.8.9,2.2.9,3.1,0s.9-2.2,0-3.1c-.2-.2-.4-.3-.6-.4l.2-1c.1-.5-.2-1-.7-1.1,0,0-.1,0-.2,0h-10.5l-.3-1.3h11.5c.4,0,.8-.3.9-.7Z"/>
+</svg>

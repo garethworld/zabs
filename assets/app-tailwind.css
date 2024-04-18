@@ -1,3 +1,96 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'font-1';
+    src: url('belanusa.static.woff2') format("woff2");
+	 font-display: block;
+}
+@font-face {
+    font-family: 'font-2';
+    src: url('whitby-brewers.static.woff2') format("woff2");
+	 font-display: block;
+}
+@font-face {
+    font-family: 'font-3';
+    src: url('daily-grind.static.woff2') format("woff2");
+	 font-display: block;
+}
+@font-face {
+    font-family: 'font-4';
+    src: url('barlow-regular.static.woff2') format("woff2");
+	 font-display: block;
+}
+
+
+
+
+
+
+.collect-1 {@apply bg-tint1  text-tint2}
+.collect-2 {@apply bg-tint2 text-tint3}
+.collect-3 {@apply text-tint2}
+.related {@apply bg-tint2 text-tint3}
+
+.collect-3 {
+    @apply bg-tint3
+}
+
+.dec-border {@apply w-full h-10;background-repeat:repeat-x;background-position-y: bottom;}
+
+.collect-1  .dec-border {background-image:url('dec-1.static.svg')}
+.collect-1 .add {@apply bg-tint2 text-tint1}
+.collect-1 .active-card:hover {@apply bg-tint2 text-tint1 border-tint1}
+.collect-1 .active-card:hover .inner-border {@apply border-tint1}
+.collect-1 .active-card:hover .add {@apply bg-tint1 text-tint2}
+.collect-1 .active-card .thumb {@apply border-tint1 }
+.collect-1 .sold-card {@apply border-opacity-50 border-tint2}
+.collect-1 .sold-card .inner-border {@apply border-opacity-50 border-tint2}
+.collect-1 .sold-card .thumb {@apply border-opacity-50 border-tint2}
+
+
+.collect-2  .dec-border {background-image:url('dec-2.static.svg')}
+.collect-2 .add {@apply bg-tint3 text-tint2}
+.collect-2 .active-card:hover {@apply bg-tint3 text-tint2 border-tint2}
+.collect-2 .active-card:hover .inner-border {@apply border-tint2}
+.collect-2 .active-card:hover .add {@apply bg-tint2 text-tint3}
+.collect-2 .active-card .thumb {@apply border-tint3 }
+
+
+.collect-3  .dec-border {background-image:url('dec-3.static.svg')}
+.collect-3 .add {@apply bg-tint2 text-tint3}
+.collect-3 .active-card:hover {@apply bg-tint2 text-tint3 border-tint3}
+.collect-3 .active-card:hover .inner-border {@apply border-tint3}
+.collect-3 .active-card:hover .add {@apply bg-tint3 text-tint2}
+.collect-3 .active-card .thumb {@apply border-tint3 }
+
+
+
+
+.pro-related .add {@apply bg-tint3 text-tint2}
+.pro-related .active-card:hover {@apply bg-tint3 text-tint2 border-tint2}
+.pro-related .active-card:hover .inner-border {@apply border-tint2}
+.pro-related .active-card:hover .add {@apply bg-tint2 text-tint3}
+.pro-related.active-card .thumb {@apply border-tint3 }
+
+
+
+.article-related .add {@apply bg-tint1 text-tint2}
+.article-related .active-card:hover {@apply bg-tint1 text-tint2 border-tint1}
+.article-related .active-card:hover .inner-border {@apply border-tint2}
+.article-related .active-card:hover .add {@apply bg-tint2 text-tint1}
+.article-related .active-card .thumb {@apply border-tint1 }
+.article-related .sold-card {@apply border-opacity-50 border-tint1}
+.article-related .sold-card .inner-border {@apply border-opacity-50 border-tint1}
+.article-related .sold-card .thumb {@apply border-opacity-50 border-tint1}
+
+.red-dec {background-image:url('dec-3.static.svg')}
+.blue-dec {background-image:url('dec-1.static.svg')}
+
+
+.recipes-grid >div:nth-child(3n) {border-right: 0 !important;}
+.recipes-grid  > div:nth-last-child(-n+3)  {border-bottom: 0 !important;}
+
+p {margin-bottom: 30px;}
+.article h3 {@apply text-3-fluid leading-2 mb-1 font-1}

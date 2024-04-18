@@ -1,49 +1,51 @@
 {% if product.metafields.row.title %}
-<section
-  id="details"
-  class="flex flex-wrap py-8 bg-tint4 text-tint3 md:py-12 lg:py-13"
->
-  <div class="{% render 'c-gutter' %}"></div>
+  <section
+    id='details'
+    class='flex flex-wrap py-8 bg-tint4 text-tint3 md:py-12 lg:py-13'
+  >
+    <div class='{% render 'c-gutter' %}'></div>
 
-  <div class="flex-1">
-    <div class="flex flex-wrap">
-      <div class="flex flex-col w-full md:w-1/4">
-        <h2 class="w-full mb-1 lg:mb-7">
-          {% if product.metafields.accentuate.product_details_text %}
+    <div class='flex-1'>
+      <div class='flex flex-wrap'>
+        <div class='flex flex-col w-full md:w-1/4'>
+          <h2 class='w-full mb-1 lg:mb-7'>
+            {% if product.metafields.accentuate.product_details_text %}
+              {{ product.metafields.accentuate.product_details_text }}
+            {% else %}
+              Product details
+            {% endif %}
+          </h2>
+          <h3 class='w-full mb-10 text-4-fluid leading-2 text-tint1'>Good to know</h3>
 
-          {{ product.metafields.accentuate.product_details_text }}
-          {% else %} Product details {% endif %}
-        </h2>
-        <h3 class="w-full mb-10 text-4-fluid leading-2 text-tint1">Good to know</h3>
-
-
-        {% if collections[parent.metafields.accentuate.related_collection].title != blank  %}
-        <div class="hidden mt-auto md:block">
-          <a
-            href="#related-products"
-            x-data="anchor()"
-            @click="go"
-            class="transition-colors duration-300 cursor-pointer text-2-fluid hover:text-tint1"
-            >View related items +</a
-          >
+          {% if collections[parent.metafields.accentuate.related_collection].title != blank %}
+            <div class='hidden mt-auto md:block'>
+              <a
+                href='#related-products'
+                x-data='anchor()'
+                @click='go'
+                class='transition-colors duration-300 cursor-pointer text-2-fluid hover:text-tint1'
+                >View related items +</a
+              >
+            </div>
+          {% endif %}
         </div>
-        {% endif %}
-      </div>
 
-      <div class="md:w-3/4">
-        {% for value in product.metafields.row.title %}
-        <div class="flex flex-wrap pt-2 pb-6 border-t md:pb-8 border-tint3">
-          <div class="w-full pb-2 pr-8 sm:pb-0 sm:w-1/4">
-            {{ product.metafields.row.title[forloop.index0] }}
-          </div>
-          <div class="w-full sm:w-3/4 text-3-fluid leading-2 has-txt">
-            {{ product.metafields.row.description[forloop.index0] }}
-          </div>
+        <div class='md:w-3/4'>
+          {% for value in product.metafields.row.title %}
+            <div class='flex flex-wrap pt-2 pb-6 border-t md:pb-8 border-tint3'>
+              <div class='w-full pb-2 pr-8 sm:pb-0 sm:w-1/4'>
+                {{ product.metafields.row.title[forloop.index0] }}
+              </div>
+              <div class='w-full sm:w-3/4 text-3-fluid leading-2 has-txt'>
+                {{ product.metafields.row.description[forloop.index0] }}
+              </div>
+            </div>
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
     </div>
-  </div>
-  <div class="{% render 'c-gutter' %}"></div>
-</section>
+    <div class='{% render 'c-gutter' %}'></div>
+  </section>
 {% endif %}
+
+sdfsdf

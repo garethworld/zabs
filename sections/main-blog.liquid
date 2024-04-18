@@ -1,48 +1,81 @@
-<section class="flex flex-wrap w-full pt-0 md:pt-7 pb-7 md:pb-13">
-  <div class="{% render 'c-gutter' %}"></div>
+<section class='flex flex-wrap bg-tint2'>
+  <div class='w-10/12 pb-24 mx-auto'>
 
-  <div class="flex-1 ">
-    <h1 class="mb-4 text-4-fluid leading-2 md:mb-11">Curated</h1> 
-      
-      {% assign blog = blogs.collections %}
+   
 
-    <div x-data="blog()" x-init="init" class="flex flex-wrap masonry">
 
-      {% assign count = 0 %}
+    <div id="feat-article" class="mb-15"></div>
 
-      {% for article in blog.articles  %}
-        {% assign count = count | plus: 1 %}
-        
 
-           {% if count == 5 %}{% assign count = 1 %}{% endif %}
-
-        <div class="flex md:flex-wrap post">
-          <div class=" {% if count == 1 %} w-full md:w-7/12 pb-8 md:pb-[20vh] {% endif %} {% if count == 2 %} md:pt-[25vh] pb-8 md:pb-[20vh] w-full md:w-7/12 ml-auto{% endif %} {% if count == 3 %} w-full md:w-10/12 ml-auto pb-8 md:pb-[20vh] {% endif %}
-        
-
-          {% if count == 4 %} w-full md:w-7/12 pb-8 md:pb-[20vh] md:mx-auto {% endif %}"
+    <div class='grid grid-cols-3 recipes-grid articles'>
+      {%- paginate blog.articles by 13 -%}
+        {% for article in blogs.recipes.articles %}
           
-          >
 
-
-             
-          
-            <a class="relative block group" href="{{ article.url }}">
-              
-              <div class="absolute top-0 left-0 z-10 flex w-full h-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 overlay bg-tint3 p-sm text-tint2 ">
-                    <span class="m-auto ">View post</span>
+          {% if  forloop.first %}
+            <div class='article p-[8px]  w-full rounded-2 text-center border-3 border-tint3 {% render 'c-color-change' %} flex flex-wrap'>
+              <div class="w-full p-2 rounded-1 border-3 border-tint3">
+              <a href='{{ article.url }}' class='flex flex-wrap'>
+              <div class="w-1/2">
+                {% assign img = article.image %}
+                {% render 'img-product-card', img: img %}
+              </div>
+              <div class="flex flex-wrap w-1/2 p-6">
+                <div class="mx-auto my-auto">
+                <h2 class="mb-3 text-tint3 font-3 leading-1 text-9-fluid">Featured recipe</h2>
+                <h3 class='mb-3 leading-5 text-10-fluid'>{{ article.title }}</h3>
+                <h4 class="leading-4 uppercase text-tint1 text-1-fluid">By Zab's Saucemaster General</h4>
                 </div>
-              <img class="block w-full" src="{{ article.image.src | image_url: width: 1000 }}">
-            
-            
-            </a>
-            <a class="block mt-4 mb-1 text-2-fluid leading-1" href="{{ article.url }}">{{ article.title }}</a>
-            <a class="block text-tint5" href="{{ article.url }}">{{ article.published_at | date: "%d/%m/%Y" }}</a>
-          </div>
-        </div>
-      {% endfor %}
+              </div>
+              </a>
+            </div>
+            </div>
+          {% else %}
+            <div class='article p-10 text-center border-b-3 border-r-3 border-tint1 {% render 'c-color-change' %} hover:bg-tint1 hover:text-tint2'>
+              <a href='{{ article.url }}' class='block '>
+                {% assign img = article.image %}
+                {% render 'img-product-card', img: img %}
+                <h2 class='mt-10 leading-5 text-5-fluid'>{{ article.title }}</h2>
+              </a>
+            </div>
+    
+          {% endif %}
+    
+        {% endfor %}
+      {%- endpaginate -%}
     </div>
-  </div>
 
-  <div class="{% render 'c-gutter' %}"></div>
+    {% paginate blog.articles by 13 -%}
+    <div class="flex flex-wrap mt-18"> 
+    <ul class="flex mx-auto">
+        {% for part in paginate.parts -%}
+         <li class="mx-1">
+          {% if part.is_link -%}
+            <a href='{{ part.url }}' class='leading-1 text-4-fluid hover:text-tint3 {% render 'c-color-change' %} '>{{ part.title }}</a>
+          {%- else -%}
+            <span class='text-4-fluid leading-1 text-tint3'>{{ part.title }}</span>
+          {% endif %}
+        {%- endfor %}
+        </li>
+        {%- if paginate.next-%}
+        <li class="ml-1"><a class="group" href="{{ paginate.next.url }}">
+<svg class="w-[16px] fill-tint1 group-hover:fill-tint3" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 16.2 15.8" viewBox="0 0 16.2 15.8"><path d="m6.9 1.1.8-.8C8 0 8.6 0 8.9.3l7 7c.3.3.3.9 0 1.2l-7 7c-.3.3-.9.3-1.2 0l-.8-.8c-.3-.3-.3-.9 0-1.2l4.4-4.2H.9C.4 9.4 0 9 0 8.5V7.3c0-.5.4-.9.9-.9h10.4L6.9 2.3c-.3-.3-.3-.9 0-1.2z"/></svg>
+        
+        </a></li>
+        {%- endif %}
+
+      </ul>
+    </div>
+    {%- endpaginate %}
+  </div>
+  <div class='w-full blue-dec dec-border '></div>
 </section>
+
+
+<script>
+  const firstArticle = document.querySelector('.articles').querySelector(':first-child');
+  const featArticle = document.getElementById('feat-article');
+  featArticle.appendChild(firstArticle);
+  
+    </script>
+  

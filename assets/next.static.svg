@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16.2 15.8">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #053c96;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path id="Icon_awesome-arrow-right" data-name="Icon awesome-arrow-right" class="cls-1" d="M6.9,1.1l.8-.8c.3-.3.9-.3,1.2,0,0,0,0,0,0,0l7,7c.3.3.3.9,0,1.2,0,0,0,0,0,0l-7,7c-.3.3-.9.3-1.2,0,0,0,0,0,0,0l-.8-.8c-.3-.3-.3-.9,0-1.2,0,0,0,0,0,0l4.4-4.2H.9C.4,9.4,0,9,0,8.5c0,0,0,0,0,0v-1.2c0-.5.4-.9.9-.9,0,0,0,0,0,0h10.4L6.9,2.3c-.3-.3-.4-.9,0-1.2,0,0,0,0,0,0Z"/>
+</svg>
