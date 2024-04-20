@@ -62,7 +62,7 @@ Select &nbsp; <span class="inline-block lowercase"> {{ product.options[0] }}</sp
 <span class="block pt-1 text-tint5">Sold out</span> 
 {% else %}
 
- <form action="/cart/add" method="post" enctype="multipart/form-data"  
+ <form action="/cart/add" data-productid="{{ product.id }}" method="post" enctype="multipart/form-data"  
   id="add-to-cart-{{ product.handle }}-{{ collection.handle }}-{{ section.id }}">
 
 {% render 'product-options' %}

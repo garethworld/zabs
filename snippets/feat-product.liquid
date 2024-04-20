@@ -11,11 +11,11 @@
   <span class="block text-tint5">Sold out</span> {% else %}
   
   
-  <form method="post" action="/cart/add">
+  <form method="post" action="/cart/add" data-productid="{{ product.id }}">
     <input
       type="hidden"
       class="hidden"
-      name="id"
+      name="id" data-productid="{{ product.id }}"
       value="{{ featPro.variants.first.id }}"
     />
     <input

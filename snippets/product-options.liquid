@@ -45,7 +45,7 @@
       </div>
 		{% endif %}
 	{% endif %}
-	<select name="id" id="product-select" class="hidden">
+	<select name="id" data-productid="{{ product.id }}" id="product-select" class="hidden">
 		{% for variant in product.variants %}
 			<option
 				{% if variant == current_variant %}selected="selected"{% endif %}

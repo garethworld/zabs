@@ -34,10 +34,10 @@
         <div class='pt-6 mx-auto mt-auto'>
           <form
             method='post'
-            action='/cart/add'
+            action='/cart/add' data-productid='{{ product.id }}'
             id='add-to-cart-{{ card_product.handle }}-{{ collection.handle }}-{{ section.id }}'
           >
-            <input type='hidden' class='hidden' name='id' value='{{ card_product.variants.first.id }}'>
+            <input type='hidden' class='hidden' name='id' data-productid='{{ product.id }}' value='{{ card_product.variants.first.id }}'>
 
             <button
               class='add {% render 'c-btn' %}'
