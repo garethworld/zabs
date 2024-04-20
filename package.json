@@ -5,7 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "watch:css": "postcss src/css/style.css -o assets/style.css -w",
+    "build:css": "NODE_ENV=production postcss src/css/style.css -o assets/style.css",
+    "watch:js": "esbuild --bundle --watch src/js/main.js --outfile=assets/main.js",
+    "build:js": "esbuild src/js/main.js --bundle --minify --pure:console.log  --outfile=assets/main.js",
+    "view": "browser-sync start --proxy $(grep VALET_URL .env | cut -d '=' -f2) --files 'app/cms/site/templates/*.php' 'app/cms/site/snippets/**/*.php' 'app/public_html/css/*.css' 'tailwind.config.js' ",
+    "dev": "concurrently \"npm:watch:css\" \"npm:watch:js\" ",
+    "pro": "npm run build:css && npm run build:js"
   },
   "repository": {
     "type": "git",
@@ -18,16 +25,25 @@
   },
   "homepage": "https://github.com/TrellisCommerce/shopify-dawn-tailwind-starter-base#readme",
   "devDependencies": {
+    "@alpinejs/intersect": "^3.12.3",
+    "alpinejs": "^3.10.2",
     "autoprefixer": "^10.4.4",
+    "concurrently": "^7.2.2",
+    "cssnano": "^5.1.12",
+    "esbuild": "^0.14.47",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.3",
     "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.1.0",
+    "postcss-preset-env": "^7.7.2",
     "prettier": "^2.5.1",
     "tailwindcss": "^3.4.1",
     "tailwindcss-fluid": "^0.2.0"
   },
   "dependencies": {
-    "@trelliscommerce/prettier-config": "^1.0.0"
+    "@trelliscommerce/prettier-config": "^1.0.0",
+    "gsap": "file:gsap-bonus.tgz"
   },
   "prettier": "@trelliscommerce/prettier-config",
   "lint-staged": {

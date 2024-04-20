@@ -76,11 +76,14 @@ module.exports = {
     },
     maxWidth: {
       content: '1000px',
+      form: '800px',
     },
     colors: {
+      none: 'transparent',
       tint1: '#053C96',
       tint2: '#FDF9E8',
       tint3: '#B71923',
+      tint4: 'yellow',
     },
     borderRadius: {
       1: '13px',

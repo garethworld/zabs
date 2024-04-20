@@ -1,56 +1,53 @@
 <!doctype html>
-<html lang="{{ request.locale.iso_code }}">
+<html lang='{{ request.locale.iso_code }}'>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
 
-    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-    <link rel="preload" href="{{ 'bundle.css' | asset_url }}" as="style">
-    <link rel="preload" href="{{ 'bundle.js' | asset_url }}" as="script">
-    <link rel="shortcut icon" href="{{ 'favicon_32x32.static.png' | asset_url }}" type="image/png">
+    <link rel='preconnect' href='https://cdn.shopify.com' crossorigin>
 
-    <title>{{ page_title | escape }} {%- assign t = template | split: '.' | first -%}{%- if t == 'password'  -%}
-        Binky{% endif %}
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+
+    <link rel='preload' href='{{ 'bundle.js' | asset_url }}' as='script'>
+    <link rel='shortcut icon' href='{{ 'favicon_32x32.static.png' | asset_url }}' type='image/png'>
+
+    <title>
+      {{ page_title | escape }}
+      {%- assign t = template | split: '.' | first -%}
+      {%- if t == 'password' -%}
+        Binky
+      {%- endif %}
     </title>
-    {%- assign t = template | split: '.' | first -%}{%- if t == 'password'  -%}
-
-      <meta name="description" content="">
+    {%- assign t = template | split: '.' | first -%}
+    {%- if t == 'password' -%}
+      <meta name='description' content=''>
 
     {% else %}
       {% if page_description %}
-        <meta name="description" content="{{ page_description | escape }}">
+        <meta name='description' content='{{ page_description | escape }}'>
       {% endif %}
     {% endif %}
-
-    {{ 'app.css' | asset_url | stylesheet_tag }}
-
-
 
     <!-- header hook for Shopify plugins -->
     {{ content_for_header }}
   </head>
 
+  <body class='flex flex-col min-h-screen pt-4 antialiased bg-tint1 text-2 text-tint1 {% render 'c-container' %} font-1'>
+    {% section 'announcement-bar' %}
 
-
-  <body class="flex flex-col min-h-screen pt-4 antialiased bg-tint1 text-2 text-tint1 {% render 'c-container' %} font-1">
-
-    {% section "announcement-bar" %}
-    
-
-    <main class="flex-grow">
-
+    <main class='flex-grow'>
       {% render 'header' %}
 
       {% render 'cart' %}
 
-      <div class="">
+      <div class=''>
         {{ content_for_layout }}
       </div>
     </main>
 
     {% section 'footer' %}
 
-    <script src="{{ 'bundle.js' | asset_url }}" defer="defer"></script>
+    <script src='{{ 'main.js' | asset_url }}' defer='defer'></script>
   </body>
 </html>

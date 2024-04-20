@@ -1,0 +1,99 @@
+{% if product.metafields.custom.usage_list %}
+  <section class='bg-tint2'>
+    <div class='flex flex-wrap py-24 text-tint'>
+      <div class='w-10/12 mx-auto'>
+        <!-- Usage list ! -->
+        <div class='grid grid-cols-2 gap-x-6'>
+          {% if product.metafields.custom.usage_list %}
+            <div class=''>
+              <h2 class='mb-8 text-tint3 font-3 text-13-fluid leading-1'>
+                {% if product.metafields.custom.usage_title %}
+                  {{ product.metafields.custom.usage_title }}
+                {% else %}
+                  Dab it on
+                {% endif %}
+              </h2>
+              <table class='w-full border-t-3 border-tint1'>
+                {% for item in product.metafields.custom.usage_list.value %}
+                  <tr class='uppercase border-b-3 border-tint1 text-3-fluid font-1'>
+                    <td class='leading-1 border-r-3 border-tint1 leading-1 pt-[36px] pb-[30px] w-[100px] text-center'>
+                      {{ forloop.index | prepend: '0' | slice: -2, 2 }}
+                    </td>
+                    <td class=' pt-[36px] pb-[30px] pl-3'>
+                      {{ item }}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </table>
+            </div>
+
+            {% if product.metafields.custom.usage_image %}
+              <div>
+                {%- assign img = product.metafields.custom.usage_image -%}
+                {% render 'img-product-card', img: img %}
+              </div>
+            {% endif %}
+          {% endif %}
+        </div>
+
+        <!-- Recipe ! -->
+        {% assign current_product_id = product.id %}
+        {% assign match_found = false %}
+        {% for post in blogs.recipes.articles %}
+          {% if match_found == false %}
+            {% for related_product in post.metafields.custom.related_products.value %}
+              {% if related_product.id == current_product_id %}
+                <div class='grid grid-cols-2 gap-6 mt-18'>
+                  {% assign img = post.image %}
+
+                  <div class=''>
+                    <a href='{{ post.url }}' class='object-cover w-full h-full'>
+                      <img
+                        class='object-cover w-full h-full rounded-1'
+                        src='{{ img| img_url: '400x400', crop: 'center'}}'
+                        alt='{{ post.title }}'
+                      >
+                    </a>
+                  </div>
+
+                  <div class='border-3 border-tint3 rounded-2 p-[8px]'>
+                    <div class='flex flex-wrap h-full p-4 text-center border-3 border-tint3 rounded-2 '>
+                      <div class='m-auto'>
+                        <h2 class='mb-10 text-tint3 font-3 leading-1 text-13-fluid'>
+                          <a href='{{ post.url}}'>Cook it in</a>
+                        </h2>
+                        <h3 class='mb-10 leading-3 uppercase text-tint1 text-12-fluid'>
+                          <a href='{{ post.url}}'>{{ post.title }}</a>
+                        </h3>
+                        <a
+                          href='{{ post.url}}'
+                          class='{% render 'c-btn' %} inline-block bg-tint3 text-tint2 hover:bg-tint1 '
+                        >
+                          <span class='mt-[17px] block'>Cook it</span></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class='flex flex-wrap mt-18'>
+                  <div class='mx-auto'>
+                    <a
+                      href='/blogs/recipes'
+                      class='pb-1 text-center {% render 'c-color-change' %} uppercase hover:text-tint3 font-2 border-b-3 leading-1 text-7-fluid'
+                      >See all recipes</a
+                    >
+                  </div>
+                </div>
+
+                {% assign match_found = true %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class='blue-dec dec-border '></div>
+  </section>
+{% endif %}

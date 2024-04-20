@@ -1,0 +1,30 @@
+<h4 class='block mb-2 text-1-fluid'>Quantity</h4>
+<div class='flex items-center w-full mb-6 '>
+  <div class='flex items-center justify-center border-1 border-tint3'>
+    <a
+      x-data='qty()'
+      @click='minus'
+      class='inline-block px-2 py-2 cursor-pointer '
+    >
+      -
+    </a>
+
+    <input
+      style='width:50px'
+      class='text-center select-none font-1'
+      type='text'
+      id='Quantity'
+      name='quantity'
+      value='1'
+      min='1'
+    >
+
+    <a
+      x-data='qty()'
+      @click='add'
+      class='inline-block px-2 py-2 cursor-pointer border-tint3'
+    >
+      +
+    </a>
+  </div>
+</div>

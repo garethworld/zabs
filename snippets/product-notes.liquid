@@ -1,0 +1,56 @@
+{% if product.metafields.custom.flavour_note %}
+  <section class='w-full bg-tint3 text-tint2'>
+    <div class='flex flex-wrap py-24 text-tint'>
+      <div class='w-10/12 mx-auto'>
+        <h2 class='{% render 'c-section-header' %}'>
+          {% if product.metafields.custom.flavour_title %}
+            {{ product.metafields.custom.flavour_title }}
+          {% else %}
+            Flavour notes
+          {% endif %}
+        </h2>
+        <div class='grid grid-cols-2 gap-x-6'>
+          <div class='flex flex-wrap text-center uppercase'>
+            <img class='w-[75px] mx-auto block' src='{{ 'chili.static.svg' | asset_url }}' alt='chili'>
+            <div class='flex flex-wrap w-full'>
+              {% if product.metafields.custom.flavour_note %}
+                <div class='max-w-[500px] mx-auto leading-5 mt-6'>
+                  {{ product.metafields.custom.flavour_note }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          <div class='flex flex-wrap text-center uppercase'>
+            <div class='mx-auto'>
+              <ul class='flex flex-wrap '>
+                {% assign heat_rating = product.metafields.custom.flavour_heat_rating.value.rating | floor %}
+                {% for i in (1..5) %}
+                  {% assign opacity = '0.5' %}
+                  {% if i <= heat_rating %}
+                    {% assign opacity = '1' %}
+                  {% endif %}
+                  <li class='px-1'>
+                    <img
+                      class='w-[35px] mx-auto block'
+                      src='{{ 'flame.static.svg' | asset_url }}'
+                      alt='flame rating {{ i }}'
+                      style='opacity: {{ opacity }};'
+                    >
+                  </li>
+                {% endfor %}
+              </ul>
+              {% if product.metafields.custom.flavour_heat_note %}
+                <div class='flex flex-wrap w-full mt-6'>
+                  <div class='max-w-[500px] mx-auto leading-2'>
+                    {{ product.metafields.custom.flavour_heat_note }}
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='mt-auto red-dec dec-border '></div>
+  </section>
+{% endif %}
