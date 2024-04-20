@@ -3576,9 +3576,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
   // src/js/test.js
   window.test = function () {
     return {
-      init(e) {
-        alert('test');
-      },
+      init(e) {},
     };
   };
 
