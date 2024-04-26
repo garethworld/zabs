@@ -6,71 +6,82 @@
       {{ page.content }}
     </div>
 
-    {% form 'contact' %}
-      {% comment %}
-        Successful message
-      {% endcomment %}
-      {% if form.posted_successfully? %}
-        <p class='note form-success'>
-          {{ 'contact.form.post_success' | t }}
-        </p>
-      {% endif %}
+    <div x-data='forms()'>
+      {% form 'contact' %}
+        {% comment %}
+          Successful message
+        {% endcomment %}
+        {% if form.posted_successfully? %}
+          <p class='note form-success'>
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {% endif %}
 
-      {{ form.errors | default_errors }}
+        {{ form.errors | default_errors }}
 
-      <div class='flex flex-wrap w-full'>
-        <div class='grid w-full grid-cols-2 gap-8'>
+        <div class='flex flex-wrap w-full'>
+          <div class='grid w-full grid-cols-2 gap-8'>
+            <div class='w-full'>
+              <input
+                x-on:input='validateTxt()'
+                type='text'
+                id='ContactFormName'
+                class='required {% render 'form-txt' %}'
+                name='contact[{{ 'contact.form.name' | t }}]'
+                placeholder='{{ 'contact.form.name' | t }}'
+                autocapitalize='words'
+                value='{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}'
+              >
+            </div>
+
+            <div class='w-full'>
+              <input
+                x-on:input='validateTxt()'
+                type='email'
+                id='ContactFormEmail'
+                class='required {% render 'form-txt' %}'
+                name='contact[email]'
+                placeholder='{{ 'contact.form.email' | t }}'
+                autocorrect='off'
+                autocapitalize='off'
+                value='{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}'
+              >
+            </div>
+          </div>
+
           <div class='w-full'>
             <input
+              x-on:input='validateTxt()'
               type='text'
-              id='ContactFormName'
-              class='{% render 'form-txt' %}'
-              name='contact[{{ 'contact.form.name' | t }}]'
-              placeholder='{{ 'contact.form.name' | t }}'
-              autocapitalize='words'
-              value='{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}'
+              id='ContactFormReason'
+              class='required {% render 'form-txt' %}'
+              name='contact[reason]'
+              placeholder='Reason'
+              value='{% if form.reason %}{{ form.reason }}{% elsif customer %}{{ customer.reason }}{% endif %}'
             >
           </div>
 
           <div class='w-full'>
-            <input
-              type='email'
-              id='ContactFormEmail'
-              class='{% render 'form-txt' %}'
-              name='contact[email]'
-              placeholder='{{ 'contact.form.email' | t }}'
-              autocorrect='off'
-              autocapitalize='off'
-              value='{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}'
-            >
+            <textarea
+              x-on:input='validateTxt()'
+              rows='10'
+              id='ContactFormMessage'
+              class='required {% render 'form-txt' %}'
+              name='contact[{{ 'contact.form.message' | t }}]'
+              placeholder='{{ 'contact.form.message' | t }}'
+            >{% if form.body %}{{ form.body }}{% endif %}</textarea>
           </div>
-        </div>
 
-        <div class='w-full'>
           <input
-            type='text'
-            id='ContactFormReason'
-            class='{% render 'form-txt' %}'
-            name='contact[reason]'
-            placeholder='Reason'
-            pattern='[0-9\-]*'
-            value='{% if form.reason %}{{ form.reason }}{% elsif customer %}{{ customer.reason }}{% endif %}'
+            x-on:click.prevent='submitForm'
+            type='submit'
+            data-form='contact_form'
+            class='submit-btn mx-auto hover:bg-tint3  bg-tint1 text-tint2 {% render 'c-btn' %}'
+            value='send'
           >
         </div>
-
-        <div class='w-full'>
-          <textarea
-            rows='10'
-            id='ContactFormMessage'
-            class='{% render 'form-txt' %}'
-            name='contact[{{ 'contact.form.message' | t }}]'
-            placeholder='{{ 'contact.form.message' | t }}'
-          >{% if form.body %}{{ form.body }}{% endif %}</textarea>
-        </div>
-
-        <input type='submit' class='mx-auto hover:bg-tint3  bg-tint1 text-tint2 {% render 'c-btn' %}' value='send'>
-      </div>
-    {% endform %}
+      {% endform %}
+    </div>
   </div>
   <div class='blue-dec dec-border '></div>
 </section>

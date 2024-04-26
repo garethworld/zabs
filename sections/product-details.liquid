@@ -1,23 +1,28 @@
-<section x-data="test()" class='flex flex-wrap bg-tint2'>
-
-
-
-  <div class='grid w-10/12 grid-cols-2 mx-auto'>
-    <div></div>
+<section class='flex flex-wrap bg-tint2'>
+  <div class='grid   {% render 'c-container' %} gap-8  pb-10 md:py-20 mx-auto md:grid-cols-2'>
     <div>
-      <h1 class='uppercase text-tint3'>{{ product.title }}</h1>
-      <h2 class='text-tint1'>{% render 'product-price' %}</h2>
+      {% render 'product-gallery' %}
+    </div>
 
-      <div>
+    <div>
+      <div class='pb-5 border-b-3 border-tint1'>
+        <h1 class='mb-6 uppercase text-tint3 text-9-fluid leading-1 font-2'>{{ product.title }}</h1>
+        <h2 class='flex flex-wrap text-tint1 leading-1 font-1 text-5-fluid'>{% render 'product-price' %}</h2>
+      </div>
+
+      <div class='py-5 leading-5 md:py-10 text-1-fluid'>
         {{ product.content }}
       </div>
 
-      <div class='mt-4'>
+      <div class=''>
         {% render 'product-form' %}
+      </div>
+
+      {% render 'product-accordion' %}
     </div>
-    
   </div>
 </section>
+
 <!-- Flavour notes ! -->
 {% render 'product-notes' %}
 
@@ -33,37 +38,19 @@
 
 {% schema %}
 {
-  "name": "Product details",
-  "max_blocks": 10,
-  "blocks": [
-    {
-      "name": "Row",
-      "type": "gallery",
-      "settings": [
-        {
-          "id": "title",
-          "type": "text",
-          "label": "Title"
-        },
-        {
-          "id": "text",
-          "type": "richtext",
-          "label": "Text"
-        }
-      ]
-    }
-  ],
+  "name": "Shipping information",
   "settings": [
     {
-      "id": "page-link",
-      "type": "page",
-      "label": "Page",
-      "info": "(shown next to options)"
-    },
+      "id": "shipping",
+      "type": "richtext",
+      "label": "Text",
+      "default": "<p>Default shipping information goes here</p>"
+    }
+  ],
+  "presets": [
     {
-      "id": "page-text",
-      "type": "text",
-      "label": "Text for link"
+      "name": "Shipping information",
+      "category": "sections"
     }
   ]
 }

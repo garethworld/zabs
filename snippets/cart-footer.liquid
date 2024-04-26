@@ -1,0 +1,31 @@
+<div class='flex flex-wrap pt-10'>
+  <div class='flex flex-wrap w-full md:w-1/2'>
+    <label class='w-full mb-6 text-3-fluid ' for='note'>Special instructions</label>
+    <textarea
+      name='note'
+      id='note'
+      class='w-full h-[180px] bg-none border-tint1 border-b-3'
+      placeholder='Your message'
+    ></textarea>
+  </div>
+  <div class='flex w-full pt-10 md:pt-0 md:w-1/2'>
+    <div class='flex flex-wrap ml-auto text-right'>
+      <div class='flex flex-wrap w-full ml-auto'>
+        <div class='md:w-full'><h2 class='mb-4 text-3-fluid '>Subtotal</h2></div>
+        <div class='flex-1 ml-auto md:flex-auto '>
+          <h3 class='mb-3 text-7-fluid leading-1 '>{{ cart.total_price | money }}</h3>
+        </div>
+        <h4 class='text-center md:text-right'>Taxes and shipping calculated at check out</h4>
+      </div>
+
+      <div class='mx-auto mt-8 md:mt-auto md:ml-auto md:mr-0 md:mt-0'>
+        <input
+          type='submit'
+          name='checkout'
+          class='{% render 'c-btn' %} bg-tint1 hover:bg-tint3 text-tint2'
+          value='CHECKOUT'
+        >
+      </div>
+    </div>
+  </div>
+</div>

@@ -42,8 +42,11 @@
     "tailwindcss-fluid": "^0.2.0"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "@trelliscommerce/prettier-config": "^1.0.0",
-    "gsap": "file:gsap-bonus.tgz"
+    "gsap": "file:gsap-bonus.tgz",
+    "instafeed.js": "^2.0.0",
+    "keen-slider": "^6.8.6"
   },
   "prettier": "@trelliscommerce/prettier-config",
   "lint-staged": {

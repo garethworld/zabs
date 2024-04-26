@@ -1,28 +1,33 @@
-<h4 class='block mb-2 text-1-fluid'>Quantity</h4>
-<div class='flex items-center w-full mb-6 '>
-  <div class='flex items-center justify-center border-1 border-tint3'>
+<div class='flex items-center overflow-hidden '>
+  <div
+    x-data='qty()'
+    class='flex  flex-wrap w-[120px] md:w-[155px]  justify-between border-3 border-tint1 rounded-2'
+  >
     <a
-      x-data='qty()'
       @click='minus'
-      class='inline-block px-2 py-2 cursor-pointer '
+      class='{% render 'c-color-change' %} inline-block px-2 md:px-4 py-2 cursor-pointer select-none rounded-l-1 hover:bg-tint1 hover:text-tint2 font-1 text-4-fluid leading-1 '
     >
       -
     </a>
 
     <input
-      style='width:50px'
-      class='text-center select-none font-1'
+      class='w-[30px] md:w-[40px] text-center select-none qty font-1 text-4-fluid leading-1 bg-none'
       type='text'
-      id='Quantity'
-      name='quantity'
-      value='1'
+      {% if key %}
+        name='updates[]'
+        id='updates_{{ key }}'
+      {% else %}
+        name='quantity'
+        id='Quantity'
+      {% endif %}
+      value='{{ count }}'
       min='1'
+      data-max='{{ product.inventory_quantity }}'
     >
 
     <a
-      x-data='qty()'
       @click='add'
-      class='inline-block px-2 py-2 cursor-pointer border-tint3'
+      class='{% render 'c-color-change' %} inline-block px-2 md:px-4 py-2 cursor-pointer select-none rounded-r-1 hover:bg-tint1 hover:text-tint2 font-1 text-4-fluid leading-1'
     >
       +
     </a>

@@ -5,9 +5,9 @@
       {% if link.url == request.path %}
         {% assign is_active = true %}
       {% endif %}
-      <li class='mr-4'>
+      <li class='mr-6'>
         <a
-          class='text-5 uppercase hover:text-tint3 {% if is_active %} text-tint3 {% endif %} {% render 'c-color-change' %}'
+          class='text-2-fluid uppercase hover:text-tint3 {% if is_active %} text-tint3 {% endif %} {% render 'c-color-change' %}'
           href='{{ link.url }}'
         >
           {{- link.title | escape -}}

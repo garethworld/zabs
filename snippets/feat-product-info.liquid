@@ -30,12 +30,12 @@
   {% else %}
 
 
-<form method="post" action="/cart/add" id="add-to-cart-{{ featPro.handle }}-{{ collection.handle }}-{{ section.id }}">
+<form method="post" action="/cart/add" data-productid="{{ product.id }}" id="add-to-cart-{{ featPro.handle }}-{{ collection.handle }}-{{ section.id }}">
 
   <input
       type="hidden"
       class="hidden"
-      name="id"
+      name="id" data-productid="{{ product.id }}"
       value="{{ featPro.variants.first.id }}"
     />
   

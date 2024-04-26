@@ -1,65 +1,18 @@
-<div class='font-4 text-5-fluid'>
+<div>
   {% assign current_variant = product.selected_or_first_available_variant %}
-  {% render 'product-price', variant: current_variant %}
 
-  {% capture "form_id" %}AddToCartForm--{{ section.id }}{%- endcapture %}
+  <form
+    x-data='product()'
+    class='mb-6'
+    action='/cart/add'
+    method='post'
+    enctype='multipart/form-data'
+    id='AddToCartForm'
+  >
+    {% render 'product-variants' %}
 
-  {% form 'product', product %}
-    <select
-      name='id'
-      data-productid='{{ product.id }}'
-      id='ProductSelect--{{ section.id }}'
-      class='my-10 product-single__variants no-js'
-    >
-      {% for variant in product.variants %}
-        {% if variant.available %}
-          <option
-            {% if variant == product.selected_or_first_available_variant %}
-              selected='selected'
-            {% endif %}
-            data-sku='{{ variant.sku }}'
-            value='{{ variant.id }}'
-          >
-            {{ variant.title }} - {{ variant.price | money_with_currency }}
-          </option>
-        {% else %}
-          <option disabled='disabled'>{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
-        {% endif %}
-      {% endfor %}
-    </select>
+    {% render 'product-add' %}
 
-    <div class=''>
-      <label for='Quantity' class=''>
-        {{- 'products.product.quantity' | t -}}
-      </label>
-      <input
-        type='number'
-        id='Quantity'
-        name='quantity'
-        value='1'
-        min='1'
-        class='js-quantity-selector'
-      >
-    </div>
-
-    <div class=''>
-      <button
-        type='submit'
-        name='add'
-        id='AddToCart--{{ section.id }}'
-        class=''
-        {% unless current_variant.available %}
-          disabled='disabled'
-        {% endunless %}
-      >
-        <span class='btn__text'>
-          {% if current_variant.available %}
-            {{ 'products.product.add_to_cart' | t }}
-          {% else %}
-            {{ 'products.product.sold_out' | t }}
-          {% endif %}
-        </span>
-      </button>
-    </div>
-  {% endform %}
+    {% render 'product-qty', product: product.variants.first, count: 1 %}
+  </form>
 </div>

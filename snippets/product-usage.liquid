@@ -1,12 +1,12 @@
 {% if product.metafields.custom.usage_list %}
   <section class='bg-tint2'>
-    <div class='flex flex-wrap py-24 text-tint'>
-      <div class='w-10/12 mx-auto'>
+    <div class='flex flex-wrap py-12 md:py-24 text-tint'>
+      <div class='w-full mx-auto md:w-10/12  {% render 'c-container' %}'>
         <!-- Usage list ! -->
-        <div class='grid grid-cols-2 gap-x-6'>
+        <div class='grid md:grid-cols-2 gap-x-6'>
           {% if product.metafields.custom.usage_list %}
-            <div class=''>
-              <h2 class='mb-8 text-tint3 font-3 text-13-fluid leading-1'>
+            <div class='order-2 md:order-1'>
+              <h2 class='mb-4 md:mb-8 text-tint3 font-3 text-13-fluid leading-1'>
                 {% if product.metafields.custom.usage_title %}
                   {{ product.metafields.custom.usage_title }}
                 {% else %}
@@ -16,10 +16,10 @@
               <table class='w-full border-t-3 border-tint1'>
                 {% for item in product.metafields.custom.usage_list.value %}
                   <tr class='uppercase border-b-3 border-tint1 text-3-fluid font-1'>
-                    <td class='leading-1 border-r-3 border-tint1 leading-1 pt-[36px] pb-[30px] w-[100px] text-center'>
+                    <td class='leading-1 border-r-3 border-tint1 leading-1 py-4 w-[50px] md:w-[100px] text-center'>
                       {{ forloop.index | prepend: '0' | slice: -2, 2 }}
                     </td>
-                    <td class=' pt-[36px] pb-[30px] pl-3'>
+                    <td class='py-4 pl-3 '>
                       {{ item }}
                     </td>
                   </tr>
@@ -28,7 +28,7 @@
             </div>
 
             {% if product.metafields.custom.usage_image %}
-              <div>
+              <div class='order-1 mb-6 md:order-2 md:mb-0'>
                 {%- assign img = product.metafields.custom.usage_image -%}
                 {% render 'img-product-card', img: img %}
               </div>
@@ -43,11 +43,11 @@
           {% if match_found == false %}
             {% for related_product in post.metafields.custom.related_products.value %}
               {% if related_product.id == current_product_id %}
-                <div class='grid grid-cols-2 gap-6 mt-18'>
+                <div class='grid gap-6 mt-6 md:grid-cols-2 md:mt-18'>
                   {% assign img = post.image %}
 
                   <div class=''>
-                    <a href='{{ post.url }}' class='object-cover w-full h-full'>
+                    <a href='{{ post.url }}' class='block object-cover w-full h-full'>
                       <img
                         class='object-cover w-full h-full rounded-1'
                         src='{{ img| img_url: '400x400', crop: 'center'}}'
@@ -56,7 +56,7 @@
                     </a>
                   </div>
 
-                  <div class='border-3 border-tint3 rounded-2 p-[8px]'>
+                  <div class='border-3 w-full border-tint3 rounded-2 p-[8px]'>
                     <div class='flex flex-wrap h-full p-4 text-center border-3 border-tint3 rounded-2 '>
                       <div class='m-auto'>
                         <h2 class='mb-10 text-tint3 font-3 leading-1 text-13-fluid'>
@@ -69,14 +69,14 @@
                           href='{{ post.url}}'
                           class='{% render 'c-btn' %} inline-block bg-tint3 text-tint2 hover:bg-tint1 '
                         >
-                          <span class='mt-[17px] block'>Cook it</span></a
+                          <span class='block m-auto'>Cook it</span></a
                         >
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class='flex flex-wrap mt-18'>
+                <div class='flex flex-wrap mt-6 md:mt-18'>
                   <div class='mx-auto'>
                     <a
                       href='/blogs/recipes'

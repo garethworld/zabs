@@ -1,5 +1,5 @@
-<div class='flex flex-wrap w-1/2 px-3 md:w-1/3'>
-  <div class='mb-6 text-center border-3 rounded-2 p-[8px] flex flex-wrap transition-colors duration-150 ease-in-out {% if card_product.available == false %} pointer-events-none  sold-card {% else %} active-card {% endif %}'>
+<div class='flex flex-wrap px-3 md:w-1/2 lg:w-1/3'>
+  <div class='mb-4 md:mb-6 text-center border-3 rounded-2 p-[8px] flex flex-wrap transition-colors duration-150 ease-in-out {% if card_product.available == false %} pointer-events-none  sold-card {% else %} active-card {% endif %}'>
     <div class='flex flex-wrap w-full p-4 border-3 rounded-1 inner-border'>
       {%- if card_product.images.size > 0 -%}
         <a href='{{ card_product.url }}' class='relative block w-full border-3 thumb rounded-1'>
@@ -26,18 +26,29 @@
             <h4 class='mt-7 font-1 text-1-fluid leading-2'>{{ card_product.metafields.descriptors.subtitle }}</h4>
           {% endif %}
 
-          <div class='w-full mt-8 text-tint5 text-6-fluid font-1'>
+          <div class='w-full mt-4 md:mt-8 text-tint5 text-6-fluid font-1'>
             {% render 'product-price', product: card_product, price_class: '' %}
           </div>
         </div>
 
-        <div class='pt-6 mx-auto mt-auto'>
+        <div class='pt-3 mx-auto mt-auto md:pt-6'>
+
+          <a href="{{ card_product.url }}" class="add {% render 'c-btn' %}"><span class="my-auto">Shop now</span></a>
+
+          <!--
           <form
             method='post'
             action='/cart/add'
+            data-productid='{{ product.id }}'
             id='add-to-cart-{{ card_product.handle }}-{{ collection.handle }}-{{ section.id }}'
           >
-            <input type='hidden' class='hidden' name='id' value='{{ card_product.variants.first.id }}'>
+            <input
+              type='hidden'
+              class='hidden'
+              name='id'
+              data-productid='{{ product.id }}'
+              value='{{ card_product.variants.first.id }}'
+            >
 
             <button
               class='add {% render 'c-btn' %}'
@@ -47,9 +58,10 @@
                 disabled
               {%- endif -%}
             >
-              <span class='mt-[8px] block'>Add to cart</span>
+              <span class='block my-auto'>Shop now</span>
             </button>
           </form>
+          --!>
         </div>
       </div>
     </div>

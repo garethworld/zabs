@@ -1,0 +1,36 @@
+<div
+  x-data='menu()'
+  x-on:resize.window='resize'
+  id='mobile-menu'
+  class='absolute top-0 left-0 z-30 hidden w-full h-full p-1 bg-tint1 text-tint2'
+>
+  <div class='w-full h-full p-1 border-3 border-tint2 rounded-2'>
+    <div class='h-full p-[1px] w-full rounded-1 border-tint2 border-3 flex flex-wrap'>
+      <div class='absolute top-[42px] left-[35px]'>
+        <button @click='close()'>
+          <img class='w-[20px]' src='{{ 'close.svg' | asset_url }}' alt='close'>
+        </button>
+      </div>
+      <div class='absolute pt-[12px] transform -translate-x-1/2 left-1/2'>
+        <a href='{{ shop.url }}'><img class='w-[120px]' src='{{ 'mob-logo.svg' | asset_url }}' alt="Dab of Zab's"> </a>
+      </div>
+
+      <div class='w-full my-auto '>{% render 'menu-mobile' %}</div>
+
+      <div class='absolute left-0 w-full bottom-7 px-7 '>
+        <div class='flex flex-wrap items-center pt-3 border-t-3 border-tint2'>
+          <div>
+            <a href='/cart' class='flex flex-wrap items-center group font-1 text-2-fluid'>
+              <img class='w-[22px] mr-1 block' src='{{ 'cart-white.svg' | asset_url }}' alt='Cart'>
+              <span class=''> ({{ cart.item_count }})</span>
+            </a>
+          </div>
+
+          <div class='ml-auto'>
+            <a class='bg-tint2 text-tint1 {% render 'c-btn' %}' href='/cart'><span class='my-auto'>View cart</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

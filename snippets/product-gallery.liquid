@@ -1,26 +1,36 @@
-<div id="gallery-holder">
-<div id="gallery" x-data="gallery()" x-init="init" class="relative w-full md:w-11/12
-
-{% if product.images.size < 2 %}
-no-arrows 
-{% endif %} 
-
-">
-
-
- {% render 'gallery-btns' %}
-
-
-
- 
-  <div id="gal-zoom" class="splide__track md:cursor-zoom">
-    <ul class="splide__list">
-      {% assign images = product.media | where: "media_type", "image" %} {% for
-      image in product.images %}
-      <li class="relative splide__slide" x-data="gallery" @click="enlarge()">{% render 'img-square', img:image%}</li>
+<div id='product-gallery' class='w-full splide' x-data='gallery()'>
+  <div class='splide__track'>
+    <ul class='splide__list'>
+      {% assign images = product.media | where: 'media_type', 'image' %}
+      {% for image in product.images %}
+        <li class='w-full splide__slide'>{% render 'img-square', img: image %}</li>
       {% endfor %}
     </ul>
   </div>
 </div>
 
+<div class='flex items-center mt-3'>
+  <div id='product-thumb-nav' class='relative flex w-full splide'>
+    <div class='splide__track  w-[250px] md:w-[390px] mx-auto '>
+      <ul class='relative z-10 splide__list'>
+        {% assign images = product.media | where: 'media_type', 'image' %}
+        {% for image in product.images %}
+          <li class='w-full rounded-1 hover:border-tint1 border-1 border-tint2 splide__slide'>
+            {% render 'img-pro-thumb', img: image %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class='absolute top-0 left-0 flex w-full h-full splide__arrows'>
+      <div class='w-[460px] mx-auto flex justify-center items-center'>
+        <button class='h-full px-2 transform splide__arrow splide__arrow--prev'>
+          <img class='w-[10px]' src='{{ 'thumb-prev.svg' | asset_url }}' alt='prev'>
+        </button>
+        <button class='h-full px-2 ml-auto splide__arrow splide__arrow--next'>
+          <img class='w-[10px]' src='{{ 'thumb-next.svg' | asset_url }}' alt='next'>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,42 @@
+<div class='flex flex-wrap py-5 border-tint1 border-b-3'>
+  <div class='flex flex-wrap items-center w-full md:w-1/2 '>
+    <!-- Image -->
+    {% if item.image != blank %}
+      <div class='mb-5 md:mb-0'>
+        <a class='w-[120px] md:w-[150px] block' href='{{ item.url | within: collections.all }}'>
+          {% render 'img-cart-thumb', item: item %}
+        </a>
+      </div>
+    {% endif %}
+
+    <!-- Title -->
+    <div class='flex flex-wrap flex-1 pl-4'>
+      <a class='block text-tint1 text-4-fluid leading-1' href='{{ item.url }}'>
+        {{- item.product.title }}
+        {% unless item.product.has_only_default_variant -%}
+          <span class='block mt-1 text-tint3 text-3-fluid'>{{ item.variant.title }}</span>
+        {%- endunless %}
+        <span class='hidden mt-3 md:block text-tint1 text-3-fluid'> {{ item.product.price | money }}</span>
+      </a>
+    </div>
+  </div>
+
+  <div class='flex items-center w-full md:w-1/2'>
+    <div class='flex flex-wrap items-center'>
+      <div>
+        {% render 'product-qty', product: item.variant, key: item.key, count: item.quantity %}
+      </div>
+
+      <div class='flex items-center'>
+        <a
+          class='inline-block ml-4 group'
+          href='/cart/change?line={{id}}&amp;quantity=0'
+        >
+          {% render 'icon-remove' %}
+        </a>
+      </div>
+    </div>
+
+    <div class='ml-auto text-3-fluid '>{{ item.line_price | money }}</div>
+  </div>
+</div>

@@ -10,7 +10,7 @@ module.exports = {
     screens: {
       sm: '320px',
       md: '900px',
-      lg: '1200px',
+      lg: '1300px',
     },
 
     fontFamily: {
@@ -19,13 +19,7 @@ module.exports = {
       3: ['font-3', 'Arial', 'sans-serif'],
       4: ['font-4', 'Arial', 'sans-serif'],
     },
-    fontSize: {
-      1: ['11px', '13px'],
-      2: ['12px', '16px'],
-      3: ['13px', '13px'],
-      4: ['14px', '16px'],
-      5: ['15px', '17px'],
-    },
+
     borderWidth: {
       1: '1px',
       2: '2px',
@@ -94,55 +88,55 @@ module.exports = {
     require('tailwindcss-fluid')({
       textSizes: {
         1: {
-          min: '14px',
+          min: '11px',
           max: '14px',
           minvw: '375px',
           maxvw: '1400px',
         },
         2: {
-          min: '15px',
+          min: '13px',
           max: '15px',
           minvw: '375px',
           maxvw: '1400px',
         },
         3: {
-          min: '16px',
+          min: '8px',
           max: '16px',
           minvw: '375px',
           maxvw: '1400px',
         },
         4: {
-          min: '19px',
+          min: '14px',
           max: '19px',
           minvw: '375px',
           maxvw: '1400px',
         },
         5: {
-          min: '21px',
+          min: '16px',
           max: '21px',
           minvw: '375px',
           maxvw: '1400px',
         },
         6: {
-          min: '23px',
+          min: '17px',
           max: '23px',
           minvw: '375px',
           maxvw: '1400px',
         },
         7: {
-          min: '30px',
+          min: '24px',
           max: '30px',
           minvw: '375px',
           maxvw: '1400px',
         },
         8: {
-          min: '37px',
+          min: '25px',
           max: '37px',
           minvw: '375px',
           maxvw: '1400px',
         },
         9: {
-          min: '41px',
+          min: '34px',
           max: '41px',
           minvw: '375px',
           maxvw: '1400px',
@@ -160,14 +154,26 @@ module.exports = {
           maxvw: '1400px',
         },
         12: {
-          min: '50px',
+          min: '29px',
           max: '50px',
           minvw: '375px',
           maxvw: '1400px',
         },
         13: {
-          min: '60px',
+          min: '32px',
           max: '60px',
+          minvw: '375px',
+          maxvw: '1400px',
+        },
+        14: {
+          min: '40px',
+          max: '81px',
+          minvw: '375px',
+          maxvw: '1400px',
+        },
+        15: {
+          min: '9px',
+          max: '11px',
           minvw: '375px',
           maxvw: '1400px',
         },

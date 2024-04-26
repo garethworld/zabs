@@ -1,45 +1,30 @@
 <header id='header' class='flex flex-wrap items-center justify-center w-full font-1 bg-tint2 rounded-t-2'>
-  <div class='relative flex flex-wrap w-10/12 h-[160px]'>
-    <div class='my-auto'>{% render 'menu' %}</div>
+  <div class='relative flex flex-wrap w-full  {% render 'c-container' %} h-[85px] md:h-[160px]'>
+    <div class='lg:hidden'></div>
+
+    <div class='my-auto '>
+      <a class='block cursor-pointer lg:hidden ' x-data='menu()' @click='open'>
+        <img class='w-[28px]' src='{{ 'ham.svg' | asset_url }}' alt='menu'>
+      </a>
+      <div class='hidden lg:block'>{% render 'menu' %}</div>
+    </div>
 
     <div class='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
-      <a href='{{ shop.url }}'><img class='w-[250px]' src='{{ 'logo.svg' | asset_url }}' alt="Dab of Zab's"> </a>
+      <a href='{{ shop.url }}'
+        ><img class='w-[120px] md:w-[200px]' src='{{ 'logo.svg' | asset_url }}' alt="Dab of Zab's">
+      </a>
     </div>
 
     <div class='my-auto ml-auto'>
       <div class='flex flex-wrap items-center ml-auto'>
         {% render 'right-menu' %}
-        <a href='/cart' class='flex flex-wrap items-end mb-2'>
+        <a href='/cart' class='flex flex-wrap items-center group font-1 text-2-fluid'>
           <img class='w-[22px] mr-1' src='{{ 'cart.svg' | asset_url }}' alt='Cart'>
-          ({{ cart.item_count }})
-        </a>
-      </div>
-
-      <div class='flex w-2/12 md:hidden'>
-        <a class='block p-3 cursor-pointer ' x-data='menu()' @click='open'>
-          <svg
-            class='w-[10px] block'
-            version='1.1'
-            xmlns='http://www.w3.org/2000/svg'
-            x='0'
-            y='0'
-            viewBox='0 0 10 10'
-            style='enable-background:new 0 0 10 10'
-            xml:space='preserve'
-          >
-            <path class="stroke-tint1" d="M0 .3h10M0 9.8h10M0 5h10"/>
-          </svg>
+          <span class='group-hover:text-tint3'> ({{ cart.item_count }})</span>
         </a>
       </div>
     </div>
   </div>
 </header>
 
-<div
-  id='mobile-menu'
-  class='absolute z-10 flex items-center justify-center w-full transform -translate-y-full md:hidden font-3 tracking-2 bg-tint2'
->
-  <div class='{% render 'c-container' %}   w-full'>
-    <div class='py-3 brand-t-border '>{% render 'menu-mobile' %}</div>
-  </div>
-</div>
+{% render 'mobile-menu' %}

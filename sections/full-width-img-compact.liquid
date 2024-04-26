@@ -1,0 +1,54 @@
+<div class='relative w-full'>
+  <img src='{{ block.settings.Image }}' alt='Full Width Image' class='w-full'>
+  <div class='absolute top-0 left-0 w-full h-full bg-black opacity-50'></div>
+  <div class='absolute text-center text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
+    {% if block.settings.Text.title != blank %}
+      <h2 class='mb-4 text-3xl font-bold'>{{ block.settings.Text.title }}</h2>
+    {% endif %}
+    {% if block.settings.Text.description != blank %}
+      <p class='text-lg'>{{ block.settings.Text.description }}</p>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Full Width Image compact",
+  "settings": [],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Full width image compact"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

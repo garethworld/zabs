@@ -1,0 +1,1 @@
+window.cart = function () {};

@@ -1,0 +1,39 @@
+<input type='hidden' name='id' id='VariantId' value='{{ product.variants.first.id }}'>
+
+{% for option in product.options %}
+  <div class='variant-group'>
+    <h3 class='mb-3 text-1-fluid leading-1'>{{ option }}</h3>
+    <ul class='flex flex-wrap -mx-1'>
+      {% for variant in product.variants %}
+        <li class='px-1 mb-2'>
+          {% if variant.available %}
+            <button
+              @click='setVariant'
+              aria-label='{{ variant.title }}'
+              class='
+                variant px-5 py-2 inline-block font-1  hover:bg-tint3 hover:text-tint2  text-1-fluid border-2 cursor-pointer rounded-2 border-3 border-tint3
+                {% if forloop.parentloop.first and forloop.first %}bg-tint3 text-tint2{% else %} bg-tint2 text-tint3{% endif %}
+              '
+              data-variant-price='{{ variant.price | money }}'
+              data-variant-id='{{ variant.id }}'
+              data-variant-inventory='{{ variant.inventory_quantity}}'
+              data-variant-available='{{ variant.available }}'
+              {% if variant.compare_at_price > variant.price %}
+                data-compare-at-variant-price='{{ variant.compare_at_price | money }}'
+              {% endif %}
+            >
+              {{ variant.title }}
+            </button>
+          {% else %}
+            <a
+              aria-label='{{ variant.title }}'
+              class='inline-block px-10 py-2 border-2 select-none opacity-40 text-tint3 font-1 text-1-fluid rounded-2 border-3 border-tint3 '
+            >
+              {{ variant.title }} (Sold Out)
+            </a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}

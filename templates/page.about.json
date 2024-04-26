@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "fullImgC": {
+      "type": "full-width-img-compact",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "fullImgC"
+  ]
+}

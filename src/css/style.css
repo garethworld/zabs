@@ -1,6 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import 'splide.css';
 
 * {
   margin: 0;
@@ -51,7 +52,7 @@ img {
 }
 
 .collect-1 {
-  @apply bg-tint1  text-tint2;
+  @apply bg-tint1 text-tint2;
 }
 .collect-2 {
   @apply bg-tint2 text-tint3;
@@ -70,6 +71,7 @@ img {
 .dec-border {
   @apply w-full h-10;
   background-repeat: repeat-x;
+  background-size: auto 80%;
   background-position-y: bottom;
 }
 
@@ -197,6 +199,53 @@ img {
 p {
   margin-bottom: 30px;
 }
+p:last-child {
+  margin-bottom: 0;
+}
 .article h3 {
-  @apply text-3-fluid leading-2 mb-1 font-1;
+  @apply mb-1 text-3-fluid leading-2 font-1;
+}
+
+#product-thumb-nav .is-active {
+  @apply border-tint1 border-1;
+}
+
+#product-thumb-nav .splide__track {
+  z-index: 20 !important;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+.shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.matchbox {
+  width: calc(100% - 16vw);
+}
+
+@screen md {
+  .dec-border {
+    background-size: auto 100%;
+  }
 }

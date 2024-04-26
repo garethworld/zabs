@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 375 209.2">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-4 {
+        isolation: isolate;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="-2.8" y="-2.4" width="102.3" height="216.9"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-2" x="53.9" y="-2.4" width="322.9" height="216.9"/>
+    </clipPath>
+  </defs>
+  <g class="cls-1">
+    <g id="Mask_Group_71" data-name="Mask Group 71">
+      <g id="Matchbox_Blank" data-name="Matchbox Blank">
+        <image id="image" class="cls-4" width="1598" height="788" transform="translate(0 2.4) scale(.3)" xlink:href="matchbox-mob.static-1.png"/>
+      </g>
+    </g>
+  </g>
+  <g class="cls-3">
+    <g id="Mask_Group_72" data-name="Mask Group 72">
+      <g id="Matchbox_Blank-2" data-name="Matchbox Blank-2">
+        <image id="image-2" data-name="image" class="cls-4" width="1598" height="788" transform="translate(-44.5 2.4) scale(.3)" xlink:href="matchbox-mob.static-2.png"/>
+      </g>
+    </g>
+  </g>
+</svg>

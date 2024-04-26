@@ -1,0 +1,19 @@
+<div class='accordion' x-data='accordion()'>
+  {% if product.metafields.custom.ingredients %}
+    {% assign inTxt = product.metafields.custom.ingredients | metafield_tag %}
+    {% render 'product-accordion-row', title: 'ingredients', text: inTxt %}
+  {% endif %}
+
+  {% if product.metafields.custom.nutritional_info %}
+    {% assign nuTxt = product.metafields.custom.nutritional_info | metafield_tag %}
+    {% render 'product-accordion-row', title: 'Nutritional info', text: nuTxt %}
+  {% endif %}
+
+  {% if product.metafields.custom.shipping_information %}
+    {% assign shipTxt = product.metafields.custom.shipping_information | metafield_tag %}
+    {% render 'product-accordion-row', title: 'Shipping', text: shipTxt %}
+  {% else %}
+    {% assign shipTxt = section.settings.shipping %}
+    {% render 'product-accordion-row', title: 'Shipping', text: shipTxt %}
+  {% endif %}
+</div>

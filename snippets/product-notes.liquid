@@ -1,7 +1,7 @@
 {% if product.metafields.custom.flavour_note %}
   <section class='w-full bg-tint3 text-tint2'>
-    <div class='flex flex-wrap py-24 text-tint'>
-      <div class='w-10/12 mx-auto'>
+    <div class='flex flex-wrap text-tint  {% render 'c-section-padding' %}'>
+      <div class='w-full md:w-10/12 mx-auto {% render 'c-container' %}'>
         <h2 class='{% render 'c-section-header' %}'>
           {% if product.metafields.custom.flavour_title %}
             {{ product.metafields.custom.flavour_title }}
@@ -9,12 +9,12 @@
             Flavour notes
           {% endif %}
         </h2>
-        <div class='grid grid-cols-2 gap-x-6'>
+        <div class='grid md:grid-cols-2 gap-y-9'>
           <div class='flex flex-wrap text-center uppercase'>
             <img class='w-[75px] mx-auto block' src='{{ 'chili.static.svg' | asset_url }}' alt='chili'>
             <div class='flex flex-wrap w-full'>
               {% if product.metafields.custom.flavour_note %}
-                <div class='max-w-[500px] mx-auto leading-5 mt-6'>
+                <div class='max-w-[500px] mx-auto text-4-fluid leading-5 mt-6'>
                   {{ product.metafields.custom.flavour_note }}
                 </div>
               {% endif %}
