@@ -1,7 +1,15 @@
-{% if product != blank %}
-  {% capture product_data_attribute %}data-oke-reviews-product-id="shopify-{{ product.id }}"{% endcapture %}
-{% endif %}
-{% if shop.metafields.okendo.WidgetPreRenderBodyStyleTags != blank %}
-  {{- shop.metafields.okendo.WidgetPreRenderBodyStyleTags }}
-{% endif %}
-<div data-oke-widget {{ product_data_attribute }}>{{ product.metafields.okendo.ReviewsWidgetSnippet }}</div>
+<section class=''>
+  <div class='{% render 'c-section-padding' %}'>
+    <h2 class='text-tint2 {% render 'c-section-header' %}'>Reviews</h2>
+
+    {% if product != blank %}
+      {% capture product_data_attribute %}data-oke-reviews-product-id="shopify-{{ product.id }}"{% endcapture %}
+    {% endif %}
+    {% if shop.metafields.okendo.WidgetPreRenderBodyStyleTags != blank %}
+      {{- shop.metafields.okendo.WidgetPreRenderBodyStyleTags }}
+    {% endif %}
+    <div data-oke-widget {{ product_data_attribute }}>{{ product.metafields.okendo.ReviewsWidgetSnippet }}</div>
+  </div>
+
+  <div class='dec-border blue-dec-alt'></div>
+</section>

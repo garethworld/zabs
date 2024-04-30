@@ -627,10 +627,6 @@ video {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.my-8 {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -797,9 +793,6 @@ video {
 .h-screen {
   height: 100vh;
 }
-.min-h-\[75vh\] {
-  min-height: 75vh;
-}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -809,9 +802,6 @@ video {
 .w-2\/12 {
   width: 16.666667%;
 }
-.w-5\/12 {
-  width: 41.666667%;
-}
 .w-\[10px\] {
   width: 10px;
 }
@@ -820,6 +810,9 @@ video {
 }
 .w-\[130px\] {
   width: 130px;
+}
+.w-\[140px\] {
+  width: 140px;
 }
 .w-\[14px\] {
   width: 14px;
@@ -881,20 +874,11 @@ video {
 .w-full {
   width: 100%;
 }
-.w-\[400px\] {
-  width: 400px;
+.max-w-\[150px\] {
+  max-width: 150px;
 }
-.w-10\/12 {
-  width: 83.333333%;
-}
-.w-\[25px\] {
-  width: 25px;
-}
-.w-11\/12 {
-  width: 91.666667%;
-}
-.w-\[140px\] {
-  width: 140px;
+.max-w-\[165px\] {
+  max-width: 165px;
 }
 .max-w-\[500px\] {
   max-width: 500px;
@@ -907,12 +891,6 @@ video {
 }
 .max-w-header {
   max-width: 600px;
-}
-.max-w-\[150px\] {
-  max-width: 150px;
-}
-.max-w-\[165px\] {
-  max-width: 165px;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -1148,14 +1126,8 @@ video {
 .fill-tint3 {
   fill: #b71923;
 }
-.fill-tint2 {
-  fill: #fdf9e8;
-}
 .stroke-tint1 {
   stroke: #053c96;
-}
-.stroke-tint2 {
-  stroke: #fdf9e8;
 }
 .object-contain {
   -o-object-fit: contain;
@@ -1231,10 +1203,6 @@ video {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.py-14 {
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
 .py-15 {
   padding-top: 75px;
   padding-bottom: 75px;
@@ -1270,10 +1238,6 @@ video {
 .py-8 {
   padding-top: 40px;
   padding-bottom: 40px;
-}
-.px-8 {
-  padding-left: 40px;
-  padding-right: 40px;
 }
 .pb-1 {
   padding-bottom: 5px;
@@ -1356,6 +1320,9 @@ video {
 .pt-4 {
   padding-top: 20px;
 }
+.pt-5 {
+  padding-top: 25px;
+}
 .pt-6 {
   padding-top: 30px;
 }
@@ -1364,12 +1331,6 @@ video {
 }
 .pt-\[16px\] {
   padding-top: 16px;
-}
-.pt-15 {
-  padding-top: 75px;
-}
-.pt-5 {
-  padding-top: 25px;
 }
 .text-left {
   text-align: left;
@@ -1391,9 +1352,6 @@ video {
 }
 .font-4 {
   font-family: font-4, Arial, sans-serif;
-}
-.font-5 {
-  font-family: font-5, Arial, sans-serif;
 }
 .text-2xl {
   font-size: 1.5rem;
@@ -2227,6 +2185,9 @@ p:last-child {
 .note-bottom {
   background: url('note-bottom.svg') no-repeat left bottom;
 }
+.oke-reviewsTab {
+  display: none !important;
+}
 .hover\:border-tint1:hover {
   --tw-border-opacity: 1;
   border-color: rgba(5, 60, 150, var(--tw-border-opacity));
@@ -2448,20 +2409,20 @@ p:last-child {
     margin-top: 90px;
   }
 
-  .md\:mt-8 {
-    margin-top: 40px;
-  }
-
-  .md\:mt-auto {
-    margin-top: auto;
+  .md\:mt-5 {
+    margin-top: 25px;
   }
 
   .md\:mt-6 {
     margin-top: 30px;
   }
 
-  .md\:mt-5 {
-    margin-top: 25px;
+  .md\:mt-8 {
+    margin-top: 40px;
+  }
+
+  .md\:mt-auto {
+    margin-top: auto;
   }
 
   .md\:block {
@@ -2516,6 +2477,10 @@ p:last-child {
     width: 75%;
   }
 
+  .md\:w-5\/12 {
+    width: 41.666667%;
+  }
+
   .md\:w-\[100px\] {
     width: 100px;
   }
@@ -2544,12 +2509,28 @@ p:last-child {
     width: 215px;
   }
 
+  .md\:w-\[240px\] {
+    width: 240px;
+  }
+
+  .md\:w-\[25px\] {
+    width: 25px;
+  }
+
+  .md\:w-\[300px\] {
+    width: 300px;
+  }
+
   .md\:w-\[31px\] {
     width: 31px;
   }
 
   .md\:w-\[390px\] {
     width: 390px;
+  }
+
+  .md\:w-\[400px\] {
+    width: 400px;
   }
 
   .md\:w-\[40px\] {
@@ -2572,28 +2553,8 @@ p:last-child {
     width: 100%;
   }
 
-  .md\:w-5\/12 {
-    width: 41.666667%;
-  }
-
-  .md\:w-\[400px\] {
-    width: 400px;
-  }
-
-  .md\:w-\[25px\] {
-    width: 25px;
-  }
-
-  .md\:w-8\/12 {
-    width: 66.666667%;
-  }
-
-  .md\:w-\[300px\] {
-    width: 300px;
-  }
-
-  .md\:w-\[240px\] {
-    width: 240px;
+  .md\:max-w-\[300px\] {
+    max-width: 300px;
   }
 
   .md\:max-w-\[330px\] {
@@ -2606,18 +2567,6 @@ p:last-child {
 
   .md\:max-w-\[800px\] {
     max-width: 800px;
-  }
-
-  .md\:max-w-\[200px\] {
-    max-width: 200px;
-  }
-
-  .md\:max-w-\[320px\] {
-    max-width: 320px;
-  }
-
-  .md\:max-w-\[300px\] {
-    max-width: 300px;
   }
 
   .md\:flex-auto {
@@ -2670,6 +2619,11 @@ p:last-child {
     padding-right: 20px;
   }
 
+  .md\:px-6 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
   .md\:px-8 {
     padding-left: 40px;
     padding-right: 40px;
@@ -2703,11 +2657,6 @@ p:last-child {
   .md\:py-4 {
     padding-top: 20px;
     padding-bottom: 20px;
-  }
-
-  .md\:px-6 {
-    padding-left: 30px;
-    padding-right: 30px;
   }
 
   .md\:pb-10 {

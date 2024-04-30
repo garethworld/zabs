@@ -6,7 +6,7 @@ Copy code
       
       {%- if section.settings['it-img'] != blank -%}
         {% assign img = section.settings['no-image'] %}
-        <img  src='{{ img| img_url}' alt="{{ section.settings['no-alt']  }}"  >
+        <img  src='{{ img }}' alt="{{ section.settings['no-alt']  }}"  >
       {%- endif -%}
 
 

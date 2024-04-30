@@ -282,3 +282,7 @@ p:last-child {
 .note-bottom {
   background: url('note-bottom.svg') no-repeat left bottom;
 }
+
+.oke-reviewsTab {
+  display: none !important;
+}
