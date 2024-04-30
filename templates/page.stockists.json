@@ -1,12 +1,12 @@
 {
   "sections": {
-    "contact": {
-      "type": "stockists",
+    "main": {
+      "type": "main-page",
       "settings": {
       }
     }
   },
   "order": [
-    "stockists"
+    "main"
   ]
 }
