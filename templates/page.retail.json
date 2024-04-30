@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "contact": {
+      "type": "retail",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "retail"
+  ]
+}

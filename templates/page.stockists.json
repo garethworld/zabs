@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "contact": {
+      "type": "stockists",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "stockists"
+  ]
+}

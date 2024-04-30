@@ -3,7 +3,7 @@
     <li class='px-1'>
       <a
         href='{{ link.url }}'
-        class='uppercase inline-block text-3-fluid leading-1 hover:text-tint3 {% render 'c-color-change' %} {% if link.active %} text-tint1{% endif %}'
+        class='uppercase inline-block text-3-fluid leading-1 hover:underline {% render 'c-color-change' %} {% if link.active %}underline{% endif %}'
       >
         {{- link.title -}}
       </a>
