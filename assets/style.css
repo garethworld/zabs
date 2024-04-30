@@ -577,6 +577,15 @@ video {
 .top-\[42px\] {
   top: 42px;
 }
+.top-\[20px\] {
+  top: 20px;
+}
+.top-\[0px\] {
+  top: 0px;
+}
+.bottom-\[0px\] {
+  bottom: 0px;
+}
 .z-0 {
   z-index: 0;
 }
@@ -709,14 +718,14 @@ video {
 .mt-1 {
   margin-top: 5px;
 }
+.mt-10 {
+  margin-top: 50px;
+}
 .mt-11 {
   margin-top: 55px;
 }
 .mt-13 {
   margin-top: 65px;
-}
-.mt-15 {
-  margin-top: 75px;
 }
 .mt-18 {
   margin-top: 90px;
@@ -747,6 +756,12 @@ video {
 }
 .mt-auto {
   margin-top: auto;
+}
+.mt-\[-2px\] {
+  margin-top: -2px;
+}
+.mt-\[-20px\] {
+  margin-top: -20px;
 }
 .block {
   display: block;
@@ -798,6 +813,9 @@ video {
 }
 .w-1\/2 {
   width: 50%;
+}
+.w-10\/12 {
+  width: 83.333333%;
 }
 .w-2\/12 {
   width: 16.666667%;
@@ -888,6 +906,9 @@ video {
 }
 .max-w-content {
   max-width: 1000px;
+}
+.max-w-form {
+  max-width: 800px;
 }
 .max-w-header {
   max-width: 600px;
@@ -1055,6 +1076,12 @@ video {
 .rounded-t-2 {
   border-top-left-radius: 21px;
   border-top-right-radius: 21px;
+}
+.rounded-tl-1 {
+  border-top-left-radius: 13px;
+}
+.rounded-tr-1 {
+  border-top-right-radius: 13px;
 }
 .border-1 {
   border-width: 1px;
@@ -1239,6 +1266,10 @@ video {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+.py-9 {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
 .pb-1 {
   padding-bottom: 5px;
 }
@@ -1331,6 +1362,9 @@ video {
 }
 .pt-\[16px\] {
   padding-top: 16px;
+}
+.pt-20 {
+  padding-top: 100px;
 }
 .text-left {
   text-align: left;
@@ -2408,6 +2442,10 @@ p:last-child {
     margin-top: 60px;
   }
 
+  .md\:mt-15 {
+    margin-top: 75px;
+  }
+
   .md\:mt-18 {
     margin-top: 90px;
   }
@@ -2482,6 +2520,10 @@ p:last-child {
 
   .md\:w-5\/12 {
     width: 41.666667%;
+  }
+
+  .md\:w-8\/12 {
+    width: 66.666667%;
   }
 
   .md\:w-\[100px\] {
@@ -2670,6 +2712,10 @@ p:last-child {
     padding-bottom: 60px;
   }
 
+  .md\:pb-15 {
+    padding-bottom: 75px;
+  }
+
   .md\:pb-20 {
     padding-bottom: 100px;
   }
@@ -2794,6 +2840,10 @@ p:last-child {
 
   .lg\:h-13 {
     height: 65px;
+  }
+
+  .lg\:w-1\/2 {
+    width: 50%;
   }
 
   .lg\:w-1\/3 {

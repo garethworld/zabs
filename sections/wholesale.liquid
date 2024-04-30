@@ -1,87 +1,40 @@
 <section class='flex flex-wrap bg-tint2'>
-  <div class='mx-auto max-w-forms pb-15'>
+  <div class='mx-auto max-w-form pb-7 md:pb-15 {% render 'c-container' %}'>
     <h1 class='{% render 'type-page-header' %}'>{{ page.title }}</h1>
-
-    <div class='py-8 text-center'>
-      {{ page.content }}
+    <div class='w-10/12 py-8 mx-auto leading-4 text-center text-1-fluid '>
+      If you are interested in selling Zab's retail in your store, please fill out the form or CLICK BELOW to head over
+      to Faire.
     </div>
 
-    <div x-data='forms()'>
-      {% form 'contact' %}
-        {% comment %}
-          Successful message
-        {% endcomment %}
-        {% if form.posted_successfully? %}
-          <p class='note form-success'>
-            {{ 'contact.form.post_success' | t }}
-          </p>
-        {% endif %}
+    {% render 'form-wholesale' %}
 
-        {{ form.errors | default_errors }}
-
-        <div class='flex flex-wrap w-full'>
-          <div class='grid w-full grid-cols-2 gap-8'>
-            <div class='w-full'>
-              <input
-                x-on:input='validateTxt()'
-                type='text'
-                id='ContactFormName'
-                class='required {% render 'form-txt' %}'
-                name='contact[{{ 'contact.form.name' | t }}]'
-                placeholder='{{ 'contact.form.name' | t }}'
-                autocapitalize='words'
-                value='{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}'
-              >
-            </div>
-
-            <div class='w-full'>
-              <input
-                x-on:input='validateTxt()'
-                type='email'
-                id='ContactFormEmail'
-                class='required {% render 'form-txt' %}'
-                name='contact[email]'
-                placeholder='{{ 'contact.form.email' | t }}'
-                autocorrect='off'
-                autocapitalize='off'
-                value='{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}'
-              >
-            </div>
-          </div>
-
-          <div class='w-full'>
-            <input
-              x-on:input='validateTxt()'
-              type='text'
-              id='ContactFormReason'
-              class='required {% render 'form-txt' %}'
-              name='contact[reason]'
-              placeholder='Reason'
-              value='{% if form.reason %}{{ form.reason }}{% elsif customer %}{{ customer.reason }}{% endif %}'
-            >
-          </div>
-
-          <div class='w-full'>
-            <textarea
-              x-on:input='validateTxt()'
-              rows='10'
-              id='ContactFormMessage'
-              class='required {% render 'form-txt' %}'
-              name='contact[{{ 'contact.form.message' | t }}]'
-              placeholder='{{ 'contact.form.message' | t }}'
-            >{% if form.body %}{{ form.body }}{% endif %}</textarea>
-          </div>
-
-          <input
-            x-on:click.prevent='submitForm'
-            type='submit'
-            data-form='contact_form'
-            class='submit-btn mx-auto hover:bg-tint3  bg-tint1 text-tint2 {% render 'c-btn' %}'
-            value='send'
-          >
-        </div>
-      {% endform %}
-    </div>
+    <p>
+      <div class='mt-10 md:mt-0'>
+        <iframe
+          src='https://www.faire.com/embed/bw_mq99g2dx95'
+          width='240'
+          height='50'
+          style='margin: 0 auto; border: none; display: block; max-width: 100%;'
+          scrolling='no'
+        ></iframe>
+      </div>
+    </p>
   </div>
   <div class='blue-dec dec-border '></div>
+</section>
+
+<section class='flex flex-wrap bg-tint1'>
+  <div class='mx-auto max-w-form pb-7 md:pb-15 {% render 'c-container' %}'>
+    <h1 class='{% render 'type-page-header' %} text-tint2'>Restaurants</h1>
+
+    <div class='flex flex-wrap'>
+      <div class='w-10/12 py-8 mx-auto leading-4 text-center text-1-fluid text-tint2 '>
+        we offer bottles for tabletops, gallons for back of house, “single dabs” to-go, and more. We work with
+        distributors and directly with restaurants. Please contact us below for more information.
+      </div>
+    </div>
+
+    {% render 'form-restaurants' %}
+  </div>
+  <div class='blue-dec-alt dec-border '></div>
 </section>

@@ -1,0 +1,76 @@
+<div x-data='forms()'>
+  {% form 'contact' %}
+    {% comment %}
+      Successful message
+    {% endcomment %}
+    {% if form.posted_successfully? %}
+      <p class='note form-success'>
+        {{ 'Restaurants.form.post_success' | t }}
+      </p>
+    {% endif %}
+
+    {{ form.errors | default_errors }}
+
+    <div class='flex flex-wrap w-full form-blue--theme'>
+      <div class='grid w-full grid-cols-2 gap-8'>
+        <div class='w-full'>
+          <input
+            x-on:input='validateTxt()'
+            type='text'
+            id='RestaurantsFormName'
+            class='required {% render 'form-txt-blue' %}'
+            name='contact[{{ 'restaurants.form.name' | t }}]'
+            placeholder='Your name'
+            autocapitalize='words'
+            value='{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}'
+          >
+        </div>
+
+        <div class='w-full'>
+          <input
+            x-on:input='validateTxt()'
+            type='email'
+            id='RestaurantsFormEmail'
+            class='required {% render 'form-txt-blue' %}'
+            name='restaurants[email]'
+            placeholder='Email address'
+            autocorrect='off'
+            autocapitalize='off'
+            value='{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}'
+          >
+        </div>
+      </div>
+
+      <div class='w-full'>
+        <input
+          x-on:input='validateTxt()'
+          type='text'
+          id='RestaurantsFormLocation'
+          class='required {% render 'form-txt-blue' %}'
+          name='restaurants[location]'
+          placeholder='Location'
+          value='{% if form.location %}{{ form.location }}{% elsif customer %}{{ customer.location }}{% endif %}'
+        >
+      </div>
+
+      <div class='w-full mt-5 md:mt-10'>
+        <textarea
+          x-on:input='validateTxt()'
+          rows='10'
+          id='RestaurantsFormMessage'
+          class='required {% render 'form-txt-blue' %}'
+          name='restaurants[{{ 'restaurants.form.message' | t }}]'
+          placeholder='Your message'
+        >{% if form.body %}{{ form.body }}{% endif %}</textarea>
+      </div>
+
+      <input
+        x-on:click.prevent='submitForm'
+        type='submit'
+        data-form='restaurants_form'
+        class='submit-btn mx-auto hover:bg-tint3 hover:text-tint2  bg-tint2 text-tint1 {% render 'c-btn' %}'
+        value='send'
+      >
+    </div>
+  {% endform %}
+</div>

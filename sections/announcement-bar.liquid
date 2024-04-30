@@ -1,63 +1,54 @@
 {%- if section.settings.show_announcement -%}
   {%- if section.settings.home_page_only == false or template.name == 'index' -%}
-
-
-    <div id="announce" class="relative z-40 text-0 md:text-1 bg-tint2 text-tint3 font-3 tracking-2 {% render 'c-container' %}">
-
-      <div class="brand-b-border">
-
-        <div class="flex flex-wrap text-center ">
-
-          <div class="w-full uppercase transform ">
+    <div
+      id='announce'
+      class='left-0 z-40 w-full p-1 mb-5 2 rounded-2 border-tint2 border-3 text-1-fluid bg-tint3 text-tint2 font-1'
+    >
+      <div class='py-2 border-tint2 border-3 rounded-1'>
+        <div class='flex flex-wrap text-center '>
+          <div class='w-full uppercase transform '>
             {%- if section.settings.link != blank -%}
-              <a class="hover:text-tint1 {% render 'c-color-change' %}" href="{{ section.settings.link }}">
-              {%- endif -%}
-              <div x-data="marquee()" class="py-3 overflow-hidden marquee" data-speed="0.2" data-reverse="true">
-                <div>{{ section.settings.text | escape }} &nbsp; &nbsp;
-                </div>
-              </div>
-              {%- if section.settings.link != blank -%}
+              <a class='hover:text-tint1 {% render 'c-color-change' %}' href='{{ section.settings.link }}'>
+            {%- endif -%}
+            {{ section.settings.text | escape }}
+
+            {%- if section.settings.link != blank -%}
               </a>
             {%- endif -%}
-
           </div>
-
-          <button x-data="announce()" @click="close" class="absolute top-0 right-0 hidden py-3 pl-4 uppercase right-3 md:block font-3 tracking-2 bg-tint2">Close</button>
-
-          <button x-data="announce()" @click="close" class="absolute top-0 right-0 block py-3 pl-4 pr-3 uppercase bg-tint2 md:hidden font-3 tracking-2">x</button>
-
         </div>
       </div>
-
     </div>
-
   {%- endif -%}
 {%- endif -%}
 
 {% schema %}
-  {
-    "name": "Announcement bar",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "show_announcement",
-        "label": "Show announcement?",
-        "default": false
-      }, {
-        "type": "checkbox",
-        "id": "home_page_only",
-        "label": "Show only on the Home page?",
-        "default": true
-      }, {
-        "type": "text",
-        "id": "text",
-        "label": "Text",
-        "default": "Enjoy complimentary carbon neutral shipping"
-      }, {
-        "type": "url",
-        "id": "link",
-        "label": "Link"
-      }
-    ]
-  }
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show announcement?",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "home_page_only",
+      "label": "Show only on the Home page?",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Enjoy complimentary carbon neutral shipping"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+  ]
+}
 {% endschema %}
