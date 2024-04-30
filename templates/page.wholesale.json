@@ -1,12 +1,12 @@
 {
   "sections": {
-    "contact": {
-      "type": "wholesale",
+    "main": {
+      "type": "main-page",
       "settings": {
       }
     }
   },
   "order": [
-    "wholesale"
+    "main"
   ]
 }
