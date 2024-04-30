@@ -5,7 +5,7 @@
         <a href='{{ card_product.url }}' class='relative block w-full border-3 thumb rounded-1'>
           {% if card_product.available == false %}
             <div class='absolute z-20 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
-              <img class='w-[150px]' src='/assets/sold-out.static.svg' alt='Sold out'>
+              <img class='w-[150px]' src='{{ 'sold-out.static.svg' | asset_url }}' alt='Sold out'>
             </div>
           {% endif %}
 
