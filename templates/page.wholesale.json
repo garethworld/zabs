@@ -1,12 +1,17 @@
 {
   "sections": {
+<<<<<<< HEAD
     "wholesale": {
       "type": "wholesale",
+=======
+    "main": {
+      "type": "main-page",
+>>>>>>> 0fedff9d2fa61751ec11ccee85ca846fede21844
       "settings": {
       }
     }
   },
   "order": [
-    "wholesale"
+    "main"
   ]
 }

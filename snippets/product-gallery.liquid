@@ -22,7 +22,7 @@
       </ul>
     </div>
 
-    <div class='absolute top-0 left-0 flex w-full h-full splide__arrows'>
+    <div class='absolute    {% if product.images.size < 4 %} hidden {% endif %} top-0 left-0 flex w-full h-full splide__arrows'>
       <div class='w-[460px] mx-auto flex justify-center items-center'>
         <button class='h-full px-2 transform splide__arrow splide__arrow--prev'>
           <img class='w-[10px]' src='{{ 'thumb-prev.svg' | asset_url }}' alt='prev'>
