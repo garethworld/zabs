@@ -11,12 +11,12 @@
 
     <!-- Title -->
     <div class='flex flex-wrap flex-1 pl-4'>
-      <a class='block text-tint1 text-4-fluid leading-1' href='{{ item.url }}'>
+      <a class='block leading-3 text-tint1 text-6-fluid' href='{{ item.url }}'>
         {{- item.product.title }}
         {% unless item.product.has_only_default_variant -%}
           <span class='block mt-1 text-tint3 text-3-fluid'>{{ item.variant.title }}</span>
         {%- endunless %}
-        <span class='hidden mt-3 md:block text-tint1 text-3-fluid'> {{ item.product.price | money }}</span>
+        <span class='hidden mt-6 md:block text-tint1 text-6-fluid'> {{ item.product.price | money }}</span>
       </a>
     </div>
   </div>
@@ -37,6 +37,6 @@
       </div>
     </div>
 
-    <div class='ml-auto text-3-fluid '>{{ item.line_price | money }}</div>
+    <div class='ml-auto text-6-fluid '>{{ item.line_price | money }}</div>
   </div>
 </div>

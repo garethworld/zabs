@@ -1,0 +1,43 @@
+Copy code
+<section class='w-full bg-tint1 text-tint2'>
+  <div class='flex flex-wrap py-10 md:py-20'>
+    <div class='max-w-[660px] w-full mx-auto text-tint1 relative'>
+      
+      
+      {%- if section.settings['it-img'] != blank -%}
+        {% assign img = section.settings['no-image'] %}
+        <img  src='{{ img| img_url}' alt="{{ section.settings['no-alt']  }}"  >
+      {%- endif -%}
+
+
+
+      </div>
+    </div>
+  </div>
+  <div class='dec-border blue-dec-alt'></div>
+</section>
+
+{% schema %}
+{
+  "name": "Note",
+  "settings": [
+    {
+      "id": "no-image",
+      "type": "image_picker",
+      "label": "Image"
+    }
+    ,
+    {
+      "id": "no-alt",
+      "type": "textarea",
+      "label": "Alt text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Note",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

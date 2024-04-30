@@ -4,10 +4,13 @@ window.insta = function () {
   return {
     init() {
       var feed = new Instafeed({
-        userId: 'garethj.world',
         accessToken:
-          'IGQWRQV2JpcDdJOGpYdW0zWC1abUxGczRFVU5DSW05Y3FIMmY4SmpNTmpzckZA2ckE4WGxUVmZAYSWZAtQ0k5RTRxemh3Tk5jT3RNamFHUS1sWURTVEZAnT0t0V1MyaWY5Q2RReUxfVUl4cXNDcVoxSnZACeE5ZAcnlBaGsZD',
+          'IGQWROWFhaMFExUUZA4VXYtbkt1SnFVR2gyVENySWxzQk8tSEtOYnFrNXdSS0JDRlVSbk9hRlRCYkVLOHFtLXY2Uno0aTA1NENaa0JCWmR1U2toZAm1hSmt4eEhwcFNVRms1S2VpTEhrbW4wTk1fUGVxX3lHUHJVcG8ZD',
+        limit: 4,
+        template:
+          '<a class="block w-full" href="{{link}}"><img class="w-full" title="{{caption}}" src="{{image}}" /></a>',
       });
+
       feed.run();
     },
   };

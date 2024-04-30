@@ -11,8 +11,9 @@
   >
     {% render 'product-variants' %}
 
-    {% render 'product-add' %}
-
-    {% render 'product-qty', product: product.variants.first, count: 1 %}
+    <div class='flex flex-wrap mt-2'>
+      <div class='mr-2'>{% render 'product-add' %}</div>
+      <div>{% render 'product-qty', product: product.variants.first, count: 1 %}</div>
+    </div>
   </form>
 </div>

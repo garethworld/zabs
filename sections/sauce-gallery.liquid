@@ -1,0 +1,156 @@
+<section class='w-full bg-tint2 '>
+  <div
+    x-data='sauces()'
+    class='relative flex flex-wrap splide  {% render 'c-section-padding' % %}'
+  >
+    {%- if section.settings['sg-title'] != blank -%}
+      <div class='w-full'>
+        <h2 class='{% render 'c-section-header' %}  text-tint3'>
+          {{ section.settings['sg-title'] }}
+        </h2>
+      </div>
+    {%- endif -%}
+
+    <div class='splide__track'>
+      <ul class='splide__list'>
+        {% for block in section.blocks %}
+          <li class='m-auto splide__slide'>
+            <div class='flex flex-wrap w-full mx-auto cursor-drag md:w-10/12'>
+              <div class='flex flex-wrap w-full md:w-5/12'>
+                <div class='flex flex-wrap w-full '>
+                  {%- if block.settings['sg-mobimg'] != blank -%}
+                    <img
+                      class='w-full mb-10 md:hidden'
+                      src='{{ block.settings['sg-mobimg'] | img_url: '1500x' }}'
+                      alt=''
+                    >
+                  {%- endif -%}
+
+                  <div class='text-center  md:w-[400px] mx-auto'>
+                    <h2 class='uppercase font-2 leading-1 text-12-fluid'>
+                      {{ block.settings['sg-product'].title }}
+                    </h2>
+
+                    {%- if block.settings['sg-product'] != blank -%}
+                      {% assign product = block.settings['sg-product'] %}
+
+                      <div class='flex flex-wrap w-full mb-5 md:mb-10'>
+                        {% render 'sauce-rating', product: product %}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+
+                {%- if block.settings['sg-leftimg'] != blank -%}
+                  <img
+                    class='hidden w-full mt-auto md:block'
+                    src='{{ block.settings['sg-leftimg'] | img_url: '1500x' }}'
+                    alt=''
+                  >
+                {%- endif -%}
+              </div>
+
+              <div class='hidden w-2/12 md:flex'>
+                {%- if block.settings['sg-middleimg'] != blank -%}
+                  <img
+                    class='w-full px-4 mt-auto'
+                    src='{{ block.settings['sg-middleimg'] | img_url: '1000x' }}'
+                    alt=''
+                  >
+                {%- endif -%}
+              </div>
+
+              <div class='flex flex-wrap w-full md:w-5/12'>
+                <div class='md:pb-10'>
+                  {%- if block.settings['sg-text'] != blank -%}
+                    <div class='px-6 text-center md:px-0 text-1-fluid'>{{ block.settings['sg-text'] }}</div>
+                  {%- endif -%}
+                  {%- if block.settings['sg-product'] != blank -%}
+                    <div class='flex w-full'>
+                      <a
+                        href='{{ block.settings['sg-product'].url }}'
+                        class='mx-auto bg-tint3 text-tint2 block mt-6 hover:bg-tint1  hover:text-tint2 w-auto {% render 'c-btn' %}'
+                      >
+                        <span class='my-auto'>Shop now</span>
+                      </a>
+                    </div>
+                  {%- endif -%}
+                </div>
+
+                {%- if block.settings['sg-rightimg'] != blank -%}
+                  <img
+                    class='hidden w-full mt-auto md:block'
+                    src='{{ block.settings['sg-rightimg'] | img_url: '1000x' }}'
+                    alt=''
+                  >
+                {%- endif -%}
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% render 'sauce-nav' %}
+  </div>
+  <div class='blue-dec dec-border'></div>
+</section>
+
+{% schema %}
+{
+  "name": "Sauce gallery",
+  "settings": [
+    {
+      "id": "sg-title",
+      "type": "text",
+      "label": "Title",
+      "default": "Our hot sauces"
+    }
+  ],
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "name": "Row",
+      "type": "gallery",
+      "settings": [
+        {
+          "id": "sg-product",
+          "type": "product",
+          "label": "Product"
+        },
+        {
+          "id": "sg-text",
+          "type": "richtext",
+          "label": "Text"
+        },
+        {
+          "id": "sg-leftimg",
+          "type": "image_picker",
+          "label": "Left image"
+        },
+        {
+          "id": "sg-middleimg",
+          "type": "image_picker",
+          "label": "Middle image"
+        },
+        {
+          "id": "sg-rightimg",
+          "type": "image_picker",
+          "label": "Right image"
+        },
+        {
+          "id": "sg-mobimg",
+          "type": "image_picker",
+          "label": "Mobile image"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Sauce gallery",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

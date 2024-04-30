@@ -1,13 +1,13 @@
 <section class='flex flex-wrap bg-tint2'>
-  <div class='w-10/12 pb-24 mx-auto'>
+  <div class='w-full py-10 md:py-20 mx-auto md:w-10/12 {% render 'c-container' %}'>
 
    
 
 
-    <div id="feat-article" class="mb-15"></div>
+    <div id="feat-article" class="w-full mb-7 md:mb-15"></div>
 
 
-    <div class='grid grid-cols-3 recipes-grid articles'>
+    <div class='grid grid-cols-1 md:grid-cols-3 gap-y-5 md:gap-y-0 recipes-grid articles'>
       {%- paginate blog.articles by 13 -%}
         {% for article in blogs.recipes.articles %}
           
@@ -16,11 +16,11 @@
             <div class='article p-[8px]  w-full rounded-2 text-center border-3 border-tint3 {% render 'c-color-change' %} flex flex-wrap'>
               <div class="w-full p-2 rounded-1 border-3 border-tint3">
               <a href='{{ article.url }}' class='flex flex-wrap'>
-              <div class="w-1/2">
+              <div class="md:w-1/2">
                 {% assign img = article.image %}
                 {% render 'img-product-card', img: img %}
               </div>
-              <div class="flex flex-wrap w-1/2 p-6">
+              <div class="flex flex-wrap p-6 md:w-1/2">
                 <div class="mx-auto my-auto">
                 <h2 class="mb-3 text-tint3 font-3 leading-1 text-9-fluid">Featured recipe</h2>
                 <h3 class='mb-3 leading-5 text-10-fluid'>{{ article.title }}</h3>
@@ -31,11 +31,11 @@
             </div>
             </div>
           {% else %}
-            <div class='article p-10 text-center border-b-3 border-r-3 border-tint1 {% render 'c-color-change' %} hover:bg-tint1 hover:text-tint2'>
+            <div class='article md:p-10 text-center md:border-b-3 md:border-r-3 border-tint1 {% render 'c-color-change' %} hover:bg-tint1 hover:text-tint2'>
               <a href='{{ article.url }}' class='block '>
                 {% assign img = article.image %}
                 {% render 'img-product-card', img: img %}
-                <h2 class='mt-10 leading-5 text-5-fluid'>{{ article.title }}</h2>
+                <h2 class='mt-5 leading-5 md:mt-10 text-5-fluid'>{{ article.title }}</h2>
               </a>
             </div>
     
@@ -45,6 +45,7 @@
       {%- endpaginate -%}
     </div>
 
+    {% if blog.articles.size > 13 %}
     {% paginate blog.articles by 13 -%}
     <div class="flex flex-wrap mt-18"> 
     <ul class="flex mx-auto">
@@ -66,7 +67,9 @@
 
       </ul>
     </div>
+
     {%- endpaginate %}
+    {% endif %}
   </div>
   <div class='w-full blue-dec dec-border '></div>
 </section>

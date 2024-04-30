@@ -1,0 +1,14 @@
+<div class='p-1 border-tint2 border-3 rounded-2'>
+  <img
+    class='block w-full rounded-1 border-tint2 border-3'
+    src='{{ img | img_url: '400x400', crop: 'center' }}'
+    alt='{% if img.alt %}{{ img.alt }}{% else %}Image{% endif %}'
+    srcset='
+      {% if img.width > 400 %}{{ img.src | img_url: '400x400', crop: 'center' }} 400w,{% endif %}
+      {% if img.width > 640 %}{{ img.src | img_url: '640x640', crop: 'center' }} 640w,{% endif %}
+      {% if img.width > 720 %}{{ img.src | img_url: '720x720', crop: 'center' }} 720w,{% endif %}
+      {% if img.width > 900 %}{{ img.src | img_url: '900x900', crop: 'center' }} 900w,{% endif %}
+    '
+    loading='lazy'
+  >
+</div>

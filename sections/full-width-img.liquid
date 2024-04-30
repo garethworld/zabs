@@ -1,0 +1,101 @@
+{%- if section.settings['fwi-img'] != blank -%}
+  <section class='w-full bg-tint2'>
+    <div class='w-full px-4'>
+      <div class='relative h-auto px rounded-2'>
+        <div class='absolute top-0 left-0 w-full h-full'>
+          {% assign imgSet = section.settings['fwi-img'] %}
+          {% render 'img-cover', img: imgSet %}
+        </div>
+
+        <div
+          x-data='hero()'
+          x-on:resize.window='init'
+          class='relative z-20 flex flex-wrap w-full  text-tint2  mx-auto lg:w-11/12   {% render 'c-container' %} '
+        >
+          <div class='flex flex-wrap py-10 mx-auto my-auto text-center md:text-left md:mx-0 '>
+            {%- if section.settings['fwi-header'] != blank -%}
+              <div class='w-full'>
+                <h2 class='mb-3 uppercase text-8-fluid font-2 leading-1 text-tint2'>
+                  {{ section.settings['fwi-header'] }}
+                </h2>
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings['fwi-sub-header'] != blank -%}
+              <div class='w-full'>
+                <h3 class='mb-8 font-3 text-17-fluid leading-1'>
+                  {{ section.settings['fwi-sub-header'] }}
+                </h3>
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings['fwi-txt'] != blank -%}
+              <div class='leading-5 text-18-fluid md:max-w-[450px]'>
+                {{ section.settings['fwi-txt'] }}
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings['fwi-btn-link'] != blank -%}
+              <div class='flex w-full mt-8'>
+                <div class='mx-auto md:mx-0'>
+                  <a
+                    href='{{ section.settings['fwi-btn-link'] }}'
+                    class='bg-tint3 block  hover:bg-tint1 text-tint2 {% render 'c-btn' %}'
+                    ><span class='my-auto'>{{ section.settings['fwi-btn-text'] }}</span></a
+                  >
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+        <div class='absolute top-0 left-0 z-10 w-full h-full opacity-65 md:opacity-50 rounded-2 grad-bg'></div>
+      </div>
+    </div>
+    <div class='dec-border red-white-dec'></div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Full width image",
+  "settings": [
+    {
+      "id": "fwi-img",
+      "type": "image_picker",
+      "label": "Image",
+      "info": "Image should be 1920x1080px. Cropped to center"
+    },
+    {
+      "id": "fwi-header",
+      "type": "text",
+      "label": "Header"
+    },
+    {
+      "id": "fwi-sub-header",
+      "type": "text",
+      "label": "Sub Header"
+    },
+    {
+      "id": "fwi-txt",
+      "type": "richtext",
+      "label": "Text"
+    },
+    {
+      "id": "fwi-btn-link",
+      "type": "url",
+      "label": "Button link"
+    },
+    {
+      "id": "fwi-btn-text",
+      "type": "text",
+      "label": "Button text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Full width image",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

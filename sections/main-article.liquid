@@ -1,5 +1,5 @@
-<section class='flex flex-wrap bg-tint2 pt-30 '>
-  <div class='mx-auto max-w-content'>
+<section class='flex flex-wrap pt-10 bg-tint2 md:pt-20 '>
+  <div class='mx-auto max-w-content {% render 'c-container' %}'>
     <div class='w-full pb-1 border-tint1 border-b-3 '>
       <div class='w-full text-center border-tint1 border-b-3 '>
         <div class=''>
@@ -11,7 +11,7 @@
     </div>
 
     <div class='pt-12 '>
-      <div class='grid grid-cols-2 gap-8'>
+      <div class='grid gap-8 md:grid-cols-2'>
         {% if article.image != blank %}
           <div>
             {% assign img = article.image %}
@@ -39,7 +39,7 @@
 
       <div class='w-full'>
         <div class='w-full pb-1 border-tint1 border-b-3 '>
-          <div class='w-full py-12 leading-4 border-tint1 border-b-3 font-4 text-5-fluid article'>
+          <div class='w-full pb-6 leading-4 md:py-12 border-tint1 border-b-3 font-4 text-5-fluid article'>
             {{ article.content }}
           </div>
         </div>

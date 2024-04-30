@@ -1,0 +1,45 @@
+<section class='bg-tint3'>
+  <div class='collect-3'>
+    <div class='{% render 'c-section-padding' %}'>
+      <h2 class='{% render 'c-section-header' %}'>
+        {{ section.settings['fp-title'] }}
+      </h2>
+      <div class='w-full flex mx-auto md:w-11/12 {% render 'c-container' %} '>
+        <div class='{% render 'c-product-grid' %} '>
+          {% for product in section.settings['fp-products'] %}
+            {% render 'product-card' with card_product: product %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class='flex w-full mt-3 md:mt-6 '>
+        <a class='mx-auto uppercase border-b-3 font-2 text-7-fluid border-tint2' href='/pages/shop'>See all</a>
+      </div>
+    </div>
+  </div>
+
+  <div class='dec-border red-dec'></div>
+</section>
+{% schema %}
+{
+  "name": "Featured products",
+  "settings": [
+    {
+      "id": "fp-title",
+      "type": "text",
+      "label": "Title",
+      "default": "Some Favorites"
+    },
+    {
+      "id": "fp-products",
+      "type": "product_list",
+      "label": "Products"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured products",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

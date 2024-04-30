@@ -1,0 +1,75 @@
+<section class='w-full pt-10 pb-2 md:px-4 bg-tint2 md:pt-20'>
+  <div class='flex flex-wrap pb-5'>
+    <img class='mx-auto w-[140px] md:w-[240px]' src='{{ 'as-seen.svg' | asset_url }}' alt='As Seen in'>
+  </div>
+  <div class='pt-1 border-t-3 border-tint3'>
+    <div
+      x-data='logos()'
+      data-reverse='false'
+      data-speed='0.4'
+      x-intersect:enter='out'
+      @click.outside='out'
+      @mouseover='over'
+      @mouseout='out'
+      class='flex flex-wrap overflow-hidden border-t-3 border-b-3 border-tint3 '
+    >
+      <div class='flex items-center py-5 whitespace-nowrap scroll-container'>
+        {% for block in section.blocks %}
+          <div class='logo' class='inline-block logo'>
+            <img
+              src='{{ block.settings['asi-image'] | img_url: '600x' }}'
+              alt='{{ block.settings['asi-alt'] }}'
+              class='max-w-[150px] md:max-w-[300px] px-3 md:px-6 '
+            >
+          </div>
+        {% endfor %}
+        {% for block in section.blocks %}
+          <div class='logo' class='inline-block logo'>
+            <img
+              src='{{ block.settings['asi-image'] | img_url: '600x' }}'
+              alt='{{ block.settings['asi-alt'] }}'
+              class='max-w-[150px] md:max-w-[300px] px-3 md:px-6 '
+            >
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "As seen in",
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "name": "Logo",
+      "type": "gallery",
+      "settings": [
+        {
+          "id": "asi-image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "asi-alt",
+          "type": "text",
+          "label": "Alt"
+        },
+        {
+          "id": "asi-link",
+          "type": "url",
+          "label": "Name"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "As seen in",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

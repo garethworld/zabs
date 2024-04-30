@@ -58,19 +58,24 @@
 
                   <div class='border-3 w-full border-tint3 rounded-2 p-[8px]'>
                     <div class='flex flex-wrap h-full p-4 text-center border-3 border-tint3 rounded-2 '>
-                      <div class='m-auto'>
-                        <h2 class='mb-10 text-tint3 font-3 leading-1 text-13-fluid'>
-                          <a href='{{ post.url}}'>Cook it in</a>
-                        </h2>
-                        <h3 class='mb-10 leading-3 uppercase text-tint1 text-12-fluid'>
-                          <a href='{{ post.url}}'>{{ post.title }}</a>
-                        </h3>
-                        <a
-                          href='{{ post.url}}'
-                          class='{% render 'c-btn' %} inline-block bg-tint3 text-tint2 hover:bg-tint1 '
-                        >
-                          <span class='block m-auto'>Cook it</span></a
-                        >
+                      <div class='flex flex-wrap m-auto'>
+                        <div class='w-full'>
+                          <h2 class='mb-10 text-tint3 font-3 leading-1 text-13-fluid'>
+                            <a href='{{ post.url}}'>Cook it in</a>
+                          </h2>
+                          <h3 class='mb-10 leading-3 uppercase text-tint1 text-12-fluid'>
+                            <a href='{{ post.url}}'>{{ post.title }}</a>
+                          </h3>
+                        </div>
+
+                        <div class='flex w-full'>
+                          <a
+                            href='{{ post.url}}'
+                            class='{% render 'c-btn' %} mx-auto inline-block bg-tint3 text-tint2 hover:bg-tint1 '
+                          >
+                            <span class='block m-auto'>Cook it</span></a
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>

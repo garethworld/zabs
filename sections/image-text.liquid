@@ -1,0 +1,89 @@
+<section class='w-full bg-tint3'>
+  <div class='w-full mx-auto w-full lg:w-8/12 py-10 md:py-20 {% render 'c-container' %}'>
+    <div class='grid gap-x-8 md:grid-cols-2 text-tint2'>
+      <div class='flex items-center order-2 h-full text-center md:text-left md:order-1'>
+        <div>
+          {%- if section.settings['it-title'] != blank -%}
+            <h2 class='mb-2 leading-4 uppercase leading-1 font-2 text-12-fluid'>
+              {{ section.settings['it-title'] }}
+            </h2>
+          {%- endif -%}
+          {%- if section.settings['it-sub-title'] != blank -%}
+            <h3 class='mb-4 leading-4 md:mb-8 font-3 text-12-fluid'>
+              {{ section.settings['it-sub-title'] }}
+            </h3>
+          {%- endif -%}
+          {%- if section.settings['it-text'] != blank -%}
+            <div class='w-full md:w-10/12 txt text-18-fluid'>
+              {{ section.settings['it-text'] }}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings['it-btn-link'] != blank -%}
+            <div class='flex'>
+              <a
+                href='{{ section.settings['it-btn-link'] }}'
+                class='bg-tint2  mx-auto md:mx-0  block mt-6 hover:bg-tint1  hover:text-tint2 text-tint3 w-auto {% render 'c-btn' %}'
+              >
+                <span class='my-auto'>{{ section.settings['it-btn-text'] }}</span>
+              </a>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+      {%- if section.settings['it-img'] != blank -%}
+        <div class='order-1 mb-6 md:order-2 md:mb-0'>
+          {% assign img = section.settings['it-img'] %}
+          {% render 'img-square-border-white', img: img %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class='dec-border blue-dec'></div>
+</section>
+
+{% schema %}
+{
+  "name": "Image & text",
+  "settings": [
+    {
+      "id": "it-img",
+      "type": "image_picker",
+      "label": "Image"
+    },
+    {
+      "id": "it-title",
+      "type": "text",
+      "label": "Title"
+    },
+    {
+      "id": "it-sub-title",
+      "type": "text",
+      "label": "Sub title"
+    },
+    {
+      "id": "it-text",
+      "type": "richtext",
+      "label": "Text"
+    },
+    {
+      "id": "it-btn-text",
+      "type": "text",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "id": "it-btn-link",
+      "type": "url",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image & text",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

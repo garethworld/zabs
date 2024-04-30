@@ -1,0 +1,68 @@
+<section class='w-full bg-tint2'>
+  <div class='w-full mx-auto lg:w-10/12 py-10 md:py-20  {% render 'c-container' %} '>
+    {% for block in section.blocks %}
+      <div class='grid gap-x-16 lg:grid-cols-2'>
+        <div class='mt-6 lg:mt-0 order-2 {% cycle 'lg:order-1', 'lg:order-2' %}'>
+          {% assign img = block.settings['itr-img'] %}
+          {% render 'img-square-border', img: img %}
+        </div>
+        <div class='order-1 {% cycle 'lg:order-2', 'lg:order-1 %} '>
+          <h2 class='mb-4 leading-4 uppercase md:mb-8 font-2 text-tint1 text-12-fluid'>
+            {{ block.settings['itr-title'] }}
+          </h2>
+          <div class='txt'>
+            {{ block.settings['itr-text'] }}
+          </div>
+        </div>
+      </div>
+
+      {% if forloop.last %}
+      {% else %}
+        <div class='py-15'>
+          <div class='w-full pb-1 border-t-3 border-tint1'>
+            <div class='w-full pt-1 border-b-3 border-tint1'></div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class='dec-border blue-dec'></div>
+</section>
+
+{% schema %}
+{
+  "name": "Image & text rows",
+  "max_blocks": 55,
+  "blocks": [
+    {
+      "name": "Row",
+      "type": "gallery",
+      "settings": [
+        {
+          "id": "itr-img",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "id": "itr-title",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "itr-text",
+          "type": "richtext",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Image & text rows",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

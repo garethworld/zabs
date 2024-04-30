@@ -1,0 +1,92 @@
+<section class='w-full py-2 md:py-4 md:px-4 bg-tint1'>
+  <div class='p-1 border-tint2 rounded-2 border-3 '>
+    <div class='border-tint2 border-3 rounded-1 text-tint2 '>
+      <div x-data='testimonials()' class='relative flex flex-wrap splide py-7 m:py-14 '>
+        <div class='w-full testimonials splide__track'>
+          <ul class='splide__list'>
+            {% for block in section.blocks %}
+              <li class='relative z-30 w-full splide__slide cursor-drag'>
+                <div class='flex flex-wrap w-full h-full'>
+                  <div class='m-auto text-center md:w-1/2 {% render 'c-container' %}'>
+                    {%- if block.settings['tes-text'] != blank -%}
+                      <div class='relative z-10 w-full my-auto mb-5 leading-2 test-txt font-2 text-12-fluid md:mb-10'>
+                        {{ block.settings['tes-text'] }}
+                      </div>
+                    {%- endif -%}
+
+                    {%- if block.settings['tes-image'] != blank -%}
+                      <div class='flex flex-wrap w-full'>
+                        <div class='mx-auto mb-4'>
+                          <img
+                            src='{{ block.settings['tes-image'] | img_url: '500x' }}'
+                            alt='{{ block.settings['tes-name'] }}'
+                            class='w-[130px] md:w-[215px] block'
+                          >
+                        </div>
+                      </div>
+                    {%- endif -%}
+
+                    {%- if block.settings['tes-name'] != blank -%}
+                      <div class='w-full'>
+                        <div class='text-center text-18-fluid'>{{ block.settings['tes-name'] }}</div>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class='relative z-10 flex flex-wrap w-full pt-10 pointer-events-none md:pt-0 md:absolute md:top-0 md:left-0 md:h-full cursor-drag splide__arrows'>
+          <div class='flex flex-wrap items-center mx-auto md:w-11/12 md:h-full'>
+            <button class='relative z-10 px-2 pointer-events-auto md:px-0 splide__arrow splide__arrow--prev'>
+              {% render 'icon-prev' %}
+            </button>
+            <button class='relative z-10 px-2 pointer-events-auto md:px-0 md:ml-auto splide__arrow splide__arrow--next'>
+              {% render 'icon-next' %}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "testimonials",
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "name": "Testimonial",
+      "type": "gallery",
+      "settings": [
+        {
+          "id": "tes-text",
+          "type": "richtext",
+          "label": "Text",
+          "info": "Use the bold button to use the alternate font."
+        },
+        {
+          "id": "tes-image",
+          "type": "image_picker",
+          "label": "Image",
+          "info": "Image should have width of 500px."
+        },
+        {
+          "id": "tes-name",
+          "type": "text",
+          "label": "Name"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "sections"
+    }
+  ]
+}
+{% endschema %}

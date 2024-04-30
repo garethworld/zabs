@@ -18,6 +18,7 @@ module.exports = {
       2: ['font-2', 'Arial', 'sans-serif'],
       3: ['font-3', 'Arial', 'sans-serif'],
       4: ['font-4', 'Arial', 'sans-serif'],
+      5: ['font-5', 'Arial', 'sans-serif'],
     },
 
     borderWidth: {
@@ -67,17 +68,28 @@ module.exports = {
       28: '140px',
       29: '145px',
       30: '150px',
+      31: '155px',
+      32: '160px',
+      33: '165px',
+      34: '170px',
+      35: '175px',
+      36: '180px',
+      37: '185px',
+      38: '190px',
+      39: '195px',
+      40: '200px',
     },
     maxWidth: {
       content: '1000px',
       form: '800px',
+      header: '600px',
     },
     colors: {
       none: 'transparent',
       tint1: '#053C96',
       tint2: '#FDF9E8',
       tint3: '#B71923',
-      tint4: 'yellow',
+      tint4: '#000',
     },
     borderRadius: {
       1: '13px',
@@ -174,6 +186,24 @@ module.exports = {
         15: {
           min: '9px',
           max: '11px',
+          minvw: '375px',
+          maxvw: '1400px',
+        },
+        16: {
+          min: '50px',
+          max: '87px',
+          minvw: '375px',
+          maxvw: '1400px',
+        },
+        17: {
+          min: '60px',
+          max: '109px',
+          minvw: '375px',
+          maxvw: '1400px',
+        },
+        18: {
+          min: '14px',
+          max: '16px',
           minvw: '375px',
           maxvw: '1400px',
         },

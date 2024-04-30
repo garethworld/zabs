@@ -1,24 +1,54 @@
-<section x-data='insta()' class='instafeed-container'>
-  <h1 style='text-align: center'>Show Instagram Feed on your Website</h1>
-  <div id='instafeed'></div>
+<section x-data='insta()' class='bg-tint2'>
+  <div class='w-full mx-auto md:w-10/12 py-10 md:py-20  {% render 'c-container' %} '>
+    {%- if section.settings['in-title'] != blank -%}
+      <h2 class='mb-4 text-center uppercase md:mb-8 text-tint1 font-2 leading-1 text-12-fluid'>
+        {{ section.settings['in-title'] }}
+      </h2>
+    {%- endif -%}
+    <div class='p-1 border-tint1 border-3 rounded-2'>
+      <div id='instafeed' class='grid grid-cols-2 gap-5 p-2 lg:grid-cols-4 rounded-1 border-3 border-tint1'></div>
+    </div>
+    {%- if section.settings['in-btn-link'] != blank -%}
+      <div class='flex mt-4 md:mt-8'>
+        <a
+          href='{{ section.settings['in-btn-link'] }}'
+          class='bg-tint3 block mx-auto hover:bg-tint1  text-tint2 w-auto {% render 'c-btn' %}'
+          ><span class='my-auto'>{{ section.settings['in-btn-text'] }}</span></a
+        >
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class='dec-border blue-dec'></div>
 </section>
-
-<style type='text/css'>
-  a img {
-    width: 25%;
-  }
-</style>
-
-<script src='https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js'></script>
 
 {% schema %}
 {
-  "name": "Ishi Instagram Block",
-  "settings": [],
+  "name": "Instagram feed",
+  "settings": [
+    {
+      "id": "in-title",
+      "type": "text",
+      "label": "Title",
+      "default": "Zab’s Datil pepper dispatch"
+    },
+    {
+      "id": "in-btn-text",
+      "type": "text",
+      "label": "Button text",
+      "default": "@zabs"
+    },
+    {
+      "id": "in-btn-link",
+      "type": "text",
+      "label": "Button link",
+      "default": "https://www.instagram.com/zabs/"
+    }
+  ],
   "presets": [
     {
-      "name": "Ishi Instagram Block",
-      "category": "ishi themes"
+      "name": "Instagram feed",
+      "category": "Social media"
     }
   ]
 }

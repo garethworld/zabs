@@ -1,4 +1,4 @@
-<section class='flex flex-wrap bg-tint2'>
+<section class='flex flex-wrap w-full bg-tint2'>
   <div class='grid   {% render 'c-container' %} gap-8  pb-10 md:py-20 mx-auto md:grid-cols-2'>
     <div>
       {% render 'product-gallery' %}
@@ -21,6 +21,7 @@
       {% render 'product-accordion' %}
     </div>
   </div>
+  <div class='w-full dec-border red-white-dec'></div>
 </section>
 
 <!-- Flavour notes ! -->
@@ -28,6 +29,9 @@
 
 <!-- Usage list & Recipe ! -->
 {% render 'product-usage' %}
+
+<!-- reviews ! -->
+{% render 'okendo-reviews-widget', product: product %}
 
 <!-- Related products ! -->
 {% render 'related-products',

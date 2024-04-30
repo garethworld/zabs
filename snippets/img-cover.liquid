@@ -1,0 +1,13 @@
+<img
+  class='block object-cover w-full h-full rounded-2'
+  src='{{ img| img_url: '400x225', crop: 'center'}}'
+  alt='{{ img.featured_image.alt }}'
+  srcset='
+    {% if img.width > 400 %}{{ img.src | img_url: '400x225', crop: 'center' }} 400w{% endif %}
+    {% if img.width > 640 %}{{ img.src | img_url: '640x360', crop: 'center' }} 640w{% endif %}
+    {% if img.width > 720 %},{{ img.src | img_url: '720x405', crop: 'center' }} 720w{% endif %}
+    {% if img.width > 1400 %},{{ img.src | img_url: '1400x788', crop: 'center' }} 1400w{% endif %}
+    {% if img.width > 1920 %},{{ img.src | img_url: '1920x1080', crop: 'center' }} 1920w{% endif %}
+  '
+  loading='lazy'
+>

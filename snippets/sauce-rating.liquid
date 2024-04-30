@@ -1,0 +1,17 @@
+<ul class='flex flex-wrap mx-auto mt-3 md:mt-5 '>
+  {% assign heat_rating = product.metafields.custom.flavour_heat_rating.value.rating | floor %}
+  {% for i in (1..5) %}
+    {% assign opacity = '0.5' %}
+    {% if i <= heat_rating %}
+      {% assign opacity = '1' %}
+    {% endif %}
+    <li class='px-1'>
+      <img
+        class='w-[20px] md:w-[25px] mx-auto block'
+        src='{{ 'flame-red.static.svg' | asset_url }}'
+        alt='flame rating {{ i }}'
+        style='opacity: {{ opacity }};'
+      >
+    </li>
+  {% endfor %}
+</ul>

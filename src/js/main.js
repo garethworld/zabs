@@ -1,5 +1,7 @@
 import Alpine from 'alpinejs';
 window.Alpine = Alpine;
+import intersect from '@alpinejs/intersect';
+Alpine.plugin(intersect);
 Alpine.start();
 
 import './cart.js';
@@ -10,3 +12,7 @@ import './accordion.js';
 import './gallery.js';
 import './forms.js';
 import './insta.js';
+import './testimonials.js';
+import './sauces.js';
+import './logos.js';
+import './hero.js';

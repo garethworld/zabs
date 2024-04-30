@@ -17,9 +17,14 @@ window.menu = function () {
         duration: 0.6,
         ease: 'power3.inOut',
       });
+
+      // add padding to body to prevent shifting
+      const scrollbarWidth = getScrollbarWidth();
+      document.body.style.paddingRight = scrollbarWidth + 'px';
     },
 
     close(e) {
+      document.body.style.paddingRight = '';
       document.body.classList.remove('fixed');
       document.documentElement.classList.remove('fixed');
       gsap.to('#mobile-menu', {
@@ -41,4 +46,14 @@ window.menu = function () {
       }
     },
   };
+
+  function getScrollbarWidth() {
+    var scrollDiv = document.createElement('div');
+    scrollDiv.style.cssText =
+      'width: 100px; height: 100px; overflow: scroll; position: absolute; top: -9999px;';
+    document.body.appendChild(scrollDiv);
+    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+    document.body.removeChild(scrollDiv);
+    return scroll;
+  }
 };

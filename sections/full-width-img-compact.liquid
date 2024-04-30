@@ -1,53 +1,68 @@
-<div class='relative w-full'>
-  <img src='{{ block.settings.Image }}' alt='Full Width Image' class='w-full'>
-  <div class='absolute top-0 left-0 w-full h-full bg-black opacity-50'></div>
-  <div class='absolute text-center text-white transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
-    {% if block.settings.Text.title != blank %}
-      <h2 class='mb-4 text-3xl font-bold'>{{ block.settings.Text.title }}</h2>
-    {% endif %}
-    {% if block.settings.Text.description != blank %}
-      <p class='text-lg'>{{ block.settings.Text.description }}</p>
-    {% endif %}
-  </div>
-</div>
+{%- if section.settings['fwic-img'] != blank -%}
+  <section class='w-full pb-15 md:pb-30 bg-tint2'>
+    <div class='w-full px-4'>
+      <div class='relative h-auto px rounded-2'>
+        <div class='absolute top-0 left-0 w-full h-full'>
+          {% assign imgSet = section.settings['fwic-img'] %}
+          {% render 'img-cover', img: imgSet %}
+        </div>
+
+        <div class='relative z-20 w-full h-full text-tint2'>
+          <div class='m-auto text-center py-30 max-w-header '>
+            {%- if section.settings['fwic-header'] != blank -%}
+              <h2 class='text-12-fluid leading-1 text-tint2'>
+                {{ section.settings['fwic-header'] }}
+              </h2>
+            {%- endif -%}
+
+            {%- if section.settings['fwic-sub-header'] != blank -%}
+              <h3 class='mb-8 font-3 text-16-fluid leading-1'>
+                {{ section.settings['fwic-sub-header'] }}
+              </h3>
+            {%- endif -%}
+
+            {%- if section.settings['fwic-txt'] != blank -%}
+              <div class='leading-5 text-3-fluid'>
+                {{ section.settings['fwic-txt'] }}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+        <div class='absolute top-0 left-0 z-10 w-full h-full bg-opacity-50 rounded-2 bg-tint4'></div>
+      </div>
+    </div>
+  </section>
+{%- endif -%}
 
 {% schema %}
 {
-  "name": "Full Width Image compact",
-  "settings": [],
-  "presets": [
+  "name": "Full width image compact",
+  "settings": [
     {
-      "category": "Image",
-      "name": "Full width image compact"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "image",
-      "name": "Image",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        }
-      ]
+      "id": "fwic-img",
+      "type": "image_picker",
+      "label": "Image"
     },
     {
+      "id": "fwic-header",
       "type": "text",
-      "name": "Text",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description"
-        }
-      ]
+      "label": "Header"
+    },
+    {
+      "id": "fwic-sub-header",
+      "type": "text",
+      "label": "Sub Header"
+    },
+    {
+      "id": "fwic-txt",
+      "type": "richtext",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Full width image compact",
+      "category": "sections"
     }
   ]
 }

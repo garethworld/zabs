@@ -1,6 +1,7 @@
 import Splide from '@splidejs/splide';
 
 window.gallery = function () {
+  var productGallery = document.getElementById('product-gallery');
   return {
     init() {
       var main = new Splide('#product-gallery', {
