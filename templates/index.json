@@ -11,12 +11,6 @@
         "fwi-btn-text": "Shop Now"
       }
     },
-    "sauce_gallery_tB6DLW": {
-      "type": "sauce-gallery",
-      "settings": {
-        "sg-title": "Our hot sauces"
-      }
-    },
     "testimonials_pnf6iz": {
       "type": "testimonials",
       "blocks": {
@@ -52,6 +46,52 @@
           "zabs-trio",
           "crew-neck-sweater"
         ]
+      }
+    },
+    "sauce_gallery_tB6DLW": {
+      "type": "sauce-gallery",
+      "blocks": {
+        "gallery_MwyLzm": {
+          "type": "gallery",
+          "settings": {
+            "sg-product": "original-large",
+            "sg-text": "<p>Zab’s Original is our twist on a classic vinegar based hot sauce. We captured the essence of the Datil Pepper - naturally Sweet Heat & signature Slow Burn - combining hand picked peppers with organic carrots, onions, garlic, and a touch of spices.<\/p>",
+            "sg-leftimg": "shopify:\/\/shop_images\/s1-left2.png",
+            "sg-middleimg": "shopify:\/\/shop_images\/bottle1.png",
+            "sg-rightimg": "shopify:\/\/shop_images\/s1-right.png",
+            "sg-mobimg": "shopify:\/\/shop_images\/s1-mobile.png"
+          }
+        },
+        "gallery_3gP7t4": {
+          "type": "gallery",
+          "settings": {
+            "sg-product": "single-product-augustine",
+            "sg-text": "<p>Zab’s tribute to how traditional Datil Pepper sauces are made where the peppers are grown - St. Augustine, Florida. Sweeter Heat and fuller flavor, with the signature Datil Pepper Slow Burn.<\/p>",
+            "sg-leftimg": "shopify:\/\/shop_images\/s2-left.jpg",
+            "sg-middleimg": "shopify:\/\/shop_images\/bottle2.jpg",
+            "sg-rightimg": "shopify:\/\/shop_images\/s2-right.jpg",
+            "sg-mobimg": "shopify:\/\/shop_images\/s1-mobile.png"
+          }
+        },
+        "gallery_Mnkzy7": {
+          "type": "gallery",
+          "settings": {
+            "sg-product": "hot-honey-original-sting",
+            "sg-text": "<p>A sweet, floral, slow burning drizzle combining nothing but wildflower honey, apple cider vinegar and datil peppers.<\/p>",
+            "sg-leftimg": "shopify:\/\/shop_images\/s3-left.jpg",
+            "sg-middleimg": "shopify:\/\/shop_images\/bottle2.jpg",
+            "sg-rightimg": "shopify:\/\/shop_images\/s4-right.jpg",
+            "sg-mobimg": "shopify:\/\/shop_images\/s1-mobile.png"
+          }
+        }
+      },
+      "block_order": [
+        "gallery_MwyLzm",
+        "gallery_3gP7t4",
+        "gallery_Mnkzy7"
+      ],
+      "settings": {
+        "sg-title": "Our hot sauces"
       }
     },
     "note_Y3E4Bw": {
@@ -200,9 +240,9 @@
   },
   "order": [
     "full_width_img_9hhKWA",
-    "sauce_gallery_tB6DLW",
     "testimonials_pnf6iz",
     "feature_products_E7ctaQ",
+    "sauce_gallery_tB6DLW",
     "note_Y3E4Bw",
     "image_text_pMBxmw",
     "insta_H3a3zr",
