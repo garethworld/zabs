@@ -90,10 +90,19 @@
             "asi-alt": "",
             "asi-link": ""
           }
+        },
+        "gallery_Kr3yLb": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/menshealth.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
         }
       },
       "block_order": [
-        "gallery_MUCHBR"
+        "gallery_MUCHBR",
+        "gallery_Kr3yLb"
       ],
       "settings": {
       }
