@@ -23,7 +23,7 @@
               <img
                 src='{{ block.settings['asi-image'] | img_url: '600x' }}'
                 alt='{{ block.settings['asi-alt'] }}'
-                class='max-h-[40px] md:max-h-[115px] px-3 md:px-6 '
+                class='block max-w-[150px] md:max-w-[250px] px-3 md:px-6 '
               >
               {%- if block.settings['asi-link'] != blank -%}
                 </a>
@@ -40,7 +40,7 @@
               <img
                 src='{{ block.settings['asi-image'] | img_url: '600x' }}'
                 alt='{{ block.settings['asi-alt'] }}'
-                class='max-w-[40px] md:max-h-[115px] px-3 md:px-6 '
+                class='block  max-w-[150px] md:max-w-[250px] px-3 md:px-6 '
               >
               {%- if block.settings['asi-link'] != blank -%}
                 </a>
