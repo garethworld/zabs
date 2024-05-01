@@ -17617,7 +17617,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
         }
         marquee = horizontalLoop(logos, {
           paused: false,
-          draggable: true,
+          draggable: false,
           speed,
           repeat: -1,
           reversed: true,

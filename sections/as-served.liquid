@@ -1,4 +1,4 @@
-<section class='w-full bg-tint2  overflow-hidden  '>
+<section class='w-full overflow-hidden bg-tint2 '>
   <div class='pb-10 md:pb-20'>
     <div class='md:px-4'>
       <div class='pb-1 border-b-3 border-tint1'>
@@ -6,10 +6,7 @@
           x-data='logos()'
           data-reverse='true'
           data-speed='0.2'
-          x-intersect:enter='out'
-          @click.outside='out'
-          @mouseover='over'
-          @mouseout='out'
+
           class='flex flex-wrap overflow-hidden border-t-3 border-b-3 border-tint1 '
         >
           <div class='flex items-center py-5 whitespace-nowrap scroll-container'>

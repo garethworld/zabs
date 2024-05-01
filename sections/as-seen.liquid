@@ -1,16 +1,13 @@
 <section class='w-full pt-10 pb-2 overflow-hidden md:px-4 bg-tint2 md:pt-20 '>
   <div class='flex flex-wrap pb-5'>
-    <img class='mx-auto w-[120px] md:w-[240px]' src='{{ 'as-seen.svg' | asset_url }}' alt='As Seen in'>
+    <img class='mx-auto w-[100px] md:w-[240px]' src='{{ 'as-seen.svg' | asset_url }}' alt='As Seen in'>
   </div>
   <div class='pt-1 border-t-3 border-tint3'>
     <div
       x-data='logos()'
       data-reverse='false'
       data-speed='0.4'
-      x-intersect:enter='out'
       @click.outside='out'
-      @mouseover='over'
-      @mouseout='out'
       class='flex flex-wrap overflow-hidden border-t-3 border-b-3 border-tint3 '
     >
       <div class='flex items-center py-5 whitespace-nowrap scroll-container'>

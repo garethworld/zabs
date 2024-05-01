@@ -16,7 +16,7 @@ window.logos = function () {
 
       marquee = horizontalLoop(logos, {
         paused: false,
-        draggable: true,
+        draggable: false,
         speed: speed,
         repeat: -1,
         reversed: true,
