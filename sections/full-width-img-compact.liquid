@@ -8,7 +8,7 @@
         </div>
 
         <div class='relative z-20 w-full h-full text-tint2'>
-          <div class='m-auto text-center py-30 max-w-header '>
+          <div class='m-auto text-center py-30 max-w-header {% render 'c-container' %} '>
             {%- if section.settings['fwic-header'] != blank -%}
               <h2 class='text-12-fluid leading-1 text-tint2'>
                 {{ section.settings['fwic-header'] }}
