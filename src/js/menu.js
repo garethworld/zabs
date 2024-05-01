@@ -8,6 +8,7 @@ window.menu = function () {
       menu.classList.remove('hidden');
       // set body height to prevent scrolling
       document.body.style.height = window.innerHeight + 'px';
+      document.body.classList.add('overflow-hidden');
 
       gsap.set('#mobile-menu', {
         x: '100%',
@@ -27,6 +28,7 @@ window.menu = function () {
     close(e) {
       document.body.style.paddingRight = '';
       document.body.style.height = 'auto';
+      document.body.classList.remove('overflow-hidden');
       gsap.to('#mobile-menu', {
         x: '100%',
         duration: 0.3,

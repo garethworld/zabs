@@ -9475,6 +9475,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
         menu.style.height = window.innerHeight + 'px';
         menu.classList.remove('hidden');
         document.body.style.height = window.innerHeight + 'px';
+        document.body.classList.add('overflow-hidden');
         gsapWithCSS.set('#mobile-menu', {
           x: '100%',
         });
@@ -9489,6 +9490,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
       close(e) {
         document.body.style.paddingRight = '';
         document.body.style.height = 'auto';
+        document.body.classList.remove('overflow-hidden');
         gsapWithCSS.to('#mobile-menu', {
           x: '100%',
           duration: 0.3,
