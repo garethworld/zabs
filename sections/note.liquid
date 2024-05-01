@@ -4,9 +4,9 @@ Copy code
     <div class='max-w-[660px] w-full mx-auto text-tint1 relative'>
       
       
-      {%- if section.settings['it-img'] != blank -%}
+      {%- if section.settings['no-image'] != blank -%}
         {% assign img = section.settings['no-image'] %}
-        <img  src='{{ img }}' alt="{{ section.settings['no-alt']  }}"  >
+        <img  class="w-full" src='{{ img |  img_url }}' alt="{{ section.settings['no-alt']  }}"  >
       {%- endif -%}
 
 
@@ -24,7 +24,8 @@ Copy code
     {
       "id": "no-image",
       "type": "image_picker",
-      "label": "Image"
+      "label": "Image",
+      "info": "Image should be a resposive svg"
     }
     ,
     {

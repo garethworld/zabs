@@ -2,7 +2,7 @@
   <div class='mb-4 md:mb-6 text-center border-3 rounded-2 p-[8px] flex flex-wrap transition-colors duration-150 ease-in-out {% if card_product.available == false %} pointer-events-none  sold-card {% else %} active-card {% endif %}'>
     <div class='flex flex-wrap w-full p-4 border-3 rounded-1 inner-border'>
       {%- if card_product.images.size > 0 -%}
-        <a href='{{ card_product.url }}' class='relative block w-full border-3 thumb rounded-1'>
+        <a href='{{ card_product.url }}' class='relative block w-full '>
           {% if card_product.available == false %}
             <div class='absolute z-20 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
               <img class='w-[150px]' src='{{ 'sold-out.static.svg' | asset_url }}' alt='Sold out'>
@@ -10,7 +10,7 @@
           {% endif %}
 
           {%- assign img = card_product.images.first -%}
-          <div class='{% if card_product.available == false %}opacity-60{%- endif -%}'>
+          <div class='w-full border-3 rounded-1  {% if card_product.available == false %}opacity-60{%- endif -%}'>
             {% render 'img-product-card', img: img %}
           </div>
         </a>
@@ -23,7 +23,7 @@
           </a>
 
           {% if card_product.metafields.custom.product_subtitle != empty %}
-            <h4 class='mt-7 font-1 text-1-fluid leading-2'>{{ card_product.metafields.custom.product_subtitle }}</h4>
+            <h4 class='leading-5 mt-7 font-1 text-1-fluid'>{{ card_product.metafields.custom.product_subtitle }}</h4>
           {% endif %}
 
           <div class='w-full mt-4 md:mt-8 text-tint5 text-6-fluid font-1'>
