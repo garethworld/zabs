@@ -267,7 +267,17 @@ p:last-child {
 }
 
 .grad-bg {
-  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@screen md {
+  .grad-bg {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 50%
+    );
+  }
 }
 
 .cursor-drag {

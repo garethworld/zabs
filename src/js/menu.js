@@ -6,8 +6,9 @@ window.menu = function () {
     open(e) {
       menu.style.height = window.innerHeight + 'px';
       menu.classList.remove('hidden');
-      document.body.classList.add('fixed');
-      document.documentElement.classList.add('fixed');
+      // set body height to prevent scrolling
+      document.body.style.height = window.innerHeight + 'px';
+
       gsap.set('#mobile-menu', {
         x: '100%',
       });
@@ -25,8 +26,7 @@ window.menu = function () {
 
     close(e) {
       document.body.style.paddingRight = '';
-      document.body.classList.remove('fixed');
-      document.documentElement.classList.remove('fixed');
+      document.body.style.height = 'auto';
       gsap.to('#mobile-menu', {
         x: '100%',
         duration: 0.3,

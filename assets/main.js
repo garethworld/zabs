@@ -9474,8 +9474,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
       open(e) {
         menu.style.height = window.innerHeight + 'px';
         menu.classList.remove('hidden');
-        document.body.classList.add('fixed');
-        document.documentElement.classList.add('fixed');
+        document.body.style.height = window.innerHeight + 'px';
         gsapWithCSS.set('#mobile-menu', {
           x: '100%',
         });
@@ -9489,8 +9488,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
       },
       close(e) {
         document.body.style.paddingRight = '';
-        document.body.classList.remove('fixed');
-        document.documentElement.classList.remove('fixed');
+        document.body.style.height = 'auto';
         gsapWithCSS.to('#mobile-menu', {
           x: '100%',
           duration: 0.3,
