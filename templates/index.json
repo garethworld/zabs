@@ -1,5 +1,16 @@
 {
   "sections": {
+    "full_width_img_9hhKWA": {
+      "type": "full-width-img",
+      "settings": {
+        "fwi-img": "shopify:\/\/shop_images\/hero.jpg",
+        "fwi-header": "Zab’s Datil pepper Hot sauce",
+        "fwi-sub-header": "Slow Burn",
+        "fwi-txt": "<p>Make each bite a slow and delicious one with a “dab of Zab’s™”<\/p>",
+        "fwi-btn-link": "shopify:\/\/pages\/shop",
+        "fwi-btn-text": "Shop Now"
+      }
+    },
     "sauce_gallery_tB6DLW": {
       "type": "sauce-gallery",
       "settings": {
@@ -50,14 +61,6 @@
         "no-alt": ""
       }
     },
-    "insta_H3a3zr": {
-      "type": "insta",
-      "settings": {
-        "in-title": "Zab’s Datil pepper dispatch",
-        "in-btn-text": "@zabs",
-        "in-btn-link": "https:\/\/www.instagram.com\/zabs\/"
-      }
-    },
     "image_text_pMBxmw": {
       "type": "image-text",
       "settings": {
@@ -68,14 +71,23 @@
         "it-btn-text": "What’s a datil pepper?",
         "it-btn-link": "shopify:\/\/pages\/about"
       }
+    },
+    "insta_H3a3zr": {
+      "type": "insta",
+      "settings": {
+        "in-title": "Zab’s Datil pepper dispatch",
+        "in-btn-text": "@zabs",
+        "in-btn-link": "https:\/\/www.instagram.com\/zabs\/"
+      }
     }
   },
   "order": [
+    "full_width_img_9hhKWA",
     "sauce_gallery_tB6DLW",
     "testimonials_pnf6iz",
     "feature_products_E7ctaQ",
     "note_Y3E4Bw",
-    "insta_H3a3zr",
-    "image_text_pMBxmw"
+    "image_text_pMBxmw",
+    "insta_H3a3zr"
   ]
 }
