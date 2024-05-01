@@ -68,11 +68,19 @@
             "sg-product": "single-product-augustine",
             "sg-text": "<p>Zab’s tribute to how traditional Datil Pepper sauces are made where the peppers are grown - St. Augustine, Florida. Sweeter Heat and fuller flavor, with the signature Datil Pepper Slow Burn.<\/p>"
           }
+        },
+        "gallery_Mnkzy7": {
+          "type": "gallery",
+          "settings": {
+            "sg-product": "hot-honey-original-sting",
+            "sg-text": "<p>A sweet, floral, slow burning drizzle combining nothing but wildflower honey, apple cider vinegar and datil peppers.<\/p>"
+          }
         }
       },
       "block_order": [
         "gallery_MwyLzm",
-        "gallery_3gP7t4"
+        "gallery_3gP7t4",
+        "gallery_Mnkzy7"
       ],
       "settings": {
         "sg-title": "Our hot sauces"
