@@ -79,6 +79,23 @@
         "in-btn-text": "@zabs",
         "in-btn-link": "https:\/\/www.instagram.com\/zabs\/"
       }
+    },
+    "as_seen_TkjM7L": {
+      "type": "as-seen",
+      "blocks": {
+        "gallery_MUCHBR": {
+          "type": "gallery",
+          "settings": {
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "gallery_MUCHBR"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -88,6 +105,7 @@
     "feature_products_E7ctaQ",
     "note_Y3E4Bw",
     "image_text_pMBxmw",
-    "insta_H3a3zr"
+    "insta_H3a3zr",
+    "as_seen_TkjM7L"
   ]
 }
