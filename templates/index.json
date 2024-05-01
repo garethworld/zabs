@@ -79,6 +79,123 @@
         "in-btn-text": "@zabs",
         "in-btn-link": "https:\/\/www.instagram.com\/zabs\/"
       }
+    },
+    "as_seen_TkjM7L": {
+      "type": "as-seen",
+      "blocks": {
+        "gallery_MUCHBR": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/eater.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_Kr3yLb": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/menshealth.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_xAwCX7": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/today.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_eTEt3h": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/strategist_83908de0-dad2-4d50-852f-b9b595494a01.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_nP4rBB": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/gq.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_QdQUwY": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/goop.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "gallery_MUCHBR",
+        "gallery_Kr3yLb",
+        "gallery_xAwCX7",
+        "gallery_eTEt3h",
+        "gallery_nP4rBB",
+        "gallery_QdQUwY"
+      ],
+      "settings": {
+      }
+    },
+    "as_served_dyXpCP": {
+      "type": "as-served",
+      "blocks": {
+        "gallery_aAJTWi": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/alfred.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_d7HcdY": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/blackseed.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_3piezR": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/bub.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_HGFrRN": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/butchers.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_xGG6ht": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/superior.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "gallery_aAJTWi",
+        "gallery_d7HcdY",
+        "gallery_3piezR",
+        "gallery_HGFrRN",
+        "gallery_xGG6ht"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -88,6 +205,8 @@
     "feature_products_E7ctaQ",
     "note_Y3E4Bw",
     "image_text_pMBxmw",
-    "insta_H3a3zr"
+    "insta_H3a3zr",
+    "as_seen_TkjM7L",
+    "as_served_dyXpCP"
   ]
 }
