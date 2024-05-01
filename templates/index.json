@@ -98,11 +98,29 @@
             "asi-alt": "",
             "asi-link": ""
           }
+        },
+        "gallery_xAwCX7": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/today.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_eTEt3h": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/strategist_83908de0-dad2-4d50-852f-b9b595494a01.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
         }
       },
       "block_order": [
         "gallery_MUCHBR",
-        "gallery_Kr3yLb"
+        "gallery_Kr3yLb",
+        "gallery_xAwCX7",
+        "gallery_eTEt3h"
       ],
       "settings": {
       }
