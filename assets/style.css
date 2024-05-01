@@ -898,6 +898,9 @@ video {
 .max-w-header {
   max-width: 600px;
 }
+.max-w-\[40px\] {
+  max-width: 40px;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
