@@ -4,15 +4,15 @@
   >
     <h1 class='pb-5 text-center uppercase md:py-10 md:py-20 text-tint1 font-2 leading-1 text-13-fluid'>Your cart</h1>
 
-    <div class='flex-wrap hidden pb-5 md:flex'>
-      <div class='w-1/2'>Product</div>
-      <div class='flex flex-wrap w-1/2'>
-        <div>Quanitity</div>
-        <div class='ml-auto'>Total</div>
-      </div>
-    </div>
-
     {% if cart.item_count > 0 %}
+      <div class='flex-wrap hidden pb-5 md:flex'>
+        <div class='w-1/2'>Product</div>
+        <div class='flex flex-wrap w-1/2'>
+          <div>Quanitity</div>
+          <div class='ml-auto'>Total</div>
+        </div>
+      </div>
+
       <form action='/cart' method='post' novalidate class='w-full '>
         <div class='w-full py-1 border-tint1 border-b-3 border-t-3'>
           <div class='border-t-3'>
