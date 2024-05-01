@@ -1,8 +1,93 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero"
+    "full_width_img_9hhKWA": {
+      "type": "full-width-img",
+      "settings": {
+        "fwi-img": "shopify:\/\/shop_images\/hero.jpg",
+        "fwi-header": "Zab’s Datil pepper Hot sauce",
+        "fwi-sub-header": "Slow Burn",
+        "fwi-txt": "<p>Make each bite a slow and delicious one with a “dab of Zab’s™”<\/p>",
+        "fwi-btn-link": "shopify:\/\/pages\/shop",
+        "fwi-btn-text": "Shop Now"
+      }
+    },
+    "sauce_gallery_tB6DLW": {
+      "type": "sauce-gallery",
+      "settings": {
+        "sg-title": "Our hot sauces"
+      }
+    },
+    "testimonials_pnf6iz": {
+      "type": "testimonials",
+      "blocks": {
+        "gallery_tMdc8r": {
+          "type": "gallery",
+          "settings": {
+            "tes-text": "<p>ZAB’S… DOES FOR THE <strong>Datil Pepper<\/strong> WHAT TABASCO DID FOR THE TABASCO PEPPER: ELEVATE IT TO SOMETHING ADDICTING AND <strong>Essential<\/strong><\/p>",
+            "tes-image": "shopify:\/\/shop_images\/strategist.svg",
+            "tes-name": "Ivy Pochoda"
+          }
+        },
+        "gallery_n3Uxap": {
+          "type": "gallery",
+          "settings": {
+            "tes-text": "<p>LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE <strong>Printing<\/strong> AND TYPESETTING INDUSTRY. LOREM IPSUM HAS BEEN THE INDUSTRY'S STANDARD DUMMY TEXT EVER SINCE THE 1500<\/p>",
+            "tes-name": "Jon Smith"
+          }
+        }
+      },
+      "block_order": [
+        "gallery_tMdc8r",
+        "gallery_n3Uxap"
+      ],
+      "settings": {
+      }
+    },
+    "feature_products_E7ctaQ": {
+      "type": "feature-products",
+      "settings": {
+        "fp-title": "Some Favourites",
+        "fp-products": [
+          "mixed-2-pack-st-augustine-original",
+          "zabs-trio",
+          "crew-neck-sweater"
+        ]
+      }
+    },
+    "note_Y3E4Bw": {
+      "type": "note",
+      "settings": {
+        "no-image": "shopify:\/\/shop_images\/note.svg",
+        "no-alt": ""
+      }
+    },
+    "image_text_pMBxmw": {
+      "type": "image-text",
+      "settings": {
+        "it-img": "shopify:\/\/shop_images\/about-header.jpg",
+        "it-title": "Made with rare",
+        "it-sub-title": "Datil Peppers",
+        "it-text": "<p>Our special ingredient, beloved for its signature “slow burn” and naturally sweet heat <\/p>",
+        "it-btn-text": "What’s a datil pepper?",
+        "it-btn-link": "shopify:\/\/pages\/about"
+      }
+    },
+    "insta_H3a3zr": {
+      "type": "insta",
+      "settings": {
+        "in-title": "Zab’s Datil pepper dispatch",
+        "in-btn-text": "@zabs",
+        "in-btn-link": "https:\/\/www.instagram.com\/zabs\/"
+      }
     }
   },
-  "order": ["hero"]
+  "order": [
+    "full_width_img_9hhKWA",
+    "sauce_gallery_tB6DLW",
+    "testimonials_pnf6iz",
+    "feature_products_E7ctaQ",
+    "note_Y3E4Bw",
+    "image_text_pMBxmw",
+    "insta_H3a3zr"
+  ]
 }
