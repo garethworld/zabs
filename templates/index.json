@@ -86,6 +86,7 @@
         "gallery_MUCHBR": {
           "type": "gallery",
           "settings": {
+            "asi-image": "shopify:\/\/shop_images\/eater.png",
             "asi-alt": "",
             "asi-link": ""
           }
