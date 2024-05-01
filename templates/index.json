@@ -101,25 +101,6 @@
         "no-alt": ""
       }
     },
-    "image_text_pMBxmw": {
-      "type": "image-text",
-      "settings": {
-        "it-img": "shopify:\/\/shop_images\/about-header.jpg",
-        "it-title": "Made with rare",
-        "it-sub-title": "Datil Peppers",
-        "it-text": "<p>Our special ingredient, beloved for its signature “slow burn” and naturally sweet heat <\/p>",
-        "it-btn-text": "What’s a datil pepper?",
-        "it-btn-link": "shopify:\/\/pages\/about"
-      }
-    },
-    "insta_H3a3zr": {
-      "type": "insta",
-      "settings": {
-        "in-title": "Zab’s Datil pepper dispatch",
-        "in-btn-text": "@zabs",
-        "in-btn-link": "https:\/\/www.instagram.com\/zabs\/"
-      }
-    },
     "as_seen_TkjM7L": {
       "type": "as-seen",
       "blocks": {
@@ -236,6 +217,25 @@
       ],
       "settings": {
       }
+    },
+    "image_text_pMBxmw": {
+      "type": "image-text",
+      "settings": {
+        "it-img": "shopify:\/\/shop_images\/about-header.jpg",
+        "it-title": "Made with rare",
+        "it-sub-title": "Datil Peppers",
+        "it-text": "<p>Our special ingredient, beloved for its signature “slow burn” and naturally sweet heat <\/p>",
+        "it-btn-text": "What’s a datil pepper?",
+        "it-btn-link": "shopify:\/\/pages\/about"
+      }
+    },
+    "insta_H3a3zr": {
+      "type": "insta",
+      "settings": {
+        "in-title": "Zab’s Datil pepper dispatch",
+        "in-btn-text": "@zabs",
+        "in-btn-link": "https:\/\/www.instagram.com\/zabs\/"
+      }
     }
   },
   "order": [
@@ -244,9 +244,9 @@
     "feature_products_E7ctaQ",
     "sauce_gallery_tB6DLW",
     "note_Y3E4Bw",
-    "image_text_pMBxmw",
-    "insta_H3a3zr",
     "as_seen_TkjM7L",
-    "as_served_dyXpCP"
+    "as_served_dyXpCP",
+    "image_text_pMBxmw",
+    "insta_H3a3zr"
   ]
 }
