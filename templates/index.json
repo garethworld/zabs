@@ -61,10 +61,18 @@
             "sg-rightimg": "shopify:\/\/shop_images\/s1-right.png",
             "sg-mobimg": "shopify:\/\/shop_images\/s1-mobile.png"
           }
+        },
+        "gallery_3gP7t4": {
+          "type": "gallery",
+          "settings": {
+            "sg-product": "single-product-augustine",
+            "sg-text": "<p>Zab’s tribute to how traditional Datil Pepper sauces are made where the peppers are grown - St. Augustine, Florida. Sweeter Heat and fuller flavor, with the signature Datil Pepper Slow Burn.<\/p>"
+          }
         }
       },
       "block_order": [
-        "gallery_MwyLzm"
+        "gallery_MwyLzm",
+        "gallery_3gP7t4"
       ],
       "settings": {
         "sg-title": "Our hot sauces"
