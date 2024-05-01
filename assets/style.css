@@ -2674,6 +2674,11 @@ p:last-child {
     padding-bottom: 20px;
   }
 
+  .md\:py-15 {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
   .md\:pb-10 {
     padding-bottom: 50px;
   }
