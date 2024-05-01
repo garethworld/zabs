@@ -142,6 +142,42 @@
       ],
       "settings": {
       }
+    },
+    "as_served_dyXpCP": {
+      "type": "as-served",
+      "blocks": {
+        "gallery_aAJTWi": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/alfred.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_d7HcdY": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/blackseed.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_3piezR": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/bub.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        }
+      },
+      "block_order": [
+        "gallery_aAJTWi",
+        "gallery_d7HcdY",
+        "gallery_3piezR"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -152,6 +188,7 @@
     "note_Y3E4Bw",
     "image_text_pMBxmw",
     "insta_H3a3zr",
-    "as_seen_TkjM7L"
+    "as_seen_TkjM7L",
+    "as_served_dyXpCP"
   ]
 }
