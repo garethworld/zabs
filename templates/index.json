@@ -169,12 +169,30 @@
             "asi-alt": "",
             "asi-link": ""
           }
+        },
+        "gallery_HGFrRN": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/butchers.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_xGG6ht": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/superior.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
         }
       },
       "block_order": [
         "gallery_aAJTWi",
         "gallery_d7HcdY",
-        "gallery_3piezR"
+        "gallery_3piezR",
+        "gallery_HGFrRN",
+        "gallery_xGG6ht"
       ],
       "settings": {
       }
