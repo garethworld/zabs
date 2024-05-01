@@ -17620,7 +17620,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
           draggable: false,
           speed,
           repeat: -1,
-          reversed: true,
+          reversed: isReverse,
         });
       },
       over() {

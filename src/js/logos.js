@@ -19,7 +19,7 @@ window.logos = function () {
         draggable: false,
         speed: speed,
         repeat: -1,
-        reversed: true,
+        reversed: isReverse,
       });
     },
     over() {
