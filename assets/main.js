@@ -9558,12 +9558,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
           add2.removeAttribute('disabled');
           add2.classList.add('hover:bg-tint3');
           add2.classList.remove('opacity-50');
-          add2.innerHTML = 'Add to cart';
+          add2.innerHTML =
+            '<span class="my-auto inline-block">Add to cart</span>';
         } else {
           add2.setAttribute('disabled', 'disabled');
           add2.classList.remove('hover:bg-tint3');
           add2.classList.add('opacity-50');
-          add2.innerHTML = 'Sold out';
+          add2.innerHTML = '<span class="my-auto inline-block">Sold out</span>';
         }
         this.$el.classList.remove('bg-tint2', 'text-tint3');
         this.$el.classList.add('bg-tint3', 'text-tint2', 'active');

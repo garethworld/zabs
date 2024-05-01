@@ -38,12 +38,12 @@ window.product = function () {
         add.removeAttribute('disabled');
         add.classList.add('hover:bg-tint3');
         add.classList.remove('opacity-50');
-        add.innerHTML = 'Add to cart';
+        add.innerHTML = '<span class="my-auto inline-block">Add to cart</span>';
       } else {
         add.setAttribute('disabled', 'disabled');
         add.classList.remove('hover:bg-tint3');
         add.classList.add('opacity-50');
-        add.innerHTML = 'Sold out';
+        add.innerHTML = '<span class="my-auto inline-block">Sold out</span>';
       }
       // set active class
       this.$el.classList.remove('bg-tint2', 'text-tint3');
