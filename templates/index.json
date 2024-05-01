@@ -114,13 +114,31 @@
             "asi-alt": "",
             "asi-link": ""
           }
+        },
+        "gallery_nP4rBB": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/gq.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
+        },
+        "gallery_QdQUwY": {
+          "type": "gallery",
+          "settings": {
+            "asi-image": "shopify:\/\/shop_images\/goop.png",
+            "asi-alt": "",
+            "asi-link": ""
+          }
         }
       },
       "block_order": [
         "gallery_MUCHBR",
         "gallery_Kr3yLb",
         "gallery_xAwCX7",
-        "gallery_eTEt3h"
+        "gallery_eTEt3h",
+        "gallery_nP4rBB",
+        "gallery_QdQUwY"
       ],
       "settings": {
       }
