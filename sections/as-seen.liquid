@@ -15,22 +15,38 @@
     >
       <div class='flex items-center py-5 whitespace-nowrap scroll-container'>
         {% for block in section.blocks %}
-          <div class='logo' class='inline-block logo'>
-            <img
-              src='{{ block.settings['asi-image'] | img_url: '600x' }}'
-              alt='{{ block.settings['asi-alt'] }}'
-              class='max-w-[150px] md:max-w-[300px] px-3 md:px-6 '
-            >
-          </div>
+          {%- if block.settings['asi-image'] != blank -%}
+            <div class='logo' class='inline-block logo'>
+              {%- if block.settings['asi-link'] != blank -%}
+                <a href='{{ block.settings['asi-link'] }}' target='_blank'>
+              {%- endif -%}
+              <img
+                src='{{ block.settings['asi-image'] | img_url: '600x' }}'
+                alt='{{ block.settings['asi-alt'] }}'
+                class='max-h-[40px] md:max-h-[115px] px-3 md:px-6 '
+              >
+              {%- if block.settings['asi-link'] != blank -%}
+                </a>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
         {% endfor %}
         {% for block in section.blocks %}
-          <div class='logo' class='inline-block logo'>
-            <img
-              src='{{ block.settings['asi-image'] | img_url: '600x' }}'
-              alt='{{ block.settings['asi-alt'] }}'
-              class='max-w-[150px] md:max-w-[300px] px-3 md:px-6 '
-            >
-          </div>
+          {%- if block.settings['asi-image'] != blank -%}
+            <div class='logo' class='inline-block logo'>
+              {%- if block.settings['asi-link'] != blank -%}
+                <a href='{{ block.settings['asi-link'] }}' target='_blank'>
+              {%- endif -%}
+              <img
+                src='{{ block.settings['asi-image'] | img_url: '600x' }}'
+                alt='{{ block.settings['asi-alt'] }}'
+                class='max-w-[150px] md:max-w-[300px] px-3 md:px-6 '
+              >
+              {%- if block.settings['asi-link'] != blank -%}
+                </a>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
         {% endfor %}
       </div>
     </div>
@@ -59,7 +75,7 @@
         {
           "id": "asi-link",
           "type": "url",
-          "label": "Name"
+          "label": "Link"
         }
       ]
     }

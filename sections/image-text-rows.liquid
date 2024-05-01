@@ -7,9 +7,11 @@
           {% render 'img-square-border', img: img %}
         </div>
         <div class='order-1 {% cycle 'lg:order-2', 'lg:order-1 %} '>
-          <h2 class='mb-4 leading-4 uppercase md:mb-8 font-2 text-tint1 text-12-fluid'>
-            {{ block.settings['itr-title'] }}
-          </h2>
+          <div class='flex flex-wrap items-center'>
+            <h2 class='mb-4 leading-4 uppercase md:mb-8 font-2 text-tint1 text-12-fluid'>
+              {{ block.settings['itr-title'] }}
+            </h2>
+          </div>
           <div class='txt'>
             {{ block.settings['itr-text'] }}
           </div>
