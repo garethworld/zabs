@@ -3,10 +3,51 @@
     "fullImgC": {
       "type": "full-width-img-compact",
       "settings": {
+        "fwic-img": "shopify:\/\/shop_images\/about-header.jpg",
+        "fwic-header": "Delicious",
+        "fwic-sub-header": "Datil Peppers",
+        "fwic-txt": "<p>Pronounced ‘Dad-dle’ like rattle or ‘Dah-teel’ Signature Slow Burn & Naturally Sweet Heat<\/p>"
+      }
+    },
+    "image_text_rows_6dCakX": {
+      "type": "image-text-rows",
+      "blocks": {
+        "gallery_Ni7Yfy": {
+          "type": "gallery",
+          "settings": {
+            "itr-img": "shopify:\/\/shop_images\/pepper2_429d00ec-7e1f-4c73-bb9e-d596cdf55566.jpg",
+            "itr-title": "The Datil Pepper",
+            "itr-text": "<p>A new (but old) ingredient you most likely didn’t know you were missing. A rare and mysterious pepper from st. Augustine, Florida. Known for its signature “slow burn” and naturally sweet heat, it provides a subtle blend of fruity, tangy flavor with a gradual, tingly and lingering heat.<br\/><br\/>Despite mysterious origins, it has been a culinary staple and centerpiece of old Florida cuisine for 200+ years. We suspect the datil originated in the caribbean, and was brought to Florida in the late 1700’s\/early 1800’s, where it became a local treasure, and evolved over time into the unique pepper it is today. Our datil peppers are grown with care on a small (but growing) farm just outside St. Augustine.<\/p>"
+          }
+        },
+        "gallery_96Xaf7": {
+          "type": "gallery",
+          "settings": {
+            "itr-img": "shopify:\/\/shop_images\/about-header.jpg",
+            "itr-title": "Slow food foundation for Biodiversity",
+            "itr-text": "<p>Datil peppers are listed under the Slow Food Foundation’s Ark of Taste - a database of heirloom and artisanal foods connected to a particular place or heritage that are at risk of disappearing.  Our mission is to support producers and share our love for these special peppers.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "gallery_Ni7Yfy",
+        "gallery_96Xaf7"
+      ],
+      "settings": {
+      }
+    },
+    "insta_nCCtcQ": {
+      "type": "insta",
+      "settings": {
+        "in-title": "Zab’s Datil pepper dispatch",
+        "in-btn-text": "@zabs",
+        "in-btn-link": "https:\/\/www.instagram.com\/zabs\/"
       }
     }
   },
   "order": [
-    "fullImgC"
+    "fullImgC",
+    "image_text_rows_6dCakX",
+    "insta_nCCtcQ"
   ]
 }
