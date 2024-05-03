@@ -1,6 +1,6 @@
-<ul class='flex -mx-1'>
+<ul class='w-full mt-4 -mx-1 md:flex md:mt-0'>
   {% for link in linklists['footer-bottom'].links %}
-    <li class='px-1'>
+    <li class='w-full px-1 mb-2 text-center md:w-auto md:text-left md:mb-0'>
       <a
         href='{{ link.url }}'
         class='uppercase inline-block text-3-fluid leading-1 hover:underline {% render 'c-color-change' %} {% if link.active %}underline{% endif %}'
@@ -9,7 +9,7 @@
       </a>
       {% if forloop.last %}
       {% else %}
-        <span class='inline-block text-3-fluid leading-1'>-</span>
+        <span class='hidden md:inline-block text-3-fluid leading-1'>-</span>
       {% endif %}
     </li>
   {% endfor %}

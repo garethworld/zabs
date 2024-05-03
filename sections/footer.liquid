@@ -37,7 +37,7 @@
         ><img class='w-[80px] md:w-[190px]' src='{{ 'footer-logo.static.svg' | asset_url }}' alt="Zab's hot sauce"
       ></a>
     </div>
-    <div class='grid grid-cols-3 mt-6 ml-auto md:mt-0 md:w-1/2 gap-x-3'>
+    <div class='grid grid-cols-2 mt-6 ml-auto md:grid-cols-3 md:mt-0 md:w-1/2 gap-x-3'>
       <div>{% include 'menu-footer-top' with menu: 'footer' %}</div>
       <div>{% include 'menu-footer-top' with menu: 'footer-two' %}</div>
       <div>{% include 'menu-footer-top' with menu: 'footer-three' %}</div>
@@ -45,7 +45,7 @@
   </div>
 
   <div class='flex pt-2 mb-6 md:pt-4 md:pb-12 flex-warp'>
-    <div class='md:w-1/2 md:ml-auto'>
+    <div class='w-full lg:w-1/2 md:ml-auto'>
       {% render 'menu-bottom' %}
     </div>
   </div>

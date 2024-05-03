@@ -10,7 +10,7 @@
           {% endif %}
 
           {%- assign img = card_product.images.first -%}
-          <div class='w-full border-3 rounded-1  {% if card_product.available == false %}opacity-60{%- endif -%}'>
+          <div class='w-full border-3 rounded-1 bg-tint2  {% if card_product.available == false %}opacity-60{%- endif -%}'>
             {% render 'img-product-card', img: img %}
           </div>
         </a>
