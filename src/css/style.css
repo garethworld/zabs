@@ -42,7 +42,7 @@ img {
 }
 @font-face {
   font-family: 'font-3';
-  src: url('daily-grind.static.woff2') format('woff2');
+  src: url('daily-grind.woff2') format('woff2');
   font-display: block;
 }
 @font-face {
