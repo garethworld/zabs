@@ -802,6 +802,9 @@ video {
 .w-2\/12 {
   width: 16.666667%;
 }
+.w-\[100px\] {
+  width: 100px;
+}
 .w-\[10px\] {
   width: 10px;
 }
@@ -870,9 +873,6 @@ video {
 }
 .w-full {
   width: 100%;
-}
-.w-\[100px\] {
-  width: 100px;
 }
 .max-w-\[150px\] {
   max-width: 150px;
@@ -1852,7 +1852,7 @@ img {
 }
 @font-face {
   font-family: 'font-3';
-  src: url('daily-grind.static.woff2') format('woff2');
+  src: url('daily-grind.woff2') format('woff2');
   font-display: block;
 }
 @font-face {
