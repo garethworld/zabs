@@ -22,7 +22,8 @@
                     <img
                       class='w-full mb-10 md:hidden'
                       src='{{ block.settings['sg-mobimg'] | img_url: '1500x' }}'
-                      alt=''
+                      alt='mobile image'
+                      loading='lazy'
                     >
                   {%- endif -%}
 
@@ -45,7 +46,7 @@
                   <img
                     class='hidden w-full mt-auto md:block'
                     src='{{ block.settings['sg-leftimg'] | img_url: '1500x' }}'
-                    alt=''
+                    alt='left image'
                   >
                 {%- endif -%}
               </div>
@@ -55,7 +56,8 @@
                   <img
                     class='w-full px-4 mt-auto'
                     src='{{ block.settings['sg-middleimg'] | img_url: '1000x' }}'
-                    alt=''
+                    alt='middle image'
+                    loading='lazy'
                   >
                 {%- endif -%}
               </div>
@@ -81,7 +83,8 @@
                   <img
                     class='hidden w-full mt-auto md:block'
                     src='{{ block.settings['sg-rightimg'] | img_url: '1000x' }}'
-                    alt=''
+                    alt='right image'
+                    loading='lazy'
                   >
                 {%- endif -%}
               </div>
