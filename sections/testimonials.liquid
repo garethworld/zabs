@@ -3,9 +3,9 @@
     <div class='border-tint2 border-3 rounded-1 text-tint2 '>
       <div x-data='testimonials()' class='relative flex flex-wrap splide py-7 m:py-14 '>
         <div class='w-full testimonials splide__track'>
-          <ul class='splide__list'>
+          <div class='splide__list'>
             {% for block in section.blocks %}
-              <li class='relative z-30 w-full splide__slide cursor-drag'>
+              <div class='relative z-30 w-full splide__slide cursor-drag'>
                 <div class='flex flex-wrap w-full h-full'>
                   <div class='m-auto text-center md:w-1/2 {% render 'c-container' %}'>
                     {%- if block.settings['tes-text'] != blank -%}
@@ -33,9 +33,9 @@
                     {%- endif -%}
                   </div>
                 </div>
-              </li>
+              </div>
             {% endfor %}
-          </ul>
+          </div>
         </div>
         <div class='relative z-10 flex flex-wrap w-full pt-10 pointer-events-none md:pt-0 md:absolute md:top-0 md:left-0 md:h-full cursor-drag splide__arrows'>
           <div class='flex flex-wrap items-center mx-auto md:w-11/12 md:h-full'>

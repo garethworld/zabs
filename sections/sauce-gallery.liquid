@@ -12,9 +12,9 @@
     {%- endif -%}
 
     <div class='splide__track'>
-      <ul class='splide__list'>
+      <div class='splide__list'>
         {% for block in section.blocks %}
-          <li class='m-auto splide__slide'>
+          <div class='m-auto splide__slide'>
             <div class='flex flex-wrap w-full mx-auto cursor-drag md:w-10/12'>
               <div class='flex flex-wrap w-full md:w-5/12'>
                 <div class='flex flex-wrap w-full '>
@@ -89,9 +89,9 @@
                 {%- endif -%}
               </div>
             </div>
-          </li>
+          </div>
         {% endfor %}
-      </ul>
+      </div>
     </div>
     {% render 'sauce-nav' %}
   </div>
