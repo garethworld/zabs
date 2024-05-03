@@ -100,7 +100,7 @@ module.exports = {
     require('tailwindcss-fluid')({
       textSizes: {
         1: {
-          min: '11px',
+          min: '13px',
           max: '14px',
           minvw: '375px',
           maxvw: '1400px',
@@ -112,7 +112,7 @@ module.exports = {
           maxvw: '1400px',
         },
         3: {
-          min: '8px',
+          min: '13px',
           max: '16px',
           minvw: '375px',
           maxvw: '1400px',
