@@ -253,7 +253,7 @@ p:last-child {
 }
 
 .matchbox {
-  width: calc(100% - 16vw);
+  width: calc(100% - 10vw);
 }
 
 .txt a {

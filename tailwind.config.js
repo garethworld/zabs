@@ -185,7 +185,7 @@ module.exports = {
         },
         15: {
           min: '9px',
-          max: '11px',
+          max: '14px',
           minvw: '375px',
           maxvw: '1400px',
         },
