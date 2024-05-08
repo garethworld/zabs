@@ -547,8 +547,8 @@ video {
 .left-1\/2 {
   left: 50%;
 }
-.left-\[10vw\] {
-  left: 10vw;
+.left-\[12vw\] {
+  left: 12vw;
 }
 .left-\[35px\] {
   left: 35px;
@@ -573,9 +573,6 @@ video {
 }
 .top-\[42px\] {
   top: 42px;
-}
-.left-\[12vw\] {
-  left: 12vw;
 }
 .z-0 {
   z-index: 0;

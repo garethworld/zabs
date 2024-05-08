@@ -56,6 +56,14 @@ window.product = function () {
           variant.classList.add('bg-tint2', 'text-tint3');
         }
       });
+      // set variant image if available
+      const varimg = this.$el.getAttribute('data-variant-image');
+      if (varimg) {
+        const thumb = document.querySelector(`[data-img-id="${varimg}"]`);
+        if (thumb) {
+          thumb.click();
+        }
+      }
     },
   };
 };

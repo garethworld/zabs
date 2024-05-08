@@ -9575,6 +9575,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
             variant.classList.add('bg-tint2', 'text-tint3');
           }
         });
+        const varimg = this.$el.getAttribute('data-variant-image');
+        if (varimg) {
+          const thumb = document.querySelector(`[data-img-id="${varimg}"]`);
+          if (thumb) {
+            thumb.click();
+          }
+        }
       },
     };
   };

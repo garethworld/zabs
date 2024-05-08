@@ -3,7 +3,11 @@
     <ul class='splide__list'>
       {% assign images = product.media | where: 'media_type', 'image' %}
       {% for image in product.images %}
-        <li class='w-full splide__slide'>{% render 'img-square', img: image %}</li>
+        <li
+          class='w-full splide__slide'
+        >
+          {% render 'img-square', img: image %}
+        </li>
       {% endfor %}
     </ul>
   </div>
@@ -12,10 +16,13 @@
 <div class='flex items-center mt-3'>
   <div id='product-thumb-nav' class='relative flex w-full splide'>
     <div class='splide__track  w-[250px] md:w-[390px] mx-auto '>
-      <ul class='relative z-10 splide__list'>
+      <ul id='thumb-nav' class='relative z-10 splide__list'>
         {% assign images = product.media | where: 'media_type', 'image' %}
         {% for image in product.images %}
-          <li class='w-full rounded-1 hover:border-tint1 border-1 border-tint2 splide__slide'>
+          <li
+            data-img-id='{{ image | remove: "files/" | split: "." | first | downcase | replace: " ", "" }}'
+            class='w-full rounded-1 hover:border-tint1 border-1 border-tint2 splide__slide'
+          >
             {% render 'img-pro-thumb', img: image %}
           </li>
         {% endfor %}
