@@ -1,11 +1,5 @@
 {
   "sections": {
-    "details": {
-      "type": "product-details",
-      "settings": {
-        "shipping": "<p>Default shipping information goes here<\/p>"
-      }
-    },
     "1715183593e7892b12": {
       "type": "apps",
       "blocks": {
@@ -21,10 +15,16 @@
       ],
       "settings": {
       }
+    },
+    "details": {
+      "type": "product-details",
+      "settings": {
+        "shipping": "<p>Default shipping information goes here<\/p>"
+      }
     }
   },
   "order": [
-    "details",
-    "1715183593e7892b12"
+    "1715183593e7892b12",
+    "details"
   ]
 }
