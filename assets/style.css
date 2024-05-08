@@ -2142,7 +2142,7 @@ p:last-child {
   perspective: 1000px;
 }
 .matchbox {
-  width: calc(100% - 10vw);
+  width: calc(100% - 14vw);
 }
 .txt a {
   --tw-text-opacity: 1;
