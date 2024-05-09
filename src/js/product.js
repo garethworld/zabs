@@ -5,7 +5,17 @@ window.product = function () {
 
   var add = document.getElementById('add-to-cart');
   return {
-    init() {},
+    init() {
+      // move the recharge section to the recharge-container div
+      const rechargeSection = document.querySelector(
+        '.recharge-subscription-widget',
+      );
+      const rechargeContainer = document.getElementById('recharge-container');
+
+      if (rechargeSection && rechargeContainer) {
+        rechargeContainer.appendChild(rechargeSection);
+      }
+    },
     setVariant(e) {
       e.preventDefault();
       const qty = document.querySelector('.qty');
@@ -62,13 +72,9 @@ window.product = function () {
       url.searchParams.set('variant', variantId);
       window.history.pushState({}, '', url);
 
-      // update select options
-      const select = document.querySelector('.variant-select');
-      if (select) {
-        select.value = variantId; // Set the value of the select element
-        // Optionally, dispatch a change event to trigger any listeners
-        select.dispatchEvent(new Event('change'));
-      }
+      // update the element current-var
+      const currentVar = document.querySelector('#VariantId');
+      currentVar.value = variantId;
 
       // set variant image if available
       const varimg = this.$el.getAttribute('data-variant-image');

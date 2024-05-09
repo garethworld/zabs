@@ -9527,7 +9527,15 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
     var compareAtPrice = document.getElementById('compare-at-price');
     var add2 = document.getElementById('add-to-cart');
     return {
-      init() {},
+      init() {
+        const rechargeSection = document.querySelector(
+          '.recharge-subscription-widget',
+        );
+        const rechargeContainer = document.getElementById('recharge-container');
+        if (rechargeSection && rechargeContainer) {
+          rechargeContainer.appendChild(rechargeSection);
+        }
+      },
       setVariant(e) {
         e.preventDefault();
         const qty = document.querySelector('.qty');
@@ -9579,11 +9587,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
         const url = new URL(window.location.href);
         url.searchParams.set('variant', variantId);
         window.history.pushState({}, '', url);
-        const select = document.querySelector('.variant-select');
-        if (select) {
-          select.value = variantId;
-          select.dispatchEvent(new Event('change'));
-        }
+        const currentVar = document.querySelector('#VariantId');
+        currentVar.value = variantId;
         const varimg = this.$el.getAttribute('data-variant-image');
         if (varimg) {
           const thumb = document.querySelector(`[data-img-id="${varimg}"]`);

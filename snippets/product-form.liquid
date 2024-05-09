@@ -10,31 +10,9 @@
     enctype='multipart/form-data'
     id='AddToCartForm'
   >
-    {% render 'product-variants' %}
+    <div id='recharge-container'></div>
 
-    <select
-      name='id'
-      data-productid='{{ product.id }}'
-      id='ProductSelect--{{ section.id }}'
-      class='variant-select'
-    >
-      {% for variant in product.variants %}
-        {% if variant.available %}
-          <option
-            id='ProductSelectOption-{{ variant.id }}'
-            {% if variant == product.selected_or_first_available_variant %}
-              selected='selected'
-            {% endif %}
-            data-sku='{{ variant.sku }}'
-            value='{{ variant.id }}'
-          >
-            {{ variant.title }} - {{ variant.price | money_with_currency }}
-          </option>
-        {% else %}
-          <option disabled='disabled'>{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
-        {% endif %}
-      {% endfor %}
-    </select>
+    {% render 'product-variants' %}
 
     <div class='flex flex-wrap mt-2'>
       <div class='mr-2'>{% render 'product-add' %}</div>

@@ -1,9 +1,10 @@
-<input type='text' name='id' id='VariantId' value='{{ product.variants.first.id }}'>
+<input type='hidden' name='id' id='VariantId' value='{{ product.variants.first.id }}'>
 
 {% if product.variants.size > 1 %}
   {% for option in product.options %}
     <div class='variant-group'>
       <h3 class='mb-3 text-1-fluid leading-1'>{{ option }}</h3>
+
       <ul class='flex flex-wrap -mx-1'>
         {% for variant in product.variants %}
           <li class='px-1 mb-2'>
