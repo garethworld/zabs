@@ -4,14 +4,13 @@
   <form
     x-data='product()'
     class='mb-6'
-    action='/cart/add' data-productid='{{ product.id }}'
+    action='/cart/add'
+    data-productid='{{ product.id }}'
     method='post'
     enctype='multipart/form-data'
     id='AddToCartForm'
   >
     {% render 'product-variants' %}
-
-    <div id='recharge'></div>
 
     <select name='id' id='product-select' class=''>
       {% for variant in product.variants %}

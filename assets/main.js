@@ -9527,19 +9527,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
     var compareAtPrice = document.getElementById('compare-at-price');
     var add2 = document.getElementById('add-to-cart');
     return {
-      init() {
-        console.log('product.js loaded');
-        const rechargeSubscriptionWidget = document.querySelector(
-          '.recharge-subscription-widget',
-        );
-        if (rechargeSubscriptionWidget) {
-          const rechargeSubscriptionWidgetParent =
-            rechargeSubscriptionWidget.parentElement;
-          document
-            .getElementById('recharge')
-            .appendChild(rechargeSubscriptionWidgetParent);
-        }
-      },
+      init() {},
       setVariant(e) {
         e.preventDefault();
         const qty = document.querySelector('.qty');
