@@ -5,17 +5,7 @@ window.product = function () {
 
   var add = document.getElementById('add-to-cart');
   return {
-    init() {
-      // move the recharge section to the recharge-container div
-      const rechargeSection = document.querySelector(
-        '.recharge-subscription-widget',
-      );
-      const rechargeContainer = document.getElementById('recharge-container');
-
-      if (rechargeSection && rechargeContainer) {
-        rechargeContainer.appendChild(rechargeSection);
-      }
-    },
+    init() {},
     setVariant(e) {
       e.preventDefault();
       const qty = document.querySelector('.qty');
