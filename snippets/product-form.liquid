@@ -12,7 +12,12 @@
   >
     {% render 'product-variants' %}
 
-    <select name='id' id='product-select' class=''>
+    <select
+      name='id'
+      data-productid='{{ product.id }}'
+      id='ProductSelect--{{ section.id }}'
+      class='product-single__variants no-js'
+    >
       {% for variant in product.variants %}
         <option
           {% if variant == current_variant %}
