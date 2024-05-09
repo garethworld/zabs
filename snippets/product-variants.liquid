@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <input type='text' name='id' id='VariantId' value='{{ product.variants.first.id }}'>
+=======
+<input type='hidden' name='id' data-productid='{{ product.id }}' id='VariantId' value='{{ product.variants.first.id }}'>
+>>>>>>> 0266e676f93f96ad5ef589e0877b1742420f91e9
 
 {% if product.variants.size > 1 %}
   {% for option in product.options %}

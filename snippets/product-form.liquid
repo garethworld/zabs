@@ -4,7 +4,7 @@
   <form
     x-data='product()'
     class='mb-6'
-    action='/cart/add'
+    action='/cart/add' data-productid='{{ product.id }}'
     method='post'
     enctype='multipart/form-data'
     id='AddToCartForm'
