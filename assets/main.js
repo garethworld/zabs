@@ -9527,7 +9527,13 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
     var compareAtPrice = document.getElementById('compare-at-price');
     var add2 = document.getElementById('add-to-cart');
     return {
-      init() {},
+      init() {
+        const rechargeSection = document.querySelector('.rc-widget');
+        const rechargeContainer = document.getElementById('recharge-container');
+        if (rechargeSection && rechargeContainer) {
+          rechargeContainer.appendChild(rechargeSection);
+        }
+      },
       setVariant(e) {
         e.preventDefault();
         const qty = document.querySelector('.qty');
