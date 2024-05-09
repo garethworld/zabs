@@ -9528,7 +9528,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
     var add2 = document.getElementById('add-to-cart');
     return {
       init() {
-        const rechargeSection = document.querySelector('.rc-widget');
+        const rechargeSection = document.querySelector(
+          '#RechargeWidget_8504682610932',
+        );
         const rechargeContainer = document.getElementById('recharge-container');
         if (rechargeSection && rechargeContainer) {
           rechargeContainer.appendChild(rechargeSection);

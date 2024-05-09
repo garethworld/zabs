@@ -7,7 +7,9 @@ window.product = function () {
   return {
     init() {
       // move the recharge section to the recharge-container div
-      const rechargeSection = document.querySelector('.rc-widget');
+      const rechargeSection = document.querySelector(
+        '#RechargeWidget_8504682610932',
+      );
       const rechargeContainer = document.getElementById('recharge-container');
 
       if (rechargeSection && rechargeContainer) {
