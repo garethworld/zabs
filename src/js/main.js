@@ -16,3 +16,4 @@ import './testimonials.js';
 import './sauces.js';
 import './logos.js';
 import './hero.js';
+import './newsletter.js';

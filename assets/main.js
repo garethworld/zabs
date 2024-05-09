@@ -17661,6 +17661,16 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
     };
   };
 
+  // src/js/newsletter.js
+  window.newsletter = function () {
+    return {
+      open() {
+        window._klOnsite = window._klOnsite || [];
+        window._klOnsite.push(['openForm', 'TA2Bfj']);
+      },
+    };
+  };
+
   // src/js/main.js
   window.Alpine = module_default;
   module_default.plugin(module_default2);
