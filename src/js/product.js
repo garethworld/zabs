@@ -62,6 +62,19 @@ window.product = function () {
       url.searchParams.set('variant', variantId);
       window.history.pushState({}, '', url);
 
+      // update select options
+      const selects = document.querySelector('.variant-select');
+      if (selects) {
+        const selectOptions = selects.querySelectorAll('option');
+        selectOptions.forEach((option) => {
+          if (option.value === variantId) {
+            option.selected = true;
+          } else {
+            option.selected = false;
+          }
+        });
+      }
+
       // set variant image if available
       const varimg = this.$el.getAttribute('data-variant-image');
       if (varimg) {

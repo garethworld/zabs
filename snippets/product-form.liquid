@@ -10,21 +10,18 @@
     enctype='multipart/form-data'
     id='AddToCartForm'
   >
-    <!-- Begin ReCharge code -->
-    {% if product.available %}{% render 'subscription-product' %}{% endif %}
-    <!-- End ReCharge code -->
-
     {% render 'product-variants' %}
 
     <select
       name='id'
       data-productid='{{ product.id }}'
       id='ProductSelect--{{ section.id }}'
-      class='product-single__variants no-js'
+      class='variant-select'
     >
       {% for variant in product.variants %}
         {% if variant.available %}
           <option
+            id='ProductSelectOption-{{ variant.id }}'
             {% if variant == product.selected_or_first_available_variant %}
               selected='selected'
             {% endif %}
