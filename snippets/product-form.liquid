@@ -11,6 +11,24 @@
   >
     {% render 'product-variants' %}
 
+    <div id='recharge'></div>
+
+    <select name='id' id='product-select' class=''>
+      {% for variant in product.variants %}
+        <option
+          {% if variant == current_variant %}
+            selected='selected'
+          {% endif %}
+          {% unless variant.available %}
+            disabled='disabled'
+          {% endunless %}
+          value='{{ variant.id }}'
+        >
+          {{ variant.title }}
+        </option>
+      {% endfor %}
+    </select>
+
     <div class='flex flex-wrap mt-2'>
       <div class='mr-2'>{% render 'product-add' %}</div>
       <div>{% render 'product-qty', product: product.variants.first, count: 1 %}</div>

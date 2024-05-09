@@ -9527,6 +9527,18 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
     var compareAtPrice = document.getElementById('compare-at-price');
     var add2 = document.getElementById('add-to-cart');
     return {
+      init() {
+        const rechargeSubscriptionWidget = document.querySelector(
+          '.recharge-subscription-widget',
+        );
+        if (rechargeSubscriptionWidget) {
+          const rechargeSubscriptionWidgetParent =
+            rechargeSubscriptionWidget.parentElement;
+          document
+            .getElementById('recharge')
+            .appendChild(rechargeSubscriptionWidgetParent);
+        }
+      },
       setVariant(e) {
         e.preventDefault();
         const qty = document.querySelector('.qty');
@@ -9575,6 +9587,9 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
             variant.classList.add('bg-tint2', 'text-tint3');
           }
         });
+        const url = new URL(window.location.href);
+        url.searchParams.set('variant', variantId);
+        window.history.pushState({}, '', url);
         const varimg = this.$el.getAttribute('data-variant-image');
         if (varimg) {
           const thumb = document.querySelector(`[data-img-id="${varimg}"]`);

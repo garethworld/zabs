@@ -5,6 +5,21 @@ window.product = function () {
 
   var add = document.getElementById('add-to-cart');
   return {
+    init() {
+      // find the a div with recharge-subscription-widget class
+      const rechargeSubscriptionWidget = document.querySelector(
+        '.recharge-subscription-widget',
+      );
+      if (rechargeSubscriptionWidget) {
+        // get partent element of the rechargeSubscriptionWidget
+        const rechargeSubscriptionWidgetParent =
+          rechargeSubscriptionWidget.parentElement;
+        // move to the element with the id recharage
+        document
+          .getElementById('recharge')
+          .appendChild(rechargeSubscriptionWidgetParent);
+      }
+    },
     setVariant(e) {
       e.preventDefault();
       const qty = document.querySelector('.qty');
@@ -56,6 +71,11 @@ window.product = function () {
           variant.classList.add('bg-tint2', 'text-tint3');
         }
       });
+      // update the url with the variant id
+      const url = new URL(window.location.href);
+      url.searchParams.set('variant', variantId);
+      window.history.pushState({}, '', url);
+
       // set variant image if available
       const varimg = this.$el.getAttribute('data-variant-image');
       if (varimg) {
