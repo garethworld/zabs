@@ -6,6 +6,7 @@ window.product = function () {
   var add = document.getElementById('add-to-cart');
   return {
     init() {
+      console.log('product.js loaded');
       // find the a div with recharge-subscription-widget class
       const rechargeSubscriptionWidget = document.querySelector(
         '.recharge-subscription-widget',

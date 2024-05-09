@@ -9528,6 +9528,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
     var add2 = document.getElementById('add-to-cart');
     return {
       init() {
+        console.log('product.js loaded');
         const rechargeSubscriptionWidget = document.querySelector(
           '.recharge-subscription-widget',
         );
