@@ -10,6 +10,10 @@
     enctype='multipart/form-data'
     id='AddToCartForm'
   >
+    <!-- Begin ReCharge code -->
+    {% if product.available %}{% render 'subscription-product' %}{% endif %}
+    <!-- End ReCharge code -->
+
     {% render 'product-variants' %}
 
     <select
