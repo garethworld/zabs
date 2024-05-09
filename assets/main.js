@@ -9579,16 +9579,10 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
         const url = new URL(window.location.href);
         url.searchParams.set('variant', variantId);
         window.history.pushState({}, '', url);
-        const selects = document.querySelector('.variant-select');
-        if (selects) {
-          const selectOptions = selects.querySelectorAll('option');
-          selectOptions.forEach((option) => {
-            if (option.value === variantId) {
-              option.selected = true;
-            } else {
-              option.selected = false;
-            }
-          });
+        const select = document.querySelector('.variant-select');
+        if (select) {
+          select.value = variantId;
+          select.dispatchEvent(new Event('change'));
         }
         const varimg = this.$el.getAttribute('data-variant-image');
         if (varimg) {

@@ -517,6 +517,11 @@ video {
     max-width: 1300px;
   }
 }
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
+  }
+}
 .pointer-events-none {
   pointer-events: none;
 }
@@ -798,6 +803,9 @@ video {
 }
 .w-10\/12 {
   width: 83.333333%;
+}
+.w-11\/12 {
+  width: 91.666667%;
 }
 .w-2\/12 {
   width: 16.666667%;
@@ -2894,5 +2902,10 @@ p:last-child {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}
+@media (min-width: 1600px) {
+  .xl\:w-11\/12 {
+    width: 91.666667%;
   }
 }

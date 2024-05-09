@@ -11,6 +11,7 @@ module.exports = {
       sm: '320px',
       md: '900px',
       lg: '1300px',
+      xl: '1600px',
     },
 
     fontFamily: {

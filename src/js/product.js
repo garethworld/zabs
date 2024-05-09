@@ -63,16 +63,11 @@ window.product = function () {
       window.history.pushState({}, '', url);
 
       // update select options
-      const selects = document.querySelector('.variant-select');
-      if (selects) {
-        const selectOptions = selects.querySelectorAll('option');
-        selectOptions.forEach((option) => {
-          if (option.value === variantId) {
-            option.selected = true;
-          } else {
-            option.selected = false;
-          }
-        });
+      const select = document.querySelector('.variant-select');
+      if (select) {
+        select.value = variantId; // Set the value of the select element
+        // Optionally, dispatch a change event to trigger any listeners
+        select.dispatchEvent(new Event('change'));
       }
 
       // set variant image if available
