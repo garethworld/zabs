@@ -313,7 +313,7 @@ p:last-child {
   @apply flex flex-col self-start;
 }
 .rc-radio {
-  @apply self-start;
+  @apply self-start w-full md:w-auto;
 }
 .rc-template__radio label {
   @apply text-tint1 text-2-fluid !important;
@@ -347,6 +347,7 @@ p:last-child {
 .rc-selling-plans {
   background: none !important;
   padding-left: 0 !important;
+  @apply mt-3;
 }
 .rc-selling-plans-dropdown__select {
   @apply border-tint1 border-3 bg-tint2 rounded-[40px] pl-5 pr-6 text-1-fluid py-2 !important;
@@ -377,5 +378,9 @@ p:last-child {
 }
 
 .rc-subscription-details__button {
-  @apply text-tint1 text-1-fluid pt-6 !important;
+  @apply text-tint1 text-1-fluid pt-3 md:pt-6 !important;
+}
+
+.rc-radio:last-of-type {
+  margin-bottom: 0 !important;
 }
