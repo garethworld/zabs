@@ -1,4 +1,5 @@
-<section class='bg-tint2'>
+<!-
+<section x-data='insta()' class='bg-tint2'>
   <div class='w-full mx-auto md:w-10/12 py-10 md:py-20  {% render 'c-container' %} '>
     {%- if section.settings['in-title'] != blank -%}
       <h2 class='mb-4 text-center uppercase md:mb-8 text-tint1 font-2 leading-1 text-12-fluid'>
@@ -6,18 +7,7 @@
       </h2>
     {%- endif -%}
     <div class='p-1 border-tint1 border-3 rounded-2'>
-      <div class='grid grid-cols-2 gap-5 p-2 lg:grid-cols-4 rounded-1 border-3 border-tint1'>
-        {%- for block in section.blocks -%}
-          <a href='{{ section.settings['in-btn-link'] }}' class='relative'>
-            <img
-              src='{{ block.settings['in-img'] | img_url: '400x400', crop: 'center'}}'
-              alt='{{ block.settings['in-alt'] }}'
-              class='object-cover w-full h-full rounded-1'
-              lazy='loading'
-            >
-          </a>
-        {%- endfor -%}
-      </div>
+      <div id='instafeed' class='grid grid-cols-2 gap-5 p-2 lg:grid-cols-4 rounded-1 border-3 border-tint1'></div>
     </div>
     {%- if section.settings['in-btn-link'] != blank -%}
       <div class='flex mt-4 md:mt-8'>
@@ -36,29 +26,6 @@
 {% schema %}
 {
   "name": "Instagram feed",
-  "max_blocks": 4,
-  "blocks": [
-    {
-      "name": "Image",
-      "type": "gallery",
-      "settings": [
-        {
-          "id": "in-img",
-          "type": "image_picker",
-          "label": "Image",
-          "info": "Should be 400px by 400px. Cropped if supplied image is larger."
-        },
-        {
-          "id": "in-alt",
-          "type": "text",
-          "label": "Alt",
-          "default": "Instagram image",
-          "info": "Text used to describe the image for screen readers"
-        }
-      ]
-    }
-  ],
-
   "settings": [
     {
       "id": "in-title",
@@ -79,7 +46,6 @@
       "default": "https://www.instagram.com/zabs/"
     }
   ],
-
   "presets": [
     {
       "name": "Instagram feed",
@@ -88,3 +54,4 @@
   ]
 }
 {% endschema %}
+->
