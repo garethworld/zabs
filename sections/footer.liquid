@@ -3,7 +3,7 @@
     <div class='mx-auto h-full  w-full  md:max-w-[800px] relative'>
       <img class='w-full md:hidden' src='{{ 'matchbox-mobile.png' | asset_url }}' alt='Matchbox'>
 
-      <img class='hidden w-full md:block' src='{{ 'matchbox.static.png' | asset_url }}' alt='Matchbox'>
+      <img class='hidden w-full md:block' src='{{ 'matchbox-desktop.png' | asset_url }}' alt='Matchbox'>
 
       <div class='absolute left-[12vw] matchbox pb-[8vw] px-4 md:px-0 md:left-[280px] pt-4 md:pt-12 top-0   md:pb-12  flex flex-wrap h-full text-tint1 text-center w-full md:w-[420px]'>
         <div class='w-full'>
@@ -15,21 +15,6 @@
         </div>
 
         <div class='w-full '>
-          <!--
-            >
-            <form action='/contact' method='post' class='relative w-full'>
-              <input
-                type='email'
-                name='email'
-                placeholder='EMAIL ON THE DOTTED LINE, PLEASE!'
-                class='w-full pb-1 placeholder-opacity-50 border-dotted bg-tint2 placeholder-tint1 border-b-6 leading-2 font-1 text-15-fluid text-tint1 border-tint1 '
-              >
-              <button type='submit' class='absolute top-0 right-0'>
-                <img class='w-[20px]' src='{{ 'arrow.static.svg' | asset_url }}' alt='Arrow'>
-              </button>
-            </form>
-          -->
-
           <button
             x-data='newsletter()'
             @click='open'

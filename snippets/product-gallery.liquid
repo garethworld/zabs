@@ -2,11 +2,25 @@
   <div class='splide__track'>
     <ul class='splide__list'>
       {% assign images = product.media | where: 'media_type', 'image' %}
-      {% for image in product.images %}
+      {% for img in product.images %}
         <li
           class='w-full splide__slide'
         >
-          {% render 'img-square', img: image %}
+          <div class='p-1 border-tint1 border-3 rounded-2'>
+            <img
+              class='block w-full rounded-1 border-3 border-tint1 '
+              src='{{ img| img_url: '400x400', crop: 'center'}}'
+              alt='{{ img.alt }}'
+              srcset='
+                   {% if img.width > 400 %}{{ img.src | img_url: '400x400', crop: 'center' }} 400w{% endif %}
+                   {% if img.width > 640 %}{{ img.src | img_url: '640x640', crop: 'center' }} 640w{% endif %}
+                   {% if img.width > 720 %},{{ img.src | img_url: '720x720', crop: 'center' }} 720w{% endif %}
+                   {% if img.width > 900 %},{{ img.src | img_url: '900x900', crop: 'center' }} 900w{% endif %}
+                {% if img.width > 1200 %},{{ img.src | img_url: '1200x1200', crop: 'center' }} 1200w{% endif %}
+              '
+              loading='lazy'
+            >
+          </div>
         </li>
       {% endfor %}
     </ul>

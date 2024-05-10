@@ -747,6 +747,9 @@ video {
 .mt-auto {
   margin-top: auto;
 }
+.ml-2 {
+  margin-left: 10px;
+}
 .block {
   display: block;
 }
@@ -872,6 +875,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-\[18px\] {
+  width: 18px;
 }
 .max-w-\[150px\] {
   max-width: 150px;
