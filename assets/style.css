@@ -777,9 +777,6 @@ video {
 .h-\[180px\] {
   height: 180px;
 }
-.h-\[35px\] {
-  height: 35px;
-}
 .h-\[85px\] {
   height: 85px;
 }
@@ -2197,7 +2194,13 @@ p:last-child {
   align-self: flex-start;
 }
 .rc-radio {
+  width: 100%;
   align-self: flex-start;
+}
+@media (min-width: 900px) {
+  .rc-radio {
+    width: auto;
+  }
 }
 .rc-template__radio label {
   --tw-text-opacity: 1 !important;
@@ -2271,6 +2274,9 @@ p:last-child {
   background: none !important;
   padding-left: 0 !important;
 }
+.rc-selling-plans {
+  margin-top: 15px;
+}
 .rc-selling-plans-dropdown__select {
   border-radius: 40px !important;
   border-width: 3px !important;
@@ -2318,7 +2324,7 @@ p:last-child {
   background-color: rgba(183, 25, 35, var(--tw-bg-opacity)) !important;
 }
 .rc-subscription-details__button {
-  padding-top: 30px !important;
+  padding-top: 15px !important;
   --tw-text-opacity: 1 !important;
   color: rgba(5, 60, 150, var(--tw-text-opacity)) !important;
   font-size: 13px !important;
@@ -2333,9 +2339,21 @@ p:last-child {
     font-size: 14px !important;
   }
 }
+@media (min-width: 900px) {
+  .rc-subscription-details__button {
+    padding-top: 30px !important;
+  }
+}
+.rc-radio:last-of-type {
+  margin-bottom: 0 !important;
+}
 .hover\:border-tint1:hover {
   --tw-border-opacity: 1;
   border-color: rgba(5, 60, 150, var(--tw-border-opacity));
+}
+.hover\:border-tint3:hover {
+  --tw-border-opacity: 1;
+  border-color: rgba(183, 25, 35, var(--tw-border-opacity));
 }
 .hover\:bg-tint1:hover {
   --tw-bg-opacity: 1;
@@ -2599,10 +2617,6 @@ p:last-child {
 
   .md\:h-\[160px\] {
     height: 160px;
-  }
-
-  .md\:h-\[45px\] {
-    height: 45px;
   }
 
   .md\:h-full {
