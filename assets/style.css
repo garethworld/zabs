@@ -684,6 +684,9 @@ video {
 .ml-1 {
   margin-left: 5px;
 }
+.ml-2 {
+  margin-left: 10px;
+}
 .ml-4 {
   margin-left: 20px;
 }
@@ -746,9 +749,6 @@ video {
 }
 .mt-auto {
   margin-top: auto;
-}
-.ml-2 {
-  margin-left: 10px;
 }
 .block {
   display: block;
@@ -825,6 +825,9 @@ video {
 .w-\[16px\] {
   width: 16px;
 }
+.w-\[18px\] {
+  width: 18px;
+}
 .w-\[20px\] {
   width: 20px;
 }
@@ -875,9 +878,6 @@ video {
 }
 .w-full {
   width: 100%;
-}
-.w-\[18px\] {
-  width: 18px;
 }
 .max-w-\[150px\] {
   max-width: 150px;
@@ -1070,9 +1070,6 @@ video {
 .border-b-3 {
   border-bottom-width: 3px;
 }
-.border-b-6 {
-  border-bottom-width: 6px;
-}
 .border-r-3 {
   border-right-width: 3px;
 }
@@ -1081,9 +1078,6 @@ video {
 }
 .border-dashed {
   border-style: dashed;
-}
-.border-dotted {
-  border-style: dotted;
 }
 .border-tint1 {
   --tw-border-opacity: 1;
@@ -1411,20 +1405,6 @@ video {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.placeholder-tint1::-moz-placeholder {
-  --tw-placeholder-opacity: 1;
-  color: rgba(5, 60, 150, var(--tw-placeholder-opacity));
-}
-.placeholder-tint1::placeholder {
-  --tw-placeholder-opacity: 1;
-  color: rgba(5, 60, 150, var(--tw-placeholder-opacity));
-}
-.placeholder-opacity-50::-moz-placeholder {
-  --tw-placeholder-opacity: 0.5;
-}
-.placeholder-opacity-50::placeholder {
-  --tw-placeholder-opacity: 0.5;
-}
 .opacity-0 {
   opacity: 0;
 }
@@ -1474,9 +1454,6 @@ video {
 }
 .duration-300 {
   transition-duration: 300ms;
-}
-.duration-500 {
-  transition-duration: 500ms;
 }
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1844,7 +1821,7 @@ img {
 }
 @font-face {
   font-family: 'font-1';
-  src: url('belanusa.woff') format('woff');
+  src: url('belanusa-fixed.woff2') format('woff2');
   font-display: block;
 }
 @font-face {
@@ -2112,6 +2089,19 @@ p:last-child {
   .article h3 {
     font-size: 16px;
   }
+}
+.article ol {
+  margin-bottom: 45px;
+  padding-left: 15px;
+}
+@media (min-width: 900px) {
+  .article ol {
+    padding-left: 20px;
+  }
+}
+.article ol li {
+  margin-bottom: 15px;
+  list-style-type: decimal;
 }
 #product-thumb-nav .is-active {
   border-width: 1px;
@@ -2858,10 +2848,6 @@ p:last-child {
 
   .md\:pb-20 {
     padding-bottom: 100px;
-  }
-
-  .md\:pb-7 {
-    padding-bottom: 35px;
   }
 
   .md\:pb-8 {
