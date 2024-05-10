@@ -2185,6 +2185,154 @@ p:last-child {
   background-clip: border-box;
   box-shadow: 0 0 0 3px #fff;
 }
+.rc-widget {
+  padding: 0 !important;
+}
+.rc-widget {
+  margin-bottom: 30px;
+}
+.rc-template__radio {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+}
+.rc-radio {
+  align-self: flex-start;
+}
+.rc-template__radio label {
+  --tw-text-opacity: 1 !important;
+  color: rgba(5, 60, 150, var(--tw-text-opacity)) !important;
+  font-size: 13px !important;
+}
+@media (min-width: 375px) {
+  .rc-template__radio label {
+    font-size: calc(13px + 2 * (100vw - 375px) / 1025) !important;
+  }
+}
+@media (min-width: 1400px) {
+  .rc-template__radio label {
+    font-size: 15px !important;
+  }
+}
+.rc-radio {
+  margin-bottom: 20px !important;
+  flex: 1 1 0% !important;
+  border-radius: 40px !important;
+  border-width: 3px !important;
+  --tw-border-opacity: 1 !important;
+  border-color: rgba(5, 60, 150, var(--tw-border-opacity)) !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+}
+.rc-radio__input {
+  border-radius: 40px;
+  border-width: 3px;
+  --tw-border-opacity: 1;
+  border-color: rgba(5, 60, 150, var(--tw-border-opacity));
+  font-size: 13px;
+}
+@media (min-width: 375px) {
+  .rc-radio__input {
+    font-size: calc(13px + 1 * (100vw - 375px) / 1025);
+  }
+}
+@media (min-width: 1400px) {
+  .rc-radio__input {
+    font-size: 14px;
+  }
+}
+.rc-radio__input {
+  width: 22px !important;
+  height: 22px !important;
+}
+.rc-radio--active {
+  background: #053c96 !important;
+}
+.rc-radio--active .rc-radio__label {
+  color: #fdf9e8 !important;
+}
+.rc-radio--active .rc-radio__input {
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(253, 249, 232, var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(253, 249, 232, var(--tw-bg-opacity));
+  box-shadow: inset 0 0 0 3px #053c96;
+}
+.rc-radio__label {
+  margin-left: 0px !important;
+}
+.rc-radio__label {
+  padding-right: 10px;
+}
+.rc-selling-plans {
+  background: none !important;
+  padding-left: 0 !important;
+}
+.rc-selling-plans-dropdown__select {
+  border-radius: 40px !important;
+  border-width: 3px !important;
+  --tw-border-opacity: 1 !important;
+  border-color: rgba(5, 60, 150, var(--tw-border-opacity)) !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgba(253, 249, 232, var(--tw-bg-opacity)) !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  padding-left: 25px !important;
+  padding-right: 30px !important;
+  font-size: 13px !important;
+}
+@media (min-width: 375px) {
+  .rc-selling-plans-dropdown__select {
+    font-size: calc(13px + 1 * (100vw - 375px) / 1025) !important;
+  }
+}
+@media (min-width: 1400px) {
+  .rc-selling-plans-dropdown__select {
+    font-size: 14px !important;
+  }
+}
+.rc-selling-plans-dropdown__select {
+  position: relative !important;
+}
+.rc-selling-plans-dropdown__select {
+  background: url('down-arrow.svg') no-repeat right 10px center;
+  align-self: flex-start;
+}
+.rc-tooltip__content {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgba(183, 25, 35, var(--tw-bg-opacity)) !important;
+}
+.rc-tooltip .tooltip .arrow:before {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgba(183, 25, 35, var(--tw-bg-opacity)) !important;
+}
+.rc-tooltip .arrow.bottom:after {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgba(183, 25, 35, var(--tw-bg-opacity)) !important;
+}
+.rc-tooltip .arrow.bottom:before {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgba(183, 25, 35, var(--tw-bg-opacity)) !important;
+}
+.rc-subscription-details__button {
+  padding-top: 30px !important;
+  --tw-text-opacity: 1 !important;
+  color: rgba(5, 60, 150, var(--tw-text-opacity)) !important;
+  font-size: 13px !important;
+}
+@media (min-width: 375px) {
+  .rc-subscription-details__button {
+    font-size: calc(13px + 1 * (100vw - 375px) / 1025) !important;
+  }
+}
+@media (min-width: 1400px) {
+  .rc-subscription-details__button {
+    font-size: 14px !important;
+  }
+}
 .hover\:border-tint1:hover {
   --tw-border-opacity: 1;
   border-color: rgba(5, 60, 150, var(--tw-border-opacity));
