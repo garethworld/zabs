@@ -17,13 +17,15 @@
           <span class='block mt-1 text-tint3 text-3-fluid'>{{ item.variant.title }}</span>
         {%- endunless %}
 
-        {% if item.selling_plan_allocation %}
-          {{ item.line_price | divided_by: item.quantity | money -}}
-          <br>
-          <span class='text-1-fluid'>{{ item.selling_plan_allocation.selling_plan.name }} Subscription</span>
-        {% else %}
-          <span class='hidden mt-6 md:block text-tint1 text-6-fluid'> {{ item.variant.price | money }}</span>
-        {% endif %}
+        <div class='pt-2'>
+          {% if item.selling_plan_allocation %}
+            {{ item.line_price | divided_by: item.quantity | money -}}
+            <span class='block text-1-fluid'>{{ item.selling_plan_allocation.selling_plan.name }} Subscription</span>
+            {{ item.selling_plan_allocation.selling_plan.name }}
+          {% else %}
+            <span class='hidden mt-6 md:block text-tint1 text-6-fluid'> {{ item.variant.price | money }}</span>
+          {% endif %}
+        </div>
       </a>
     </div>
   </div>
