@@ -19,10 +19,12 @@
 
         <div class='pt-2'>
           {% if item.selling_plan_allocation %}
-            {{ item.line_price | divided_by: item.quantity | money -}}
+            <span class='hidden mt-6 md:block text-tint1 text-4-fluid'>
+              {{ item.line_price | divided_by: item.quantity | money -}}
+            </span>
             <span class='block text-1-fluid'>{{ item.selling_plan_allocation.selling_plan.name }} Subscription</span>
           {% else %}
-            <span class='hidden mt-6 md:block text-tint1 text-6-fluid'> {{ item.variant.price | money }}</span>
+            <span class='hidden mt-6 md:block text-tint1 text-4-fluid'> {{ item.variant.price | money }}</span>
           {% endif %}
         </div>
       </a>
