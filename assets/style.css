@@ -1329,20 +1329,8 @@ video {
 .pt-\[16px\] {
   padding-top: 16px;
 }
-.pt-\[4px\] {
-  padding-top: 4px;
-}
-.pt-\[9px\] {
-  padding-top: 9px;
-}
-.pt-\[8px\] {
-  padding-top: 8px;
-}
 .pt-\[7px\] {
   padding-top: 7px;
-}
-.pt-\[1px\] {
-  padding-top: 1px;
 }
 .text-left {
   text-align: left;
@@ -2360,6 +2348,23 @@ p:last-child {
 }
 .rc-radio:last-of-type {
   margin-bottom: 0 !important;
+}
+div#rc_login {
+  font-size: 13px !important;
+}
+@media (min-width: 375px) {
+  div#rc_login {
+    font-size: calc(13px + 1 * (100vw - 375px) / 1025) !important;
+  }
+}
+@media (min-width: 1400px) {
+  div#rc_login {
+    font-size: 14px !important;
+  }
+}
+div#rc_login a:hover {
+  --tw-text-opacity: 1 !important;
+  color: rgba(183, 25, 35, var(--tw-text-opacity)) !important;
 }
 .hover\:border-tint1:hover {
   --tw-border-opacity: 1;

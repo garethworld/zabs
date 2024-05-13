@@ -17676,6 +17676,38 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
     };
   };
 
+  // src/js/login.js
+  window.login = function () {
+    return {
+      showReset(e) {
+        document
+          .getElementById('RecoverPasswordForm')
+          .classList.remove('hidden');
+        document.getElementById('CustomerLoginForm').classList.add('hidden');
+      },
+      hideReset(e) {
+        document.getElementById('RecoverPasswordForm').classList.add('hidden');
+        document.getElementById('CustomerLoginForm').classList.remove('hidden');
+      },
+    };
+  };
+
+  // src/js/password.js
+  window.password = function () {
+    return {
+      toggle(e) {
+        var x = document.getElementById('CustomerPassword');
+        if (x.type === 'password') {
+          x.type = 'text';
+          e.target.innerHTML = 'Hide password';
+        } else {
+          x.type = 'password';
+          e.target.innerHTML = 'Show password';
+        }
+      },
+    };
+  };
+
   // src/js/main.js
   window.Alpine = module_default;
   module_default.plugin(module_default2);

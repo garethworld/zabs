@@ -1,8 +1,12 @@
-<section class="flex flex-wrap mb-12 mt-md">
+<section class='flex flex-wrap bg-tint2'>
+  <div class='mx-auto max-w-form pb-7 md:pb-15 {% render 'c-container' %}'>
 
-  <div class="w-full mx-auto max-w-forms px-7 " x-data="{ show: false }">
+  <div  x-data="{ show: false }">
       
-<h1 class="mb-4 text-4-fluid leading-2 md:mb-6">Sign in</h1>
+
+    <h1 class='{% render 'type-page-header' %} mb-10'>Sign in</h1>
+
+
 
       <div class="hidden" id="ResetSuccess">
         {{ 'customer.recover_password.success' | t }}
@@ -20,28 +24,27 @@
 
 
   <div class="mt-2 mb-6 ">
-          <label  class="{% render 'c-label' %}" for="CustomerEmail">Email</label>
-          <input type="email" name="customer[email]" id="CustomerEmail" class="{% render 'c-input' %} {% if form.errors contains 'email' %}border-tint3{% endif %}" autocorrect="off" autocapitalize="off" autofocus>
+
+          <input type="email" name="customer[email]" placeholder="Email" id="CustomerEmail" class="{% render 'form-txt' %} {% if form.errors contains 'email' %}border-tint3{% endif %}" autocorrect="off" autocapitalize="off" autofocus>
 
           </div>
           {% if form.password_needed %}
 
 
         <div class="flex flex-wrap mb-6">
-            <label class="w-full {% render 'c-label' %}" for="CustomerPassword">Password</label>
-            <input type="password" value="" name="customer[password]" id="CustomerPassword" class="w-full {% render 'c-input' %} mb-0 {% if form.errors contains 'password' %} border-tint3{% endif %}">
+            <input type="password" placeholder="password" value="" name="customer[password]" id="CustomerPassword" class="w-full {% render 'form-txt' %} mb-0 {% if form.errors contains 'password' %} border-tint3{% endif %}">
           {% endif %}
            
           {% if form.password_needed %}
-              <a  x-data="login()" @click="showReset" class="inline-block mt-2 text-1-fluid hover:text-tint1 text-tint5" href="#recover" id="RecoverPassword">Forgot password?</a>
+              <a  x-data="login()" @click="showReset" class="block mt-2 text-1-fluid hover:text-tint1 hover:text-tint3 text-tint5" href="#recover" id="RecoverPassword">Forgot password?</a>
             {% endif %}
 
 
-              <a  x-data="password()" @click="toggle" class="inline-block mt-2 ml-auto cursor-pointer select-none text-1-fluid hover:text-tint1 text-tint5">Show password</a>
+              <a  x-data="password()" @click="toggle" class="inline-block text-right w-[150px] mt-2 ml-auto cursor-pointer select-none hover:text-tint3 text-1-fluid hover:text-tint1 text-tint5">Show password</a>
 </div>
 
           <div class="flex w-full">
-            <input type="submit" class="ml-auto transition-colors duration-300 cursor-pointer hover:text-tint3 text-4-fluid leading-2 text-tint1" value="Sign in">
+            <input type="submit" class="mx-auto {% render 'c-btn' %} bg-tint1 text-tint2 hover:bg-tint3" value="Sign in">
 
             
 </div>
@@ -78,14 +81,13 @@
               <span class="hide reset-password-success"></span>
             {% endif %}
 
-            <label class="{% render 'c-label' %}" for="RecoverEmail">Your email</label>
-            <input class="{% render 'c-input' %}"  type="email" value="" name="email" id="RecoverEmail" class="input-full" autocorrect="off" autocapitalize="off">
+            <input class="{% render 'form-txt' %}" placeholder="Email"  type="email" value="" name="email" id="RecoverEmail" class="input-full" autocorrect="off" autocapitalize="off">
 
 
 
               <div class="flex flex-wrap w-full mt-2">
                 <div class="w-full mb-3"><a  x-data="login()" @click="hideReset" class="cursor-pointer text-tint5 hover:text-tint3">Cancel</a></div>
-                <input type="submit" class="ml-auto transition-colors duration-300 cursor-pointer hover:text-tint3 text-4-fluid leading-2 text-tint1" value="Send">
+                <input type="submit" class="mx-auto {% render 'c-btn' %} bg-tint1 text-tint2 hover:bg-tint3" value="Send">
               </p>
 
            
@@ -114,5 +116,7 @@
   </div>  
 </div>
 
+</div>
+  <div class='blue-dec dec-border '></div>
 </div>
 </section>

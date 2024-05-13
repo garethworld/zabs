@@ -219,7 +219,7 @@ p:last-child {
 }
 
 .article ol {
-  @apply mb-9 pl-3 md:pl-4;
+  @apply pl-3 mb-9 md:pl-4;
 }
 
 .article ol li {
@@ -391,4 +391,12 @@ p:last-child {
 
 .rc-radio:last-of-type {
   margin-bottom: 0 !important;
+}
+
+div#rc_login {
+  @apply text-1-fluid !important;
+}
+
+div#rc_login a:hover {
+  @apply text-tint3 !important;
 }

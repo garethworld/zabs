@@ -17,3 +17,5 @@ import './sauces.js';
 import './logos.js';
 import './hero.js';
 import './newsletter.js';
+import './login.js';
+import './password.js';
