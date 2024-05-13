@@ -2,6 +2,7 @@
   "sections": {
     "full_width_img_9hhKWA": {
       "type": "full-width-img",
+      "disabled": true,
       "settings": {
         "fwi-img": "shopify:\/\/shop_images\/hero.jpg",
         "fwi-header": "Zab’s Datil pepper Hot sauce",
@@ -97,8 +98,7 @@
     "note_Y3E4Bw": {
       "type": "note",
       "settings": {
-        "no-image": "shopify:\/\/shop_images\/note.svg",
-        "no-alt": ""
+        "no-image": "shopify:\/\/shop_images\/note.svg"
       }
     },
     "as_seen_TkjM7L": {
@@ -231,6 +231,42 @@
     },
     "insta_H3a3zr": {
       "type": "insta",
+      "blocks": {
+        "gallery_4rPngz": {
+          "type": "gallery",
+          "settings": {
+            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.35.31.png",
+            "in-alt": "Instagram image"
+          }
+        },
+        "gallery_mPF4YX": {
+          "type": "gallery",
+          "settings": {
+            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.35.11.png",
+            "in-alt": "Instagram image"
+          }
+        },
+        "gallery_qUHdYX": {
+          "type": "gallery",
+          "settings": {
+            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.34.58.png",
+            "in-alt": "Instagram image"
+          }
+        },
+        "gallery_W4jYpY": {
+          "type": "gallery",
+          "settings": {
+            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.34.40.png",
+            "in-alt": "Instagram image"
+          }
+        }
+      },
+      "block_order": [
+        "gallery_4rPngz",
+        "gallery_mPF4YX",
+        "gallery_qUHdYX",
+        "gallery_W4jYpY"
+      ],
       "settings": {
         "in-title": "Zab’s Datil pepper dispatch",
         "in-btn-text": "@zabs",
