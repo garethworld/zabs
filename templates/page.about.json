@@ -38,6 +38,26 @@
     },
     "insta_nCCtcQ": {
       "type": "insta",
+      "blocks": {
+        "gallery_qxfYzm": {
+          "type": "gallery",
+          "settings": {
+            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.34.40.png",
+            "in-alt": "Instagram image"
+          }
+        },
+        "gallery_Y4BpAy": {
+          "type": "gallery",
+          "settings": {
+            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.34.58.png",
+            "in-alt": "Instagram image"
+          }
+        }
+      },
+      "block_order": [
+        "gallery_qxfYzm",
+        "gallery_Y4BpAy"
+      ],
       "settings": {
         "in-title": "Zab’s Datil pepper dispatch",
         "in-btn-text": "@zabs",
