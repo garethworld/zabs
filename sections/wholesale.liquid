@@ -28,8 +28,7 @@
 
     <div class='flex flex-wrap'>
       <div class='w-10/12 py-8 mx-auto leading-5 text-center text-1-fluid text-tint2 '>
-        we offer bottles for tabletops, gallons for back of house, “single dabs” to-go, and more. We work with
-        distributors and directly with restaurants. Please contact us below for more information.
+        {{ section.settings['restaurants-txt'] }}
       </div>
     </div>
 
@@ -37,3 +36,9 @@
   </div>
   <div class='blue-dec-alt dec-border '></div>
 </section>
+
+{% schema %}
+{ "name": "Wholesale", "max_blocks": 1, "blocks": [ { "name": "Form", "type": "form", "settings": [ { "id":
+"restaurants-txt", "type": "textarea", "label": "Restaurants text", "default": "We offer bottles for tabletops, gallons
+for back of house, “single dabs” to-go, and more. We work with distributors and directly with restaurants. Please
+contact us below for more information." } ] } ] }
