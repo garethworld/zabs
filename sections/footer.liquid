@@ -11,7 +11,7 @@
         </div>
 
         <div class='hidden w-full leading-6 font-1 text-15-fluid md:block'>
-          <p>For new product releases, merchandise, restaurant partnerships, and more info</p>
+          {{ section.settings['ne-text'] }}
         </div>
 
         <div class='w-full '>
@@ -46,3 +46,16 @@
     </div>
   </div>
 </footer>
+{% schema %}
+{
+  "name": "Newsletter signup text",
+  "settings": [
+    {
+      "id": "ne-text",
+      "type": "textarea",
+      "label": "Text",
+      "default": "For new product releases, merchandise, restaurant partnerships, and more info"
+    }
+  ]
+}
+{% endschema %}
