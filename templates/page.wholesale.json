@@ -3,6 +3,7 @@
     "wholesale": {
       "type": "wholesale",
       "settings": {
+        "rest-text": "We offer bottles for tabletops, gallons for back of house, \n“single dabs” to-go, and more.  We work with distributors and directly with restaurants.  Please contact us below for more information."
       }
     }
   },
