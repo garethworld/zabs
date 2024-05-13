@@ -17,6 +17,7 @@
         <div class='w-full '>
           <button
             x-data='newsletter()'
+            data-id='{{ section.settings['no-id'] }}'
             @click='open'
             class=' mx-auto bg-tint3 text-tint2 hover:bg-tint1 hover:text-tint2 {% render 'c-btn' %}'
           >
@@ -55,6 +56,13 @@
       "type": "textarea",
       "label": "Text",
       "default": "For new product releases, merchandise, restaurant partnerships, and more info"
+    },
+    {
+      "id": "no-id",
+      "type": "text",
+      "label": "klaviyo form id",
+      "info": "Used by the sign up button",
+      "default": "TA2Bfj"
     }
   ]
 }
