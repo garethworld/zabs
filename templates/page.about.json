@@ -52,11 +52,27 @@
             "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.34.58.png",
             "in-alt": "Instagram image"
           }
+        },
+        "gallery_yGUbBP": {
+          "type": "gallery",
+          "settings": {
+            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.35.11.png",
+            "in-alt": "Instagram image"
+          }
+        },
+        "gallery_tagtek": {
+          "type": "gallery",
+          "settings": {
+            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.35.31.png",
+            "in-alt": "Instagram image"
+          }
         }
       },
       "block_order": [
         "gallery_qxfYzm",
-        "gallery_Y4BpAy"
+        "gallery_Y4BpAy",
+        "gallery_yGUbBP",
+        "gallery_tagtek"
       ],
       "settings": {
         "in-title": "Zab’s Datil pepper dispatch",
