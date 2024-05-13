@@ -1,9 +1,9 @@
 <footer class='mt-auto text-tint2'>
   <div class='flex flex-wrap pt-12 bg-tint2 {% render 'c-container' %} '>
     <div class='mx-auto h-full  w-full  md:max-w-[800px] relative'>
-      <img class='w-full md:hidden' src='{{ 'matchbox-mobile.png' | asset_url }}' alt='Matchbox'>
+      <img class='w-full md:hidden' src='{{ 'matchbox-mobile.png' | asset_url }}' alt='Matchbox' loading='lazy'>
 
-      <img class='hidden w-full md:block' src='{{ 'matchbox-desktop.png' | asset_url }}' alt='Matchbox'>
+      <img class='hidden w-full md:block' src='{{ 'matchbox-desktop.png' | asset_url }}' alt='Matchbox' loading='lazy'>
 
       <div class='absolute left-[12vw] matchbox pb-[8vw] px-4 md:px-0 md:left-[280px] pt-4 md:pt-12 top-0   md:pb-12  flex flex-wrap h-full text-tint1 text-center w-full md:w-[420px]'>
         <div class='w-full'>
@@ -31,7 +31,11 @@
   <div class='bg-tint2 rounded-b-2 text-tint1   {% render 'c-container' %} py-6 md:py-12 flex flex-wrap items-center'>
     <div>
       <a href='{{ shop.url }}'
-        ><img class='w-[80px] md:w-[190px]' src='{{ 'footer-logo.static.svg' | asset_url }}' alt="Zab's hot sauce"
+        ><img
+          class='w-[80px] md:w-[190px]'
+          src='{{ 'footer-logo.static.svg' | asset_url }}'
+          alt="Zab's hot sauce"
+          loading='lazy'
       ></a>
     </div>
     <div class='grid grid-cols-2 mt-6 ml-auto md:grid-cols-3 md:mt-0 md:w-1/2 gap-x-3'>

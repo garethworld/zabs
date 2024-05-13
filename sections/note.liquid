@@ -6,7 +6,7 @@ Copy code
       
       {%- if section.settings['no-image'] != blank -%}
         {% assign img = section.settings['no-image'] %}
-        <img  class="w-full" src='{{ img |  img_url }}' alt="{{ section.settings['no-alt']  }}"  >
+        <img  class="w-full" src='{{ img |  img_url }}' alt="{{ section.settings['no-alt']  }}"  loading='lazy' >
       {%- endif -%}
 
 

@@ -590,6 +590,9 @@ video {
 .h-\[180px\] {
   height: 180px;
 }
+.h-\[75dvh\] {
+  height: 75dvh;
+}
 .h-\[85px\] {
   height: 85px;
 }
