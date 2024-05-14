@@ -2152,15 +2152,13 @@ p:last-child {
   width: calc(100% - 14vw);
 }
 .txt a {
+  --tw-text-opacity: 1;
+  color: rgba(183, 25, 35, var(--tw-text-opacity));
   text-decoration-line: underline;
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke;
   transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.txt a:hover {
-  --tw-text-opacity: 1;
-  color: rgba(183, 25, 35, var(--tw-text-opacity));
 }
 @media (min-width: 900px) {
   .dec-border {
