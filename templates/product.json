@@ -1,30 +1,19 @@
 {
   "sections": {
-    "1715183593e7892b12": {
-      "type": "apps",
-      "blocks": {
-        "recharge_subscriptions_subscription_widget_w4X6kH": {
-          "type": "shopify:\/\/apps\/recharge-subscriptions\/blocks\/subscription-widget\/371eed76-0b44-4869-9813-730372ea378e",
-          "settings": {
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "recharge_subscriptions_subscription_widget_w4X6kH"
-      ],
-      "settings": {
-      }
-    },
     "details": {
       "type": "product-details",
       "settings": {
         "shipping": "<p>Default shipping information goes here<\/p>"
       }
+    },
+    "1715183593e7892b12": {
+      "type": "apps",
+      "settings": {
+      }
     }
   },
   "order": [
-    "1715183593e7892b12",
-    "details"
+    "details",
+    "1715183593e7892b12"
   ]
 }
