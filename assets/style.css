@@ -1094,6 +1094,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgba(183, 25, 35, var(--tw-border-opacity));
 }
+.border-b-tint3 {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgba(183, 25, 35, var(--tw-border-opacity));
+}
 .bg-none {
   background-color: transparent;
 }

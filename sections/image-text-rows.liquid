@@ -16,7 +16,7 @@
             {{ block.settings['itr-text'] }}
 
             {% if block.settings['itr-link'] != blank %}
-              <a href='{{ block.settings['itr-link'] }}' class='mt-4 font-2 text-2-fluid">
+              <a href='{{ block.settings['itr-link'] }}' class='mt-4 uppercase font-2 text-tint3 border-b-3 border-tint3 text-2-fluid">
                 {{ block.settings['itr-link-text'] }}
               </a>
             {% endif %}
@@ -66,12 +66,12 @@
         {
           "id": "itr-link",
           "type": "url",
-          "label": "Link"
+          "label": "CTA link"
         },
         {
           "id": "itr-link-text",
           "type": "text",
-          "label": "Link text"
+          "label": "CTA link text"
         }
       ]
     }
