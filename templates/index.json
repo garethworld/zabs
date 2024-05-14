@@ -25,8 +25,9 @@
         "gallery_n3Uxap": {
           "type": "gallery",
           "settings": {
-            "tes-text": "<p>LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE <strong>Printing<\/strong> AND TYPESETTING INDUSTRY. LOREM IPSUM HAS BEEN THE INDUSTRY'S STANDARD DUMMY TEXT EVER SINCE THE 1500<\/p>",
-            "tes-name": "Jon Smith"
+            "tes-text": "<p>ZAB'S MIGHT BE THE <strong>hottest<\/strong> HOT SAUCE IN TOWN<\/p>",
+            "tes-image": "shopify:\/\/shop_images\/eater-white.svg",
+            "tes-name": "Karen Palmer"
           }
         }
       },
