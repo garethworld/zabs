@@ -401,3 +401,7 @@ div#rc_login {
 div#rc_login a:hover {
   @apply text-tint3 !important;
 }
+
+.no-underline {
+  text-decoration: none !important;
+}
