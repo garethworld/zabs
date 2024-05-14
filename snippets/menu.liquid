@@ -1,6 +1,6 @@
 <nav class='relative z-20 '>
   <ul class='flex menu'>
-    {% for link in linklists['main-menu'].links %}
+    {% for link in linklists['top-left'].links %}
       {% assign is_active = false %}
       {% if link.url == request.path %}
         {% assign is_active = true %}
