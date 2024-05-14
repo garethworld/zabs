@@ -216,7 +216,7 @@ p:last-child {
 }
 .article h3,
 .article h4 {
-  @apply mb-1 text-3-fluid leading-2 font-1;
+  @apply mb-1 leading-5 text-3-fluid font-1;
 }
 
 .article ol {
