@@ -1878,19 +1878,22 @@ p {
 p:last-child {
   margin-bottom: 0;
 }
-.article h3 {
+.article h3,
+.article h4 {
   font-family: font-1, Arial, sans-serif;
   font-size: 13px;
   line-height: 110%;
   margin-bottom: 5px;
 }
 @media (min-width: 375px) {
-  .article h3 {
+  .article h3,
+  .article h4 {
     font-size: calc(11.90244px + 0.29268vw);
   }
 }
 @media (min-width: 1400px) {
-  .article h3 {
+  .article h3,
+  .article h4 {
     font-size: 16px;
   }
 }
@@ -2408,9 +2411,6 @@ div#rc_login a:hover {
   }
   .md\:w-\[200px\] {
     width: 200px;
-  }
-  .md\:w-\[215px\] {
-    width: 215px;
   }
   .md\:w-\[240px\] {
     width: 240px;
