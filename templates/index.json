@@ -25,7 +25,7 @@
         "gallery_n3Uxap": {
           "type": "gallery",
           "settings": {
-            "tes-text": "<p>ZAB'S MIGHT BE THE <strong>hottest<\/strong> HOT SAUCE IN TOWN<\/p>",
+            "tes-text": "<p>ZAB'S MIGHT BE THE <strong>Hottest<\/strong> HOT SAUCE IN TOWN<\/p>",
             "tes-image": "shopify:\/\/shop_images\/eater-white.svg",
             "tes-name": "Karen Palmer"
           }
@@ -58,9 +58,9 @@
             "sg-product": "original-large",
             "sg-text": "<p>Zab’s Original is our twist on a classic vinegar based hot sauce. We captured the essence of the Datil Pepper - naturally Sweet Heat & signature Slow Burn - combining hand picked peppers with organic carrots, onions, garlic, and a touch of spices.<\/p>",
             "sg-leftimg": "shopify:\/\/shop_images\/s1-left2.png",
-            "sg-middleimg": "shopify:\/\/shop_images\/bottle1.png",
+            "sg-middleimg": "shopify:\/\/shop_images\/Zabs_Original_Bottle_Illustration.png",
             "sg-rightimg": "shopify:\/\/shop_images\/s1-right.png",
-            "sg-mobimg": "shopify:\/\/shop_images\/Zabs_Original_Uses_Mobile_Cropped.png"
+            "sg-mobimg": "shopify:\/\/shop_images\/Zabs_Original_Uses_Mobile_Cropped_419322d0-41dc-4d2b-ad5d-f8731091bafa.png"
           }
         },
         "gallery_3gP7t4": {
@@ -235,28 +235,28 @@
         "gallery_4rPngz": {
           "type": "gallery",
           "settings": {
-            "in-img": "shopify:\/\/shop_images\/insta2.jpg",
+            "in-img": "shopify:\/\/shop_images\/insta1.png",
             "in-alt": "Instagram image"
           }
         },
         "gallery_mPF4YX": {
           "type": "gallery",
           "settings": {
-            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.35.11.png",
+            "in-img": "shopify:\/\/shop_images\/insta2.png",
             "in-alt": "Instagram image"
           }
         },
         "gallery_qUHdYX": {
           "type": "gallery",
           "settings": {
-            "in-img": "shopify:\/\/shop_images\/insta3.jpg",
+            "in-img": "shopify:\/\/shop_images\/insta3.png",
             "in-alt": "Instagram image"
           }
         },
         "gallery_W4jYpY": {
           "type": "gallery",
           "settings": {
-            "in-img": "shopify:\/\/shop_images\/insta1.jpg",
+            "in-img": "shopify:\/\/shop_images\/insta4.png",
             "in-alt": "Instagram image"
           }
         }
