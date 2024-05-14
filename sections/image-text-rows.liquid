@@ -14,6 +14,12 @@
           </div>
           <div class='leading-5 txt article'>
             {{ block.settings['itr-text'] }}
+
+            {% if block.settings['itr-link'] != blank %}
+              <a href='{{ block.settings['itr-link'] }}' class='mt-4 font-2 text-2-fluid">
+                {{ block.settings['itr-link-text'] }}
+              </a>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -56,6 +62,16 @@
           "id": "itr-text",
           "type": "richtext",
           "label": "Text"
+        },
+        {
+          "id": "itr-link",
+          "type": "url",
+          "label": "Link"
+        },
+        {
+          "id": "itr-link-text",
+          "type": "text",
+          "label": "Link text"
         }
       ]
     }
