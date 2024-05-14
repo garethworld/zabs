@@ -1598,6 +1598,19 @@ video {
     font-size: 41px;
   }
 }
+.text-10-fluid {
+  font-size: 43px;
+}
+@media (min-width: 375px) {
+  .text-10-fluid {
+    font-size: calc(43px + 0 * (100vw - 375px) / 1025);
+  }
+}
+@media (min-width: 1400px) {
+  .text-10-fluid {
+    font-size: 43px;
+  }
+}
 .text-12-fluid {
   font-size: 29px;
 }
