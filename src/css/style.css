@@ -266,7 +266,7 @@ p:last-child {
 }
 
 .txt a {
-  @apply underline transition-colors duration-150 ease-in-out text-tint3;
+  @apply underline transition-colors duration-150 ease-in-out text-tint3 hover:text-tint1;
 }
 
 @screen md {

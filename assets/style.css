@@ -2162,6 +2162,10 @@ p:last-child {
   transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.txt a:hover {
+  --tw-text-opacity: 1;
+  color: rgba(5, 60, 150, var(--tw-text-opacity));
+}
 @media (min-width: 900px) {
   .dec-border {
     background-size: auto 100%;
