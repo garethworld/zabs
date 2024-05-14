@@ -11,7 +11,7 @@
     id='AddToCartForm'
   >
     <div id='recharge-container'></div>
-    {% if product.available %}{% include 'subscription-product' %}{% endif %}
+    {% if product.available %}{% render 'subscription-product' %}{% endif %}
 
     {% render 'product-variants' %}
 
