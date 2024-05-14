@@ -235,7 +235,7 @@
         "gallery_4rPngz": {
           "type": "gallery",
           "settings": {
-            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.35.31.png",
+            "in-img": "shopify:\/\/shop_images\/insta2.jpg",
             "in-alt": "Instagram image"
           }
         },
@@ -249,14 +249,14 @@
         "gallery_qUHdYX": {
           "type": "gallery",
           "settings": {
-            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.34.58.png",
+            "in-img": "shopify:\/\/shop_images\/insta3.jpg",
             "in-alt": "Instagram image"
           }
         },
         "gallery_W4jYpY": {
           "type": "gallery",
           "settings": {
-            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.34.40.png",
+            "in-img": "shopify:\/\/shop_images\/insta1.jpg",
             "in-alt": "Instagram image"
           }
         }
