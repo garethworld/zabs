@@ -235,28 +235,28 @@
         "gallery_4rPngz": {
           "type": "gallery",
           "settings": {
-            "in-img": "shopify:\/\/shop_images\/insta2.jpg",
+            "in-img": "shopify:\/\/shop_images\/insta1.png",
             "in-alt": "Instagram image"
           }
         },
         "gallery_mPF4YX": {
           "type": "gallery",
           "settings": {
-            "in-img": "shopify:\/\/shop_images\/Screenshot_2024-04-29_at_19.35.11.png",
+            "in-img": "shopify:\/\/shop_images\/insta2.png",
             "in-alt": "Instagram image"
           }
         },
         "gallery_qUHdYX": {
           "type": "gallery",
           "settings": {
-            "in-img": "shopify:\/\/shop_images\/insta3.jpg",
+            "in-img": "shopify:\/\/shop_images\/insta3.png",
             "in-alt": "Instagram image"
           }
         },
         "gallery_W4jYpY": {
           "type": "gallery",
           "settings": {
-            "in-img": "shopify:\/\/shop_images\/insta1.jpg",
+            "in-img": "shopify:\/\/shop_images\/insta4.png",
             "in-alt": "Instagram image"
           }
         }
