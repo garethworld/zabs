@@ -1,4 +1,4 @@
-<input type='hidden' name='id' id='VariantId' value='{{ product.variants.first.id }}'>
+<input type='hidden' name='id' id='VariantId' value='{{ product.variants.first.id }}' data-productid='{{product.id}}'>
 
 {% if product.variants.size > 1 %}
   {% for option in product.options %}

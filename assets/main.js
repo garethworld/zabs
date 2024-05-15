@@ -7001,11 +7001,7 @@ ${
       e = document.getElementById('compare-at-price'),
       i = document.getElementById('add-to-cart');
     return {
-      init() {
-        let n = document.querySelector('#RechargeWidget_8504682610932'),
-          s = document.getElementById('recharge-container');
-        n && s && s.appendChild(n);
-      },
+      init() {},
       setVariant(n) {
         n.preventDefault();
         let s = document.querySelector('.qty'),

@@ -21,8 +21,8 @@
             </div>
           </div>
           <div class='flex flex-wrap text-center uppercase'>
-            <div class='mx-auto'>
-              <ul class='flex flex-wrap '>
+            <div class='flex flex-col flex-wrap mx-auto '>
+              <ul class='flex flex-wrap mx-auto '>
                 {% assign heat_rating = product.metafields.custom.flavour_heat_rating.value.rating | floor %}
                 {% for i in (1..5) %}
                   {% assign opacity = '0.5' %}

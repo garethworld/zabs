@@ -10,8 +10,17 @@
     enctype='multipart/form-data'
     id='AddToCartForm'
   >
-    <div id='recharge-container'></div>
-    {% if product.available %}{% render 'subscription-product' %}{% endif %}
+    <!-- <div id='recharge-container'></div> -->
+
+    <!-- old recharge -->
+    <input name='properties[shipping_interval_frequency]' type='hidden' value='1'>
+    <input name='properties[shipping_interval_unit_type]' type='hidden' value='Days'>
+
+    <!-- old recharge -->
+
+    {% if product.available %}
+      {% render 'subscription-product' %}
+    {% endif %}
 
     {% render 'product-variants' %}
 

@@ -6,6 +6,7 @@ window.product = function () {
   var add = document.getElementById('add-to-cart');
   return {
     init() {
+      /*
       // move the recharge section to the recharge-container div
       const rechargeSection = document.querySelector(
         '#RechargeWidget_8504682610932',
@@ -15,6 +16,7 @@ window.product = function () {
       if (rechargeSection && rechargeContainer) {
         rechargeContainer.appendChild(rechargeSection);
       }
+      */
     },
     setVariant(e) {
       e.preventDefault();

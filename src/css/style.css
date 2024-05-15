@@ -324,7 +324,8 @@ p:last-child {
 .rc-radio {
   @apply self-start w-full md:w-auto;
 }
-.rc-template__radio label {
+.rc-template__radio label,
+label.rc_label {
   @apply text-tint1 text-2-fluid !important;
 }
 .rc-radio {
@@ -404,4 +405,76 @@ div#rc_login a:hover {
 
 .no-underline {
   text-decoration: none !important;
+}
+
+/* recharge 1.0  */
+
+label.rc_label {
+  @apply text-tint1 text-2-fluid  py-2 !important;
+}
+
+.rc_block {
+  @apply border-tint1 border-3 rounded-[40px] mb-4  cursor-pointer items-center flex flex-wrap  px-5 w-full max-w-[400px] !important;
+}
+
+.rc_popup__block__content {
+  @apply bg-tint1 text-tint1 text-1-fluid !important;
+}
+
+.rc_block input.rc_radio {
+  @apply border-tint1 border-3 rounded-[40px] p-0 mr-2 !important;
+}
+
+.rc_block input.rc_radio {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.rc_block__type--active {
+  background: #053c96 !important;
+  color: #fdf9e8 !important;
+}
+
+.rc_block__type--active .rc_label {
+  @apply text-tint2 !important;
+}
+
+.rc_block__type--active input.rc_radio {
+  @apply bg-tint2 border-tint2 border-1 !important;
+  box-shadow: inset 0 0 0 3px #053c96 !important;
+}
+
+.rc_select {
+  @apply border-tint1 border-3 bg-tint2 rounded-[40px] pl-5 pr-6 text-1-fluid py-2 text-tint2 !important;
+}
+
+.rc_select {
+  position: relative !important;
+  background: url('down-arrow.svg') no-repeat right 10px center;
+  color: #053c96 !important;
+}
+
+.rc_block__type--active .rc_label .rc_select {
+  @apply text-tint1 !important;
+}
+
+.rc_block__type__options {
+  border: 0 !important;
+  width: 100% !important;
+}
+
+.div.rc_block__type {
+  border-radius: 0px !important;
+  padding: 0 !important;
+}
+
+.rc_radio_options {
+  display: flex;
+}
+
+div.rc_block {
+  white-space: wrap !important;
 }
