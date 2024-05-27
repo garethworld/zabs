@@ -9535,6 +9535,7 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ''}`,
         if (rechargeSection && rechargeContainer) {
           rechargeContainer.appendChild(rechargeSection);
         }
+        alert('product.js loaded');
       },
       setVariant(e) {
         e.preventDefault();

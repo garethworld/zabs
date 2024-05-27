@@ -15,6 +15,7 @@ window.product = function () {
       if (rechargeSection && rechargeContainer) {
         rechargeContainer.appendChild(rechargeSection);
       }
+      alert('product.js loaded');
     },
     setVariant(e) {
       e.preventDefault();
