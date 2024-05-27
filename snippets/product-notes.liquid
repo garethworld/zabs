@@ -9,7 +9,7 @@
             Flavour notes
           {% endif %}
         </h2>
-        <div class='grid md:grid-cols-2 gap-y-9'>
+        <div class='grid md:grid-cols-2 gap-y-9 md:gap-x-4'>
           <div class='flex flex-wrap text-center uppercase'>
             <img class='w-[75px] mx-auto block' src='{{ 'chili.static.svg' | asset_url }}' alt='chili'>
             <div class='flex flex-wrap w-full'>
@@ -41,7 +41,7 @@
               </ul>
               {% if product.metafields.custom.flavour_heat_note %}
                 <div class='flex flex-wrap w-full mt-6'>
-                  <div class='max-w-[500px] mx-auto leading-2'>
+                  <div class='max-w-[500px] mx-auto text-4-fluid leading-5'>
                     {{ product.metafields.custom.flavour_heat_note }}
                   </div>
                 </div>

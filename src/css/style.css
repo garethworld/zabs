@@ -478,3 +478,17 @@ label.rc_label {
 div.rc_block {
   white-space: wrap !important;
 }
+
+.stockist-result-name {
+  margin-top: 20px !important;
+  display: block !important;
+}
+
+.stockist-selected .stockist-result-distance {
+  margin-left: 20px !important;
+}
+
+#stockist-widget .stockist-list-result .stockist-result-distance {
+  width: auto !important;
+  @apply text-tint3 text-1-fluid mb-1;
+}

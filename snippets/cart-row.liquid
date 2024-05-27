@@ -18,8 +18,6 @@
         {%- endunless %}
 
         <div class='pt-2'>
-          {{ charge_interval_frequency }}
-
           {% if item.selling_plan_allocation %}
             <span class='hidden mt-6 md:block text-tint1 text-4-fluid'>
               {{ item.line_price | divided_by: item.quantity | money -}}

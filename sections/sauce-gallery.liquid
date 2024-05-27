@@ -16,11 +16,11 @@
         {% for block in section.blocks %}
           <div class='m-auto splide__slide'>
             <div class='flex flex-wrap w-full mx-auto cursor-drag md:w-10/12'>
-              <div class='flex flex-wrap w-full md:w-5/12'>
+              <div class='flex flex-wrap w-8/12 mx-auto md:mx-0 md:w-5/12'>
                 <div class='flex flex-wrap w-full '>
                   {%- if block.settings['sg-mobimg'] != blank -%}
                     <img
-                      class='w-full mb-10 md:hidden'
+                      class='w-full mb-5 md:hidden'
                       src='{{ block.settings['sg-mobimg'] | img_url: '1500x' }}'
                       alt='mobile image'
                       loading='lazy'
