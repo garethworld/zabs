@@ -1010,6 +1010,10 @@ video {
 .gap-y-9 {
   row-gap: 45px;
 }
+.gap-x-1 {
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(30px * (1 - var(--tw-space-y-reverse)));
