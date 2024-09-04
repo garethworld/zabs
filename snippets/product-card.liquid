@@ -32,26 +32,28 @@
         </div>
 
         <div class='pt-3 mx-auto mt-auto md:pt-6'>
+          <a href='{{ card_product.url }}' class='add {% render 'c-btn' %}'
+            ><span class='my-auto'>
+              {% if card_product.available == false %}
+                Sold out
+              {% else %}
+                Shop now
+              {% endif %}
+            </span></a
+          >
 
-          <a href="{{ card_product.url }}" class="add {% render 'c-btn' %}"><span class="my-auto">
-            {% if card_product.available == false %}
-              Sold out
-            {% else %}
-              Shop now
-            {% endif %}
-            </span></a>
-
-          <!--
           <form
             method='post'
-            action='/cart/add' data-productid='{{ product.id }}'
+            action='/cart/add'
+            data-productid='{{ product.id }}'
             data-productid='{{ product.id }}'
             id='add-to-cart-{{ card_product.handle }}-{{ collection.handle }}-{{ section.id }}'
           >
             <input
               type='hidden'
               class='hidden'
-              name='id' data-productid='{{ product.id }}'
+              name='id'
+              data-productid='{{ product.id }}'
               data-productid='{{ product.id }}'
               value='{{ card_product.variants.first.id }}'
             >
@@ -67,7 +69,6 @@
               <span class='block my-auto'>Shop now</span>
             </button>
           </form>
-          --!>
         </div>
       </div>
     </div>
