@@ -1,11 +1,20 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "show_announcement": false,
-          "home_page_only": true,
+          "show_announcement": true,
+          "home_page_only": false,
           "text": "Enjoy complimentary carbon neutral shipping",
           "link": ""
         }
@@ -13,6 +22,8 @@
       "footer": {
         "type": "footer",
         "settings": {
+          "ne-text": "For new product releases, merchandise, restaurant partnerships, and more info",
+          "no-id": "RjdCjJ"
         }
       }
     },
