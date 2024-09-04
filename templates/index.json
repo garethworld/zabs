@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "full_width_img_9hhKWA": {
@@ -9,6 +18,17 @@
         "fwi-txt": "<p>Make each bite a slow and delicious one with a “dab of Zab’s™”<\/p>",
         "fwi-btn-link": "shopify:\/\/pages\/shop",
         "fwi-btn-text": "Shop Now"
+      }
+    },
+    "feature_products_E7ctaQ": {
+      "type": "feature-products",
+      "settings": {
+        "fp-title": "Some Favorites",
+        "fp-products": [
+          "mixed-2-pack-st-augustine-original",
+          "zabs-trio",
+          "crew-neck-sweater"
+        ]
       }
     },
     "testimonials_pnf6iz": {
@@ -36,17 +56,6 @@
         "gallery_n3Uxap"
       ],
       "settings": {
-      }
-    },
-    "feature_products_E7ctaQ": {
-      "type": "feature-products",
-      "settings": {
-        "fp-title": "Some Favorites",
-        "fp-products": [
-          "mixed-2-pack-st-augustine-original",
-          "zabs-trio",
-          "crew-neck-sweater"
-        ]
       }
     },
     "sauce_gallery_tB6DLW": {
@@ -97,6 +106,7 @@
     },
     "note_Y3E4Bw": {
       "type": "note",
+      "disabled": true,
       "settings": {
         "no-image": "shopify:\/\/shop_images\/note.svg"
       }
@@ -220,6 +230,7 @@
     },
     "image_text_pMBxmw": {
       "type": "image-text",
+      "disabled": true,
       "settings": {
         "it-img": "shopify:\/\/shop_images\/about-header.jpg",
         "it-title": "Made with rare",
@@ -276,8 +287,8 @@
   },
   "order": [
     "full_width_img_9hhKWA",
-    "testimonials_pnf6iz",
     "feature_products_E7ctaQ",
+    "testimonials_pnf6iz",
     "sauce_gallery_tB6DLW",
     "note_Y3E4Bw",
     "as_seen_TkjM7L",
