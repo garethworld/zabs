@@ -13,8 +13,8 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "show_announcement": true,
-          "home_page_only": false,
+          "show_announcement": false,
+          "home_page_only": true,
           "text": "Enjoy complimentary carbon neutral shipping",
           "link": ""
         }
@@ -22,8 +22,6 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "ne-text": "For new product releases, merchandise, restaurant partnerships, and more info",
-          "no-id": "RjdCjJ"
         }
       }
     },

@@ -502,10 +502,10 @@ video {
     max-width: 320px;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 960px) {
 
   .container {
-    max-width: 900px;
+    max-width: 960px;
   }
 }
 @media (min-width: 1300px) {
@@ -2118,7 +2118,7 @@ p:last-child {
   margin-bottom: 45px;
   padding-left: 15px;
 }
-@media (min-width: 900px) {
+@media (min-width: 960px) {
 
   .article ol {
     padding-left: 20px;
@@ -2179,7 +2179,7 @@ p:last-child {
   --tw-text-opacity: 1;
   color: rgba(5, 60, 150, var(--tw-text-opacity));
 }
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .dec-border {
     background-size: auto 100%;
   }
@@ -2187,7 +2187,7 @@ p:last-child {
 .grad-bg {
   background-color: rgba(0, 0, 0, 0.6);
 }
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .grad-bg {
     background: linear-gradient(90deg,
         rgba(0, 0, 0, 1) 0%,
@@ -2226,7 +2226,7 @@ p:last-child {
   width: 100%;
   align-self: flex-start;
 }
-@media (min-width: 900px) {
+@media (min-width: 960px) {
 
   .rc-radio {
     width: auto;
@@ -2380,7 +2380,7 @@ label.rc_label {
     font-size: 14px !important;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 960px) {
 
   .rc-subscription-details__button {
     padding-top: 30px !important;
@@ -2548,7 +2548,7 @@ div#rc_login a:hover {
     padding-bottom: 0;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 960px) {
 
   .md\:absolute {
     position: absolute;
@@ -2900,11 +2900,6 @@ div#rc_login a:hover {
   .md\:px-8 {
     padding-left: 40px;
     padding-right: 40px;
-  }
-
-  .md\:py-10 {
-    padding-top: 50px;
-    padding-bottom: 50px;
   }
 
   .md\:py-11 {
