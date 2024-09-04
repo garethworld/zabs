@@ -42,33 +42,35 @@
             </span></a
           >
 
-          <form
-            method='post'
-            action='/cart/add'
-            data-productid='{{ product.id }}'
-            data-productid='{{ product.id }}'
-            id='add-to-cart-{{ card_product.handle }}-{{ collection.handle }}-{{ section.id }}'
-          >
-            <input
-              type='hidden'
-              class='hidden'
-              name='id'
+          {% if card_product.available == true %}
+            <form
+              method='post'
+              action='/cart/add'
               data-productid='{{ product.id }}'
               data-productid='{{ product.id }}'
-              value='{{ card_product.variants.first.id }}'
+              id='add-to-cart-{{ card_product.handle }}-{{ collection.handle }}-{{ section.id }}'
             >
+              <input
+                type='hidden'
+                class='hidden'
+                name='id'
+                data-productid='{{ product.id }}'
+                data-productid='{{ product.id }}'
+                value='{{ card_product.variants.first.id }}'
+              >
 
-            <button
-              class='add {% render 'c-btn' %}'
-              type='submit'
-              name='add'
-              {% if card_product.available == false %}
-                disabled
-              {%- endif -%}
-            >
-              <span class='block my-auto'>Add to cart</span>
-            </button>
-          </form>
+              <button
+                class='add {% render 'c-btn' %}'
+                type='submit'
+                name='add'
+                {% if card_product.available == false %}
+                  disabled
+                {%- endif -%}
+              >
+                <span class='block my-auto'>Add to cart</span>
+              </button>
+            </form>
+          {% endif %}
         </div>
       </div>
     </div>
