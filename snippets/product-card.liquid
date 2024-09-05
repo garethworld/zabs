@@ -33,7 +33,7 @@
 
         <div class='pt-3 mx-auto mt-auto gap-x-1 md:pt-6'>
           <a href='{{ card_product.url }}' class='add {% render 'c-btn' %}'
-            ><span class='my-auto'>
+            ><span class='mx-auto my-auto'>
               {% if card_product.available == false %}
                 Sold out
               {% else %}
@@ -60,7 +60,7 @@
               >
 
               <button
-                class='add mt-6 {% render 'c-btn' %}'
+                class='add mt-3 {% render 'c-btn' %}'
                 type='submit'
                 name='add'
                 {% if card_product.available == false %}
