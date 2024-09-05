@@ -1,6 +1,6 @@
 <section class=''>
   <div>
-    {% assign bg_tints = 'collect-1,collect-2,collect-3' | split: ',' %}
+    {% assign bg_tints = 'collect-3,collect-2,collect-3' | split: ',' %}
     {% for collection in section.settings['feat-collections'] %}
       {% assign index = forloop.index0 %}
       {% assign bg_class_index = index | modulo: bg_tints.size %}
