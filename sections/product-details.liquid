@@ -6,9 +6,9 @@
 
     <div>
       <div class='pb-5 border-b-3 border-tint1'>
+        {% render 'okendo-reviews-product-rating-summary', product: product %}
         <h1 class='mb-6 uppercase text-tint3 text-9-fluid leading-1 font-2'>{{ product.title }}</h1>
         <h2 class='flex flex-wrap text-tint1 leading-1 font-1 text-5-fluid'>{% render 'product-price' %}</h2>
-        {% render 'okendo-reviews-product-rating-summary', product: product %}
       </div>
 
       <div class='pt-5'>
