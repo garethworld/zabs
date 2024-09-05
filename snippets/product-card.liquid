@@ -12,13 +12,13 @@
           {%- assign img = card_product.images.first -%}
           {%- assign img2 = card_product.images[1] -%}
 
-          <div class='w-full border-3 rounded-1 bg-tint2  relaative {% if card_product.available == false %}opacity-60{%- endif -%}'>
+          <div class='w-full border-3 rounded-1 bg-tint2 group  relaative {% if card_product.available == false %}opacity-60{%- endif -%}'>
             {% render 'img-product-card', img: img %}
 
             {% if card_product.images.size > 1 %}
               <img
                 src='{{ img2 | img_url }}'
-                class='absolute top-0 left-0 w-full transition-opacity duration-300 ease-in-out opacity-0 second-image'
+                class='absolute top-0 left-0 z-20 w-full transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 '
               >
             {% endif %}
           </div>
