@@ -80,7 +80,7 @@
 
               <button
                 class='
-                  add mt-3 ml-auto border-2 border-tint2
+                  add mt-3 ml-auto quick-add
 
                                   rounded-2 uppercase px-3 pt-[7px] pb-[10px] font-1 leading-1 text-2-fluid inline-block cursor-pointer flex
                   {% render 'c-color-change' %}
@@ -92,7 +92,9 @@
                 {%- endif -%}
               >
                 <span class='flex flex-wrap items-center block my-auto'
-                  >Add <img style='width:16px' class='ml-1 ' src='{{ 'cart-white.svg' | asset_url }}' alt='Cart'>
+                  >Add
+                  <img style='width:16px' class='ml-1 white-cart ' src='{{ 'cart-white.svg' | asset_url }}' alt='Cart'>
+                  <img style='width:16px' class='hidden ml-1 blue-cart ' src='{{ 'cart.svg' | asset_url }}' alt='Cart'>
                 </span>
               </button>
             </form>
