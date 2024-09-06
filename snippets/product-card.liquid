@@ -44,7 +44,14 @@
         </div>
 
         <div class='pt-3 mx-auto mt-auto gap-x-1 md:pt-6'>
-          <a href='{{ card_product.url }}' class='add quick-add {% render 'c-btn' %}'
+          <a
+            href='{{ card_product.url }}'
+            class='
+              add quick-add
+
+                          rounded-2 uppercase px-3 pt-[7px] pb-[10px] font-1 leading-1 text-4-fluid inline-block cursor-pointer flex
+              {% render 'c-color-change' %}
+            '
             ><span class='mx-auto my-auto'>
               {% if card_product.available == false %}
                 Sold out
