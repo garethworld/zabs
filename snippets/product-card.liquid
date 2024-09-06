@@ -44,7 +44,7 @@
         </div>
 
         <div class='pt-3 mx-auto mt-auto gap-x-1 md:pt-6'>
-          <a href='{{ card_product.url }}' class='add {% render 'c-btn' %}'
+          <a href='{{ card_product.url }}' class='add quick-add {% render 'c-btn' %}'
             ><span class='mx-auto my-auto'>
               {% if card_product.available == false %}
                 Sold out
@@ -79,7 +79,11 @@
                   disabled
                 {%- endif -%}
               >
-                <span class='block my-auto'>Quick Add</span>
+                <span class='block my-auto'
+                  >Add
+
+                  <img class='w-[22px] ml-1' src='{{ 'cart.svg' | asset_url }}' alt='Cart'>
+                </span>
               </button>
             </form>
           {% endif %}
