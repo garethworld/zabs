@@ -44,14 +44,7 @@
         </div>
 
         <div class='pt-3 mx-auto mt-auto gap-x-1 md:pt-6'>
-          <a
-            href='{{ card_product.url }}'
-            class='
-              add quick-add
-
-                          rounded-2 uppercase px-3 pt-[7px] pb-[10px] font-1 leading-1 text-4-fluid inline-block cursor-pointer flex
-              {% render 'c-color-change' %}
-            '
+          <a href='{{ card_product.url }}' class='add quick-add {% render 'c-btn' %}'
             ><span class='mx-auto my-auto'>
               {% if card_product.available == false %}
                 Sold out
@@ -79,7 +72,12 @@
               >
 
               <button
-                class='add mt-3 {% render 'c-btn' %}'
+                class='
+                  add mt-3
+
+                                  rounded-2 uppercase px-3 pt-[7px] pb-[10px] font-1 leading-1 text-4-fluid inline-block cursor-pointer flex
+                  {% render 'c-color-change' %}
+                '
                 type='submit'
                 name='add'
                 {% if card_product.available == false %}
@@ -87,9 +85,7 @@
                 {%- endif -%}
               >
                 <span class='flex flex-wrap block my-auto'
-                  >Add
-
-                  <img class='w-[22px] ml-1' src='{{ 'cart-white.svg' | asset_url }}' alt='Cart'>
+                  >Add <img class='w-[22px] ml-1' src='{{ 'cart-white.svg' | asset_url }}' alt='Cart'>
                 </span>
               </button>
             </form>
