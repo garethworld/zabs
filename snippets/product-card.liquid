@@ -91,10 +91,14 @@
                   disabled
                 {%- endif -%}
               >
-                <span class='flex flex-wrap items-center block my-auto'
-                  >Add
-                  <img style='width:16px' class='ml-1 white-cart ' src='{{ 'cart-white.svg' | asset_url }}' alt='Cart'>
-                  <img style='width:16px' class='hidden ml-1 blue-cart ' src='{{ 'cart.svg' | asset_url }}' alt='Cart'>
+                <span class='flex flex-wrap items-center block my-auto'>
+                  {% if card_product.available == false %}
+                    Sold out
+                  {% else %}
+                 ADD TO CART
+                  {% endif %}
+                </span>
+
                 </span>
               </button>
             </form>
