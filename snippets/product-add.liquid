@@ -3,9 +3,9 @@
   name='add'
   id='add-to-cart'
   class='
-    border-3 border-tint1 hover:border-tint3
-    bg-tint1  {% unless  product.variants.first.available %}opacity-50 {% else %}
-      hover:bg-tint3
+    border-3 border-tint3 hover:border-tint1
+    bg-tint3  {% unless  product.variants.first.available %}opacity-50 {% else %}
+      hover:bg-tint1
     {% endunless %}   text-tint2 {% render 'c-color-change' %} {% render 'c-btn' %}
   '
   {% unless product.variants.first.available %}
