@@ -1,9 +1,9 @@
-<div class='flex flex-wrap px-3 md:w-1/2 lg:w-1/3 group'>
+<div class='relative flex flex-wrap px-3 md:w-1/2 lg:w-1/3 group'>
 
 
   {% if product.tags contains 'best seller' %}
-    <div class="">
-      <img src="{{ 'best-seller.png' | asset_url }}" alt="Best Seller">
+    <div class="absolute">
+      <img style="width:20px" src="{{ 'best-seller.png' | asset_url }}" alt="Best Seller">
     </div>
   {% endif %}
 
