@@ -3,13 +3,13 @@
 
   {% if product.tags contains 'best seller' %}
     <div class="absolute">
-      <img style="width:20px" src="{{ 'best-seller.png' | asset_url }}" alt="Best Seller">
+      <img style="width:90px" src="{{ 'best-seller.png' | asset_url }}" alt="Best Seller">
     </div>
   {% endif %}
 
   {% if product.tags contains 'best value' %}
-    <div class="">
-      <img src="{{ 'best-value.png' | asset_url }}" alt="Best value">
+    <div class="absolute">
+      <img style="width:90px" src="{{ 'best-value.png' | asset_url }}" alt="Best value">
     </div>
   {% endif %}
 
