@@ -14,7 +14,7 @@
                 aria-label='{{ variant.title }}'
                 class='
                   variant px-5 py-2 inline-block font-1  hover:bg-tint3 hover:text-tint2  text-1-fluid border-2 cursor-pointer rounded-2 border-3 border-tint3
-                  {% if forloop.parentloop.first and forloop.first %}bg-tint3 text-tint2{% else %} bg-tint2 text-tint3{% endif %}
+                  {% if forloop.parentloop.first and forloop.first %}bg-tint1 text-tint2{% else %} bg-tint2 text-tint3{% endif %}
                 '
                 data-variant-image='{% if variant.image %}{{ variant.image.src | remove: "files/" | split: "." | first | downcase | replace: " ", "" }}{% endif %}'
                 data-variant-price='{{ variant.price | money }}'
