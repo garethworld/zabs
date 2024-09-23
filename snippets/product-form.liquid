@@ -10,12 +10,13 @@
     enctype='multipart/form-data'
     id='AddToCartForm'
   >
+    <div class='mr-2'>{% render 'product-add' %}</div>
+
     <div id='recharge-container'></div>
 
     {% render 'product-variants' %}
 
     <div class='flex flex-wrap mt-2'>
-      <div class='mr-2'>{% render 'product-add' %}</div>
       <div>{% render 'product-qty', product: product.variants.first, count: 1 %}</div>
     </div>
   </form>
