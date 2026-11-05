@@ -6,7 +6,7 @@
           {% assign img = block.settings['itr-img'] %}
           {% render 'img-square-border', img: img %}
         </div>
-        <div class='order-1 {% cycle 'lg:order-2', 'lg:order-1 %} '>
+        <div class='order-1 {% cycle 'lg:order-2', lg.order-1 %} '>
           <div class='flex flex-wrap items-center'>
             <h2 class='mb-4 leading-4 uppercase md:mb-8 font-2 text-tint1 text-12-fluid'>
               {{ block.settings['itr-title'] }}
@@ -88,3 +88,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% cycle 'lg:order-2', 'lg:order-1 %}"
+  to: "{% cycle 'lg:order-2', lg.order-1 %}"
+  position: 447..483
+{% endcomment %}

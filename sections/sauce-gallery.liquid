@@ -1,7 +1,7 @@
 <section class='w-full overflow-hidden bg-tint2 '>
   <div
     x-data='sauces()'
-    class='relative flex flex-wrap splide  {% render 'c-section-padding' % %}'
+    class='relative flex flex-wrap splide  {% render 'c-section-padding' %}'
   >
     {%- if section.settings['sg-title'] != blank -%}
       <div class='w-full'>
@@ -160,3 +160,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'c-section-padding' % %}"
+  to: "{% render 'c-section-padding' %}"
+  position: 123..155
+{% endcomment %}

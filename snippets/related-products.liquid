@@ -13,7 +13,7 @@
     <div class="mx-auto md:w-10/12 {% render 'c-container' %}">
       <div class='{% render 'c-product-grid' %}'>
     {% for related_product in products.value %}
-      {% render 'product-card' with card_product: related_product %}
+      {% render 'product-card' with card_product, card_product: related_product %}
     {% endfor %}
     </div>
     </div>
@@ -21,4 +21,13 @@
     </div>
     <div class="blue-dec dec-border "></div>
   </section>
-  {% endif %} 
+  {% endif %} {%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-card' with card_product: related_product %}"
+  to: "{% render 'product-card' with card_product, card_product: related_product %}"
+  position: 477..553
+{%- endcomment -%}

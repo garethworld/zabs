@@ -28,7 +28,7 @@
       <div class="flex flex-wrap md:-mx-2">
         {% for item in search.results %} {% assign product = item %}
            <div class="w-full pb-8 md:pb-10 sm:px-2 sm:w-1/2 md:w-1/3 lg:w-1/4">
-          {% render 'product-card',card_product: product, img:product.images.first.%}
+          {% render 'product-card', card_product: product, img: product.images.first %}
         </div>
         {% endfor %}
       </div>
@@ -65,3 +65,14 @@
     <div class="{% render 'c-gutter' %}"></div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-card',card_product: product, img:product.images.first.%}"
+  to: "{% render 'product-card', card_product: product, img: product.images.first
+    %}"
+  position: 873..950
+{% endcomment %}

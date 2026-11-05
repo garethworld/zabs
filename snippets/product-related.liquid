@@ -25,7 +25,7 @@
           <ul class="splide__list ">
         {% for product in collection.products limit: 6 %}
             <li class="splide__slide">
-            {% render 'product-card',card_product: product, img:product.images.first.%}
+            {% render 'product-card', card_product: product, img: product.images.first %}
             </li>
         {% endfor %}
         </ul>
@@ -39,3 +39,14 @@
 
 
     {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-card',card_product: product, img:product.images.first.%}"
+  to: "{% render 'product-card', card_product: product, img: product.images.first
+    %}"
+  position: 1880..1957
+{% endcomment %}

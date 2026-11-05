@@ -39,9 +39,9 @@
       ></a>
     </div>
     <div class='grid grid-cols-2 mt-6 ml-auto md:grid-cols-3 md:mt-0 md:w-1/2 gap-x-3'>
-      <div>{% include 'menu-footer-top' with menu: 'footer-one' %}</div>
-      <div>{% include 'menu-footer-top' with menu: 'footer-two' %}</div>
-      <div>{% include 'menu-footer-top' with menu: 'footer-three' %}</div>
+      <div>{% include 'menu-footer-top' with menu, menu: 'footer-one' %}</div>
+      <div>{% include 'menu-footer-top' with menu, menu: 'footer-two' %}</div>
+      <div>{% include 'menu-footer-top' with menu, menu: 'footer-three' %}</div>
     </div>
   </div>
 
@@ -71,3 +71,19 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% include 'menu-footer-top' with menu: 'footer-one' %}"
+  to: "{% include 'menu-footer-top' with menu, menu: 'footer-one' %}"
+  position: 1728..1789
+- from: "{% include 'menu-footer-top' with menu: 'footer-two' %}"
+  to: "{% include 'menu-footer-top' with menu, menu: 'footer-two' %}"
+  position: 1807..1868
+- from: "{% include 'menu-footer-top' with menu: 'footer-three' %}"
+  to: "{% include 'menu-footer-top' with menu, menu: 'footer-three' %}"
+  position: 1886..1949
+{% endcomment %}

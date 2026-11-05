@@ -7,7 +7,7 @@
       <div class='w-full flex mx-auto md:w-11/12 {% render 'c-container' %} '>
         <div class='{% render 'c-product-grid' %} '>
           {% for product in section.settings['fp-products'] %}
-            {% render 'product-card' with card_product: product %}
+            {% render 'product-card' with card_product, card_product: product %}
           {% endfor %}
         </div>
       </div>
@@ -43,3 +43,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-card' with card_product: product %}"
+  to: "{% render 'product-card' with card_product, card_product: product %}"
+  position: 417..485
+{% endcomment %}

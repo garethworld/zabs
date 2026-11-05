@@ -11,7 +11,7 @@
           <div class='w-full mx-auto md:w-10/12 {% render 'c-container' %} '>
             <div class='{% render 'c-product-grid' %}'>
               {% for product in collection.products %}
-                {% include 'product-card' with card_product: product %}
+                {% include 'product-card' with card_product, card_product: product %}
               {% endfor %}
             </div>
           </div>
@@ -35,3 +35,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% include 'product-card' with card_product: product %}"
+  to: "{% include 'product-card' with card_product, card_product: product %}"
+  position: 705..774
+{% endcomment %}
